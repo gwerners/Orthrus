@@ -1,0 +1,2 @@
+# Orthrus
+In Greek mythology, Orthrus (Greek: Ὄρθρος, Orthros) or Orthus (Greek: Ὄρθος, Orthos) was, according to the mythographer Apollodorus, a two-headed dog who guarded Geryon's cattle and was killed by Heracles. He was the offspring of the monsters Echidna and Typhon, and the brother of Cerberus, who was also a multi-headed guard dog. This project (as the monster) have more than one "face". It is a REST framework done in C++, Lua, Java and aim to enable multilanguage REST modules.
