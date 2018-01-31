@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>HTTP compression - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf22" />
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/HTTP_compression" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=HTTP_compression&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=HTTP_compression&amp;action=edit" />
+<link rel="apple-touch-icon" href="//bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="//bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/HTTP_compression" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/HTTP_compression" />
+<script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"HTTP_compression","wgTitle":"HTTP compression","wgCurRevisionId":654553091,"wgRevisionId":654553091,"wgArticleId":4954757,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Web development","Lossless compression algorithms","Hypertext Transfer Protocol"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"HTTP_compression","wgRelevantArticleId":4954757,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr"},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgBetaFeaturesFeatures":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q3495340"}); } );</script>
+<script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */ } );</script>
+<script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","ext.imageMetrics.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]); } );</script>
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf22/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-HTTP_compression skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">HTTP compression</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hatnote">"SDCH" redirects here. For the Partido Socialdemocracia Chilena, see <a href="/wiki/Chilean_Social_Democracy_Party" title="Chilean Social Democracy Party">Chilean Social Democracy Party</a>.</div>
+<table class="vertical-navbox nowraplinks hlist" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%">
+<tr>
+<th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em"><a href="/wiki/Hypertext_Transfer_Protocol" title="Hypertext Transfer Protocol">HTTP</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<ul>
+<li><a href="/wiki/HTTP_persistent_connection" title="HTTP persistent connection">Persistence</a></li>
+<li><strong class="selflink">Compression</strong></li>
+<li><a href="/wiki/HTTPS" title="HTTPS">HTTPS</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em"><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">Request methods</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<ul>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">OPTIONS</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">GET</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">HEAD</a></li>
+<li><a href="/wiki/POST_(HTTP)" title="POST (HTTP)">POST</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">PUT</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">DELETE</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">TRACE</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">CONNECT</a></li>
+<li><a href="/wiki/Hypertext_Transfer_Protocol#Request_methods" title="Hypertext Transfer Protocol">PATCH</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em"><a href="/wiki/List_of_HTTP_header_fields" title="List of HTTP header fields">Header fields</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<ul>
+<li><a href="/wiki/HTTP_cookie" title="HTTP cookie">Cookie</a></li>
+<li><a href="/wiki/HTTP_ETag" title="HTTP ETag">ETag</a></li>
+<li><a href="/wiki/HTTP_location" title="HTTP location">Location</a></li>
+<li><a href="/wiki/HTTP_referer" title="HTTP referer">HTTP referer</a></li>
+<li><a href="/wiki/Do_Not_Track" title="Do Not Track">DNT</a></li>
+<li><a href="/wiki/X-Forwarded-For" title="X-Forwarded-For">X-Forwarded-For</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em"><a href="/wiki/List_of_HTTP_status_codes" title="List of HTTP status codes">Status codes</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<ul>
+<li><a href="/wiki/HTTP_301" title="HTTP 301">301 Moved Permanently</a></li>
+<li><a href="/wiki/HTTP_302" title="HTTP 302">302 Found</a></li>
+<li><a href="/wiki/HTTP_303" title="HTTP 303">303 See Other</a></li>
+<li><a href="/wiki/HTTP_403" title="HTTP 403">403 Forbidden</a></li>
+<li><a href="/wiki/HTTP_404" title="HTTP 404">404 Not Found</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;font-size:115%">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="/wiki/Template:HTTP" title="Template:HTTP"><span title="View this template">v</span></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:HTTP" title="Template talk:HTTP"><span title="Discuss this template">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:HTTP&amp;action=edit"><span title="Edit this template">e</span></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+<p><b>HTTP compression</b> is a capability that can be built into <a href="/wiki/Web_server" title="Web server">web servers</a> and <a href="/wiki/Web_client" title="Web client" class="mw-redirect">web clients</a> to improve transfer speed and bandwidth utilization.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup></p>
+<p><a href="/wiki/HTTP" title="HTTP" class="mw-redirect">HTTP</a> data is <a href="/wiki/Data_compression" title="Data compression">compressed</a> before it is sent from the server: compliant browsers will announce what methods are supported to the server before downloading the correct format; browsers that do not support compliant compression method will download uncompressed data. The most common compression schemes include <a href="/wiki/Gzip" title="Gzip">gzip</a> and <a href="/wiki/Deflate" title="Deflate" class="mw-redirect">Deflate</a>, however a full list of available schemes is maintained by the <a href="/wiki/Internet_Assigned_Numbers_Authority" title="Internet Assigned Numbers Authority">IANA</a>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup> Additionally, third parties develop new methods and include them in their products, for example the Google Shared Dictionary Compression Over HTTP (SDCH) scheme implemented in the <a href="/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a> browser and used on Google servers.</p>
+<p>There are two different ways compression can be done in HTTP. At a lower level, a Transfer-Encoding header field may indicate the payload of a HTTP message is compressed. At a higher level, a Content-Encoding header field may indicate that a resource being transferred, cached, or otherwise referenced is compressed. Compression using Content-Encoding is more widely supported than Transfer-Encoding, and some browsers do not advertise for Transfer-Encoding compression to avoid triggering bugs in servers.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>3<span>]</span></a></sup></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Compression_scheme_negotiation"><span class="tocnumber">1</span> <span class="toctext">Compression scheme negotiation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Content-Encoding_tokens"><span class="tocnumber">2</span> <span class="toctext">Content-Encoding tokens</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Servers_that_support_HTTP_compression"><span class="tocnumber">3</span> <span class="toctext">Servers that support HTTP compression</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Problems_preventing_the_use_of_HTTP_compression"><span class="tocnumber">4</span> <span class="toctext">Problems preventing the use of HTTP compression</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Security_implications"><span class="tocnumber">5</span> <span class="toctext">Security implications</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Compression_scheme_negotiation">Compression scheme negotiation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=1" title="Edit section: Compression scheme negotiation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In most cases, excluding the SDCH, the negotiation is done in two steps, described in <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc2616">RFC 2616</a>:</p>
+<p>1. The <a href="/wiki/Web_client" title="Web client" class="mw-redirect">web client</a> advertises which compression schemes it supports by including a list of tokens in the <a href="/wiki/HTTP_request" title="HTTP request" class="mw-redirect">HTTP request</a>. For <i>Content-Encoding</i>, the list in a field called <i>Accept-Encoding</i>; for <i>Transfer-Encoding</i>, the field is called <i>TE</i>.</p>
+<pre>
+GET /encrypted-area HTTP/1.1
+Host: www.example.com
+<b>Accept-Encoding: gzip, deflate</b>
+</pre>
+<p>2. If the server supports one or more compression schemes, the outgoing data may be compressed by one or more methods supported by both parties. If this is the case, the server will add a <i>Content-Encoding</i> or <i>Transfer-Encoding</i> field in the HTTP response with the used schemes, separated by commas.</p>
+<pre>
+HTTP/1.1 200 OK
+Date: mon, 1 Apr 2015 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix)  (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+Accept-Ranges: bytes
+Content-Length: 438
+Connection: close
+Content-Type: text/html; charset=UTF-8
+<b>Content-Encoding: gzip</b>
+</pre>
+<p>The <a href="/wiki/Web_server" title="Web server">web server</a> is by no means obliged to use any compression method&#160;– this depends on the internal settings of the web server and also may depend on the internal architecture of the website in question.</p>
+<p>In case of SDCH a dictionary negotiation is also required, which may involve additional steps, like downloading a proper dictionary from the external server.</p>
+<h2><span class="mw-headline" id="Content-Encoding_tokens">Content-Encoding tokens</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=2" title="Edit section: Content-Encoding tokens">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The official list of tokens available to servers and client is maintained by IANA,<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup> and it includes:</p>
+<ul>
+<li><a href="/wiki/Compress" title="Compress">compress</a> – UNIX "compress" program method (historic; deprecated in most applications and replaced by gzip or deflate)</li>
+<li>deflate – compression based on the <a href="/wiki/Deflate" title="Deflate" class="mw-redirect">deflate</a> algorithm (described in <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc1951">RFC 1951</a>), wrapped inside the zlib data format (<a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc1950">RFC 1950</a>);</li>
+<li><a href="/wiki/Efficient_XML_Interchange" title="Efficient XML Interchange">exi</a> – W3C Efficient XML Interchange</li>
+<li><a href="/wiki/Gzip" title="Gzip">gzip</a> – GNU zip format (described in <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc1952">RFC 1952</a>). This method is the most broadly supported as of March 2011.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup></li>
+<li>identity – No transformation is used. This is the default value for content coding.</li>
+<li><a href="/wiki/Pack200" title="Pack200">pack200-gzip</a> – Network Transfer Format for Java Archives<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>6<span>]</span></a></sup></li>
+</ul>
+<p>In addition to these, a number of unofficial or non-standardized tokens are used in the wild by either servers or clients:</p>
+<ul>
+<li><a href="/wiki/Bzip2" title="Bzip2">bzip2</a> – compression based on the free bzip2 format, supported by <a href="/wiki/Lighttpd" title="Lighttpd">lighttpd</a><sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup></li>
+<li><a href="/wiki/LZMA" title="LZMA" class="mw-redirect">lzma</a> – compression based on (raw) LZMA is available in Opera 20, and in elinks via a compile-time option<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>8<span>]</span></a></sup></li>
+<li>peerdist<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup> – <a href="/wiki/Microsoft" title="Microsoft">Microsoft</a> Peer Content Caching and Retrieval</li>
+<li>sdch<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup><sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup> – <a href="/wiki/Google" title="Google">Google</a> Shared Dictionary Compression for HTTP, based on <a href="/wiki/VCDIFF" title="VCDIFF">VCDIFF</a> (<a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc3284">RFC 3284</a>); supported natively in recent versions of <a href="/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a>, Chromium and Android, as well as on Google websites.</li>
+<li><a href="/wiki/Xz" title="Xz">xz</a> - LZMA2-based content compression, supported by a non-official Firefox patch;<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>12<span>]</span></a></sup> and fully implemented in mget since 2013-12-31.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup></li>
+</ul>
+<h2><span class="mw-headline" id="Servers_that_support_HTTP_compression">Servers that support HTTP compression</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=3" title="Edit section: Servers that support HTTP compression">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/SAP_NetWeaver" title="SAP NetWeaver">SAP NetWeaver</a></li>
+<li><a href="/wiki/Internet_Information_Services" title="Internet Information Services">Microsoft IIS</a>: built-in or using third-party module</li>
+<li><a href="/wiki/Apache_HTTP_Server" title="Apache HTTP Server">Apache HTTP Server</a>, via <b><a rel="nofollow" class="external text" href="http://httpd.apache.org/docs/2.2/mod/mod_deflate.html">mod_deflate</a></b> (despite its name, only supporting gzip<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup>)</li>
+<li><a href="/wiki/Hiawatha_(web_server)" title="Hiawatha (web server)">Hiawatha HTTP server</a>: serves pre-compressed files<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup></li>
+<li><a href="/wiki/Cherokee_(Webserver)" title="Cherokee (Webserver)" class="mw-redirect">Cherokee HTTP server</a>, On the fly gzip and deflate compressions</li>
+<li><a href="/wiki/Oracle_iPlanet_Web_Server" title="Oracle iPlanet Web Server">Oracle iPlanet Web Server</a></li>
+<li><a href="/wiki/Zeus_Web_Server" title="Zeus Web Server">Zeus Web Server</a></li>
+<li><a href="/wiki/Lighttpd" title="Lighttpd">lighttpd</a>, via <b>mod_compress</b> and the newer <b>mod_deflate</b> (1.5.x)</li>
+<li><a href="/wiki/Nginx" title="Nginx">nginx</a> – built-in</li>
+<li>Applications based on <a href="/wiki/Tornado_(web_server)" title="Tornado (web server)">Tornado</a>, if "compress_response" is set to True in the application settings (for versions prior to 4.0, set "gzip" to True)</li>
+<li><a href="/wiki/Jetty_(Web_server)" title="Jetty (Web server)" class="mw-redirect">Jetty Server</a> – built-into default static content serving and available via servlet filter configurations</li>
+<li><a href="/wiki/GeoServer" title="GeoServer">GeoServer</a></li>
+<li><a href="/wiki/Apache_Tomcat" title="Apache Tomcat">Apache Tomcat</a></li>
+<li><a href="/wiki/IBM_Websphere" title="IBM Websphere" class="mw-redirect">IBM Websphere</a></li>
+<li><a href="/wiki/AOLserver" title="AOLserver">AOLserver</a></li>
+<li><a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a> <a href="/wiki/Rack_(web_server_interface)" title="Rack (web server interface)">Rack</a>, via the <b>Rack::Deflater</b> middleware</li>
+</ul>
+<p>The compression in HTTP can also be achieved by using the functionality of <a href="/wiki/Server-side_scripting" title="Server-side scripting">server-side scripting</a> languages like <a href="/wiki/PHP" title="PHP">PHP</a>, or programming languages like <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>.</p>
+<h2><span class="mw-headline" id="Problems_preventing_the_use_of_HTTP_compression">Problems preventing the use of HTTP compression</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=4" title="Edit section: Problems preventing the use of HTTP compression">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A 2009 article by Google engineers Arvind Jain and Jason Glasgow states that more than 99 person-years are wasted<sup id="cite_ref-google-use-compression_16-0" class="reference"><a href="#cite_note-google-use-compression-16"><span>[</span>16<span>]</span></a></sup> daily due to increase in page load time when users do not receive compressed content. This occurs when anti-virus software interferes with connections to force them to be uncompressed, where proxies are used (with overcautious web browsers), where servers are misconfigured, and where browser bugs stop compression being used. Internet Explorer 6, which drops to HTTP 1.0 (without features like compression or pipelining) when behind a proxy&#160;– a common configuration in corporate environments&#160;– was the mainstream browser most prone to failing back to uncompressed HTTP.<sup id="cite_ref-google-use-compression_16-1" class="reference"><a href="#cite_note-google-use-compression-16"><span>[</span>16<span>]</span></a></sup></p>
+<p>Another problem found while deploying HTTP compression on large scale is due to the <b>deflate</b> encoding definition: while HTTP 1.1 defines the <b>deflate</b> encoding as data compressed with deflate (<a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc1951">RFC 1951</a>) inside a <a href="/wiki/Zlib" title="Zlib">zlib</a> formatted stream (<a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc1950">RFC 1950</a>), Microsoft server and client products historically implemented it as a "raw" deflated stream,<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>17<span>]</span></a></sup> making its deployment unreliable.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span>[</span>18<span>]</span></a></sup><sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>19<span>]</span></a></sup> For this reason, some software, including the Apache HTTP Server, only implement <b>gzip</b> encoding.</p>
+<h2><span class="mw-headline" id="Security_implications">Security implications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=5" title="Edit section: Security implications">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="/wiki/BREACH" title="BREACH" class="mw-redirect">BREACH</a></div>
+<p>In 2012, a general attack against the use of data compression, called <a href="/wiki/CRIME" title="CRIME">CRIME</a>, was announced. While the CRIME attack could work effectively against a large number of protocols, including but not limited to TLS, and application-layer protocols such as SPDY or HTTP, only exploits against TLS and SPDY were demonstrated and largely mitigated in browsers and servers. The CRIME exploit against HTTP compression has not been mitigated at all, even though the authors of CRIME have warned that this vulnerability might be even more widespread than SPDY and TLS compression combined.</p>
+<p>In 2013, a new instance of the CRIME attack against HTTP compression, dubbed BREACH, was published. A BREACH attack can extract login tokens, email addresses or other sensitive information from TLS encrypted web traffic in as little as 30 seconds (depending on the number of bytes to be extracted), provided the attacker tricks the victim into visiting a malicious web link.<sup id="cite_ref-Gooin20130801_20-0" class="reference"><a href="#cite_note-Gooin20130801-20"><span>[</span>20<span>]</span></a></sup> All versions of TLS and SSL are at risk from BREACH regardless of the encryption algorithm or cipher used.<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span>[</span>21<span>]</span></a></sup> Unlike previous instances of <a href="/wiki/CRIME_(security_exploit)" title="CRIME (security exploit)" class="mw-redirect">CRIME</a>, which can be successfully defended against by turning off TLS compression or SPDY header compression, BREACH exploits HTTP compression which cannot realistically be turned off, as virtually all web servers rely upon it to improve data transmission speeds for users.<sup id="cite_ref-Gooin20130801_20-1" class="reference"><a href="#cite_note-Gooin20130801-20"><span>[</span>20<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=6" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/d52ff289-94d3-4085-bc4e-24eb4f312e0e.mspx?mfr=true">"Using HTTP Compression (IIS 6.0)"</a>. Microsoft Corporation<span class="reference-accessdate">. Retrieved <span class="nowrap">9 February</span> 2010</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Using+HTTP+Compression+%28IIS+6.0%29&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.microsoft.com%2Ftechnet%2Fprodtechnol%2FWindowsServer2003%2FLibrary%2FIIS%2Fd52ff289-94d3-4085-bc4e-24eb4f312e0e.mspx%3Fmfr%3Dtrue&amp;rft.pub=Microsoft+Corporation&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc2616">RFC 2616</a>, Section 3.5: "The Internet Assigned Numbers Authority (IANA) acts as a registry for content-coding value tokens."</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://code.google.com/p/chromium/issues/detail?id=94730">'RFC2616 "Transfer-Encoding: gzip, chunked" not handled properly'</a>, <a href="/wiki/Chromium_(browser)" title="Chromium (browser)" class="mw-redirect">Chromium</a> Issue 94730</span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.iana.org/assignments/http-parameters/http-parameters.xhtml#content-coding">"Hypertext Transfer Protocol Parameters - HTTP Content Coding Registry"</a>. IANA<span class="reference-accessdate">. Retrieved <span class="nowrap">18 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Hypertext+Transfer+Protocol+Parameters+-+HTTP+Content+Coding+Registry&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.iana.org%2Fassignments%2Fhttp-parameters%2Fhttp-parameters.xhtml%23content-coding&amp;rft.pub=IANA&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.vervestudios.co/projects/compression-tests/results">"Compression Tests: Results"</a>. Verve Studios, Co<span class="reference-accessdate">. Retrieved <span class="nowrap">19 July</span> 2012</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Compression+Tests%3A+Results&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.vervestudios.co%2Fprojects%2Fcompression-tests%2Fresults&amp;rft.pub=Verve+Studios%2C+Co&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://jcp.org/en/jsr/detail?id=200">"JSR 200: Network Transfer Format for Java Archives"</a>. The Java Community Process Program.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=JSR+200%3A+Network+Transfer+Format+for+Java+Archives&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fjcp.org%2Fen%2Fjsr%2Fdetail%3Fid%3D200&amp;rft.pub=The+Java+Community+Process+Program&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://redmine.lighttpd.net/projects/1/wiki/Docs_ModCompress">"ModCompress - Lighttpd"</a>. lighty labs<span class="reference-accessdate">. Retrieved <span class="nowrap">18 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=ModCompress+-+Lighttpd&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fredmine.lighttpd.net%2Fprojects%2F1%2Fwiki%2FDocs_ModCompress&amp;rft.pub=lighty+labs&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://elinks.or.cz/documentation/html/manual.html-chunked/ch01s07.html#CONFIG-LZMA">elinks LZMA decompression</a></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/dd304322%28v=PROT.10%29.aspx">"[MS-PCCRTP]: Peer Content Caching and Retrieval: Hypertext Transfer Protocol (HTTP) Extensions"</a>. Microsoft<span class="reference-accessdate">. Retrieved <span class="nowrap">19 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=%5BMS-PCCRTP%5D%3A+Peer+Content+Caching+and+Retrieval%3A+Hypertext+Transfer+Protocol+%28HTTP%29+Extensions&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Fdd304322%2528v%3DPROT.10%2529.aspx&amp;rft.pub=Microsoft&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><span class="citation web">Butler, Jon; Wei-Hsin Lee; McQuade, Bryan; Mixter, Kenneth. <a rel="nofollow" class="external text" href="http://lists.w3.org/Archives/Public/ietf-http-wg/2008JulSep/att-0441/Shared_Dictionary_Compression_over_HTTP.pdf">"A Proposal for Shared Dictionary Compression Over HTTP"</a>. Google.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.au=Butler%2C+Jon&amp;rft.aufirst=Jon&amp;rft.aulast=Butler&amp;rft.au=McQuade%2C+Bryan&amp;rft.au=Mixter%2C+Kenneth&amp;rft.au=Wei-Hsin+Lee&amp;rft.btitle=A+Proposal+for+Shared+Dictionary+Compression+Over+HTTP&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fietf-http-wg%2F2008JulSep%2Fatt-0441%2FShared_Dictionary_Compression_over_HTTP.pdf&amp;rft.pub=Google&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://groups.google.com/forum/#!forum/SDCH">"SDCH Mailing List"</a>. Google Groups.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=SDCH+Mailing+List&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fgroups.google.com%2Fforum%2F%23%21forum%2FSDCH&amp;rft.pub=Google+Groups&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://wiki.mozilla.org/LZMA2_Compression">"LZMA2 Compression - MozillaWiki"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">18 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=LZMA2+Compression+-+MozillaWiki&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fwiki.mozilla.org%2FLZMA2_Compression&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://github.com/rockdaboot/mget">"mget GitHub project page"</a><span class="reference-accessdate">. Retrieved May 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=mget+GitHub+project+page&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fgithub.com%2Frockdaboot%2Fmget&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://mark.koli.ch/2009/04/howto-use-apache-mod-deflate-to-compress-web-content-obsessed-with-speed-of-kolichcommobi.html">"HOWTO: Use Apache mod_deflate To Compress Web Content (Accept-Encoding: gzip)"</a>. Mark S. Kolich<span class="reference-accessdate">. Retrieved <span class="nowrap">23 March</span> 2011</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=HOWTO%3A+Use+Apache+mod_deflate+To+Compress+Web+Content+%28Accept-Encoding%3A+gzip%29&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmark.koli.ch%2F2009%2F04%2Fhowto-use-apache-mod-deflate-to-compress-web-content-obsessed-with-speed-of-kolichcommobi.html&amp;rft.pub=Mark+S.+Kolich&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.hiawatha-webserver.org/manpages">"Extra part of Hiawatha webserver's manual"</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Extra+part+of+Hiawatha+webserver%27s+manual&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.hiawatha-webserver.org%2Fmanpages&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-google-use-compression-16"><span class="mw-cite-backlink">^ <a href="#cite_ref-google-use-compression_16-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-google-use-compression_16-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://developers.google.com/speed/articles/use-compression">"Use compression to make the web faster"</a>. Google Developers<span class="reference-accessdate">. Retrieved <span class="nowrap">22 May</span> 2013</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Use+compression+to+make+the+web+faster&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fdevelopers.google.com%2Fspeed%2Farticles%2Fuse-compression&amp;rft.pub=Google+Developers&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://stackoverflow.com/questions/9170338/why-are-major-web-sites-using-gzip/9186091#9186091">"deflate - Why are major web sites using gzip?"</a>. Stack Overflow<span class="reference-accessdate">. Retrieved <span class="nowrap">18 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=deflate+-+Why+are+major+web+sites+using+gzip%3F&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F9170338%2Fwhy-are-major-web-sites-using-gzip%2F9186091%239186091&amp;rft.pub=Stack+Overflow&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.vervestudios.co/projects/compression-tests/">"Compression Tests: About"</a>. Verve Studios<span class="reference-accessdate">. Retrieved <span class="nowrap">18 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Compression+Tests%3A+About&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.vervestudios.co%2Fprojects%2Fcompression-tests%2F&amp;rft.pub=Verve+Studios&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://zoompf.com/blog/2012/02/lose-the-wait-http-compression">"Lose the wait: HTTP Compression"</a>. Zoompf Web Performance<span class="reference-accessdate">. Retrieved <span class="nowrap">18 April</span> 2014</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.btitle=Lose+the+wait%3A+HTTP+Compression&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fzoompf.com%2Fblog%2F2012%2F02%2Flose-the-wait-http-compression&amp;rft.pub=Zoompf+Web+Performance&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-Gooin20130801-20"><span class="mw-cite-backlink">^ <a href="#cite_ref-Gooin20130801_20-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Gooin20130801_20-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web">Goodin, Dan (1 August 2013). <a rel="nofollow" class="external text" href="http://arstechnica.com/security/2013/08/gone-in-30-seconds-new-attack-plucks-secrets-from-https-protected-pages/">"Gone in 30 seconds: New attack plucks secrets from HTTPS-protected pages"</a>. <i>Ars Technica</i>. Condé Nast<span class="reference-accessdate">. Retrieved <span class="nowrap">2 August</span> 2013</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.atitle=Gone+in+30+seconds%3A+New+attack+plucks+secrets+from+HTTPS-protected+pages&amp;rft.aufirst=Dan&amp;rft.au=Goodin%2C+Dan&amp;rft.aulast=Goodin&amp;rft.date=1+August+2013&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Farstechnica.com%2Fsecurity%2F2013%2F08%2Fgone-in-30-seconds-new-attack-plucks-secrets-from-https-protected-pages%2F&amp;rft.jtitle=Ars+Technica&amp;rft.pub=Cond%C3%A9+Nast&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text"><span class="citation web">Leyden, John (2 August 2013). <a rel="nofollow" class="external text" href="http://www.theregister.co.uk/2013/08/02/breach_crypto_attack/">"Step into the BREACH: New attack developed to read encrypted web data"</a>. <i>The Register</i><span class="reference-accessdate">. Retrieved <span class="nowrap">2 August</span> 2013</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHTTP+compression&amp;rft.atitle=Step+into+the+BREACH%3A+New+attack+developed+to+read+encrypted+web+data&amp;rft.aufirst=John&amp;rft.aulast=Leyden&amp;rft.au=Leyden%2C+John&amp;rft.date=2+August+2013&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.theregister.co.uk%2F2013%2F08%2F02%2Fbreach_crypto_attack%2F&amp;rft.jtitle=The+Register&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=HTTP_compression&amp;action=edit&amp;section=7" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc2616">RFC 2616</a>: Hypertext Transfer Protocol – HTTP/1.1</li>
+<li><a rel="nofollow" class="external text" href="http://www.iana.org/assignments/http-parameters">HTTP Content-Coding Values</a> by Internet Assigned Numbers Authority</li>
+<li><a rel="nofollow" class="external text" href="http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs:Modcompress">Compression with lighttpd</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.codinghorror.com/blog/2004/08/http-compression-and-iis-6-0.html">Coding Horror: HTTP Compression on IIS 6.0</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20110716033901/http://www.15seconds.com/Issue/020314.htm">15 Seconds: Web Site Compression</a> at the <a href="/wiki/Wayback_Machine" title="Wayback Machine">Wayback Machine</a> (archived July 16, 2011)</li>
+<li><a rel="nofollow" class="external text" href="http://www.http-compression.com/">HTTP Compression</a>: resource page by the founder of VIGOS AG, Constantin Rack</li>
+<li><a rel="nofollow" class="external text" href="http://www.serverwatch.com/tutorials/article.php/3514866">Using HTTP Compression</a> by Martin Brown of Server Watch</li>
+<li><a rel="nofollow" class="external text" href="http://www.devshed.com/c/a/PHP/Using-HTTP-Compression-in-PHP-Make-Your-Web-Pages-Load-Faster/">Using HTTP Compression in PHP</a></li>
+<li><a rel="nofollow" class="external text" href="http://toolspot.org/http_compression.php">check http compression</a></li>
+<li><a rel="nofollow" class="external text" href="https://banu.com/blog/38/dynamic-and-static-http-compression-with-apache-httpd/">Dynamic and static HTTP compression with Apache httpd</a></li>
+<li><a rel="nofollow" class="external text" href="http://david.fullrecall.com/browser-http-compression-test">Browser HTTP Compression Test</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1237
+CPU time usage: 0.183 seconds
+Real time usage: 0.431 seconds
+Preprocessor visited node count: 1004/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 31461/2097152 bytes
+Template argument size: 179/2097152 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 1/500
+Lua time usage: 0.060/10.000 seconds
+Lua memory usage: 2.68 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  383.237      1 - -total
+ 58.49%  224.161      1 - Template:Main
+ 23.42%   89.740      1 - Template:Reflist
+ 15.88%   60.865     18 - Template:Cite_web
+  6.48%   24.839      1 - Template:Redirect
+  4.64%   17.765      1 - Template:HTTP
+  4.04%   15.495      1 - Template:Sidebar
+  1.18%    4.528      1 - Template:Wayback
+  0.50%    1.909      1 - Template:Yesno
+  0.44%    1.670      1 - Template:Column-width
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:4954757-0!*!0!!en!*!* and timestamp 20150401220809 and revision id 654553091
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=HTTP_compression&amp;oldid=654553091">http://en.wikipedia.org/w/index.php?title=HTTP_compression&amp;oldid=654553091</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Web_development" title="Category:Web development">Web development</a></li><li><a href="/wiki/Category:Lossless_compression_algorithms" title="Category:Lossless compression algorithms">Lossless compression algorithms</a></li><li><a href="/wiki/Category:Hypertext_Transfer_Protocol" title="Category:Hypertext Transfer Protocol">Hypertext Transfer Protocol</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=HTTP+compression&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=HTTP+compression" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/HTTP_compression"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:HTTP_compression"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/HTTP_compression" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=HTTP_compression&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=HTTP_compression&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikimedia Shop">Wikipedia store</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/HTTP_compression" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/HTTP_compression" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="/w/index.php?title=HTTP_compression&amp;oldid=654553091" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/w/index.php?title=HTTP_compression&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q3495340" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=HTTP_compression&amp;id=654553091" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=HTTP+compression">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=HTTP+compression&amp;oldid=654553091&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="/w/index.php?title=HTTP_compression&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-cs"><a href="//cs.wikipedia.org/wiki/Komprese_HTTP" title="Komprese HTTP – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="//de.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP-Kompression" title="Hypertext Transfer Protocol – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="//es.wikipedia.org/wiki/Compresi%C3%B3n_HTTP" title="Compresión HTTP – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="//sr.wikipedia.org/wiki/HTTP_kompresija" title="HTTP kompresija – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="//www.wikidata.org/wiki/Q3495340#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 April 2015, at 22:08.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=HTTP_compression&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.25wmf22/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="//bits.wikimedia.org/static-1.25wmf22/resources/assets/poweredby_mediawiki_132x47.png 1.5x, //bits.wikimedia.org/static-1.25wmf22/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"}); } );</script>
+<script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.wikiEditor.init","ext.imageMetrics.loader","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true); } );</script>
+<script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E"); } );</script>
+<script>var _mwq = _mwq || []; _mwq.push( function ( mw ) { mw.config.set({"wgBackendResponseTime":344,"wgHostname":"mw1167"}); } );</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+// See README.txt for information and build instructions.
+
+syntax = "proto3";
+
+package m4u_interfaces;
+
+option java_package = "com.m4u_interfaces.request";
+option java_outer_classname = "RequestProtos";
+
+message Request {
+
+   string path  = 1;
+   enum MethodType {
+      GET = 0;
+      HEAD = 1;
+      POST = 2;
+      PUT = 3;
+      DELETE = 4;
+      CONNECT = 5;
+      OPTIONS = 6;
+      TRACE = 7;
+   }
+
+   MethodType type = 2;
+
+   message Parameters {
+      string key = 1;
+      string value = 2;
+   }
+
+   repeated Parameters params = 3;
+
+   string body = 4;
+}
+
+message MessageBlock {
+  repeated Request request = 1;
+}

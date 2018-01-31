@@ -1,0 +1,51 @@
+// See README.txt for information and build instructions.
+
+syntax = "proto3";
+
+package m4u_interfaces;
+
+option java_package = "com.m4u_interfaces.request";
+option java_outer_classname = "RequestProtos";
+
+
+message Request {
+   string name            = 1;
+   string raw             = 2;
+   int32  type            = 3;
+   uint32 method          = 4;
+   int32  status_code     = 5;
+   string response_status = 6;
+   string request_path    = 7;
+   string request_url     = 8;
+   string fragment        = 9;
+   string query_string    = 10;
+   string body            = 11;
+   uint64 body_size       = 12;
+   string host            = 13;
+   string userinfo        = 14;
+   uint32 port            = 15;
+   int32  num_headers     = 16;
+   int32  last_header_element = 17;
+   int32  should_keep_alive   = 18;
+   int32  num_chunks          = 19;
+   int32  num_chunks_complete = 20;
+   message Chunk {
+      int32 length   = 2;
+   }
+   repeated Chunk chunks = 21;
+
+   string upgrade        = 22;
+   uint32 http_major     = 23;
+   uint32 http_minor     = 24;
+
+   message Header {
+      string key   = 1;
+      string value = 2;
+   }
+   repeated Header headers = 25;
+
+}
+
+message MessageBlock {
+  repeated Request request = 1;
+}
