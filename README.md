@@ -19,6 +19,7 @@ Directories:
 -test   - examples! lots of experimentations before doing the main software.
 
 TODO:
+
 1)enable async processing of the request. Currently the request will block on
 the C++/Java module waiting the response. This will be changed as the module
 already have the socket descriptor to answer anytime in the future...
