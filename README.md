@@ -5,18 +5,26 @@ In Greek mythology, Orthrus (Greek: Ὄρθρος, Orthros) or Orthus (Greek: �
 Directories:
 
 -BO_src - REST modules (C++ and Java)
+
 -ksh    - helper ksh functions to build opensource modules
+
 -open_source - copy of used open source libraries
+
 -plugin - http parser modules (1.0 is experimental and is not recomended)
+
 -scripts- server initialization script in lua language
+
 -src    - server source
+
 -test   - examples! lots of experimentations before doing the main software.
 
 TODO:
 1)enable async processing of the request. Currently the request will block on
 the C++/Java module waiting the response. This will be changed as the module
 already have the socket descriptor to answer anytime in the future...
+
 2)rebuild the http parser (the one in use is from nodejs project)
+
 3)enable a fast url2module using regular expression.
 
 
