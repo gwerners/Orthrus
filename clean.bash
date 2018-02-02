@@ -6,6 +6,7 @@ rm -rf BO
 rm *.log
 rm src/*.pb.h
 rm src/*.pb.cc
+rm ._LuaJIT*
 
 cd BO_src/JAVA/USSD
 ./clean.ksh
