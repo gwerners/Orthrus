@@ -1,6 +1,6 @@
-#!/bin/ksh
+#!/bin/bash
 PWD=`pwd`
-source `pwd`/../../../ksh/build_functions.ksh
+source `pwd`/../../../bash/build_functions.bash
 CC=g++
 
 LIBRARIES=`pwd`/../../../libraries

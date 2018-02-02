@@ -1,6 +1,6 @@
-#!/bin/ksh
+#!/bin/bash
 
-source `pwd`/ksh/build_functions.ksh
+source `pwd`/bash/build_functions.bash
 
 CC=g++
 CFLAGS="-O3"
@@ -9,7 +9,8 @@ LIBRARIES=`pwd`/libraries
 OPEN_SOURCE=`pwd`/open_source
 OS="$(uname)"
 
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle;
+#export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$PATH:$JAVA_HOME/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/jvm/java-8-oracle/jre/lib/amd64/server
 export CLASSPATH=`pwd`/BO/JAVA/USSD/com/m4u_interfaces/request:${LIBRARIES}/lib/protobuf-java-3.0.0-beta-1.jar
@@ -68,7 +69,7 @@ if [[ -e "${LIBRARIES}/lib/libM4UI-Rest-2.0.so" ]]; then
    echo "lib exists:${LIBRARIES}/lib/libM4UI-Rest-2.0.so, skipping build!"
 else
    cd plugin/Rest-2.0
-   ./fast.ksh
+   ./fast.bash
    cp ./libM4UI-Rest-2.0.so ${LIBRARIES}/lib/libM4UI-Rest-2.0.so
    cd ../../
 fi
@@ -96,7 +97,7 @@ else
 	#libprotobuf.so.10 => ./libraries/lib/libprotobuf.so.10 (0x00007f3af39f8000)
 
    #sudo apt-get install chrpath
-   
+
    #essa linha corrige o rpath da libprotobuf para o diretorio de libs!
    #chrpath -r libprotobuf.so.10 --replace `pwd`/libraries/lib/libprotobuf.so.10
    echo "libprotobuf.so corrected for linux"
@@ -107,7 +108,7 @@ if [[ -e "`pwd`/BO/CPP/SMS/worker.exe" ]]; then
    rm -rf  "`pwd`/BO/CPP/SMS/worker.exe"
 fi
 cd BO_src/CPP/SMS
-./fast.ksh
+./fast.bash
 mkdir -p ../../../BO/CPP/SMS
 cp worker.exe ../../../BO/CPP/SMS
 cd ../../..
@@ -123,7 +124,7 @@ if [[ -e "`pwd`/BO/JAVA/USSD/worker.exe" ]]; then
    rm -rf  "`pwd`/BO/JAVA/USSD/worker.exe"
 fi
 cd BO_src/JAVA/USSD
-./fast.ksh
+./fast.bash
 mkdir -p ../../../BO/JAVA/USSD
 cp worker.exe ../../../BO/JAVA/USSD
 cp Worker.class ../../../BO/JAVA/USSD
@@ -141,7 +142,7 @@ if [[ -e "`pwd`/BO/CPP/BENCH/worker.exe" ]]; then
    rm -rf  "`pwd`/BO/CPP/BENCH/scripts"
 fi
 cd BO_src/CPP/BENCH
-./fast.ksh
+./fast.bash
 mkdir -p ../../../BO/CPP/BENCH
 mkdir -p ../../../BO/CPP/BENCH/scripts
 cp worker.exe ../../../BO/CPP/BENCH
@@ -156,4 +157,3 @@ fi
 
 #valgrind valgrind --leak-check=full --show-leak-kinds=all --log-file="valgrind.txt" ./server_jit.exe
 ./server_jit.exe
-

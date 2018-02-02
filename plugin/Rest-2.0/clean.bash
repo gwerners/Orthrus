@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 rm client.exe
 rm *.o
 rm response.pb.*

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 rm server.exe
 rm server_jit.exe
 rm -rf libraries

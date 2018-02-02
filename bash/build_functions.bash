@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/bash
 
 #$1 = LIBRARIES   PATH - install location
 #$2 = OPEN_SOURCE PATH - libraries repository
@@ -134,6 +134,3 @@ function build {
       fi
    fi
 }
-
-
-
