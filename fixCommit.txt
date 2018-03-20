@@ -1,0 +1,7 @@
+
+
+para deixar o bitbucket feliz, 
+rodar localmente:
+
+git config user.name "gwerners"
+git config user.email "gabriel.wernersbach@gmail.com"
