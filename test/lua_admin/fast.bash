@@ -1,8 +1,8 @@
-#!/bin/ksh
+#!/bin/bash
 PWD=`pwd`
 LIBRARIES=../../libraries
 OPEN_SOURCE=../../open_source
-source ../../ksh/build_functions.ksh ${LIBRARIES} ${OPEN_SOURCE}
+source ../../bash/build_functions.bash ${LIBRARIES} ${OPEN_SOURCE}
 CC=g++
 CFLAGS="-O3"
 
