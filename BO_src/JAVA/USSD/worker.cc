@@ -282,6 +282,8 @@ int main(int argc, char**argv)
    
    InitializeLog();
 
+   EnabledLog=LOG_COLOR|LOG_INFO|LOG_WARNING|LOG_ERROR;
+
    if(argc>1)
    {
       log_debug("class path[%s]",argv[1]);

@@ -6,13 +6,13 @@ CC=g++
 LIBRARIES=`pwd`/../../../libraries
 OPEN_SOURCE=`pwd`/../../../open_source
 
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle;
+export JAVA_HOME=/usr/lib/jvm/default-java;
 export PATH=$PATH:$JAVA_HOME/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/jvm/java-8-oracle/jre/lib/amd64/server
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/jvm/default-java/jre/lib/amd64/server
 export CLASSPATH=`pwd`:`pwd`/com/m4u_interfaces:`pwd`/com/:`pwd`/com/m4u_interfaces/request:${LIBRARIES}/lib/protobuf-java-3.0.0-beta-1.jar
 
 CFLAGS="-O3 -I$JAVA_HOME/include -I$JAVA_HOME/include/linux"
-LDFLAGS="-L$JAVA_HOME/jre/lib/i386 -L$JAVA_HOME/jre/lib/i386/client/ -L/usr/lib/jvm/java-8-oracle/jre/lib/amd64/server -ljvm"
+LDFLAGS="-L$JAVA_HOME/jre/lib/i386 -L$JAVA_HOME/jre/lib/i386/client/ -L/usr/lib/jvm/default-java/jre/lib/amd64/server -ljvm"
 
 
 build "protobuffer"

@@ -73,6 +73,7 @@ void readed(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
 }
 void new_answer_request(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
 {
+   char answer[1024];
    char *gpage;
    uv_shutdown_t* sreq;
    bool ret;
@@ -89,10 +90,15 @@ void new_answer_request(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
       uv_shutdown(sreq, (uv_stream_t *)client, after_shutdown);
       return;
    }
-   gpage=RunLuaPage("GetPerformancePage");
-   
+   //gpage=RunLuaPage("GetPerformancePage");
+   sprintf((char*)&answer,
+   "HTTP/1.0 200 OK\r\n"
+   "Date:  \r\n"
+   "Content-Type: text/html\r\n"
+   "Content-Length: %d\r\n\r\n%s",75,"<html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>") ;
    req = (write_req_t *) malloc(sizeof(write_req_t));
-   req->buf = uv_buf_init(gpage, strlen(gpage));
+   //req->buf = uv_buf_init(gpage, strlen(gpage));
+   req->buf = uv_buf_init(answer, strlen(answer));
 
    uv_write((uv_write_t*)req, client, &req->buf, 1, echo_write);
    if(gpage){free(gpage); gpage=NULL; }

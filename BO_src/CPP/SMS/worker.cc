@@ -206,6 +206,7 @@ int main()
    GOOGLE_PROTOBUF_VERIFY_VERSION;
 
    InitializeLog();
+   EnabledLog=LOG_COLOR|LOG_INFO|LOG_ERROR;
    //;test_write(argc,argv);
    //test_read(argc,argv);
 

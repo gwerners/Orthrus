@@ -9,13 +9,13 @@ rm src/*.pb.cc
 rm ._LuaJIT*
 
 cd BO_src/JAVA/USSD
-./clean.ksh
+./clean.bash
 cd ../../..
 
 cd BO_src/CPP/SMS
-./clean.ksh
+./clean.bash
 cd ../../..
 
 cd BO_src/CPP/BENCH
-./clean.ksh
+./clean.bash
 cd ../../..
