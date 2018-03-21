@@ -1,12 +1,13 @@
-#include <iostream>
-#include <fstream>
-#include <string>
 #include "request.pb.h"
+#include <fstream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-
 // This function fills in a Person message based on user input.
-void PromptForAddress(tutorial::Person* person) {
+void
+PromptForAddress(tutorial::Person* person)
+{
   cout << "Enter person ID number: ";
   int id;
   cin >> id;
@@ -50,7 +51,9 @@ void PromptForAddress(tutorial::Person* person) {
 }
 
 // Iterates though all people in the AddressBook and prints info about them.
-void ListPeople(const tutorial::AddressBook& address_book) {
+void
+ListPeople(const tutorial::AddressBook& address_book)
+{
   for (int i = 0; i < address_book.people_size(); i++) {
     const tutorial::Person& person = address_book.people(i);
 
@@ -78,7 +81,8 @@ void ListPeople(const tutorial::AddressBook& address_book) {
     }
   }
 }
-int test_write(int argc,char**argv)
+int
+test_write(int argc, char** argv)
 {
 
   if (argc != 2) {
@@ -111,11 +115,10 @@ int test_write(int argc,char**argv)
       return -1;
     }
   }
-
 }
-int test_read(int argc,char**argv)
+int
+test_read(int argc, char** argv)
 {
-
 
   if (argc != 2) {
     cerr << "Usage:  " << argv[0] << " ADDRESS_BOOK_FILE" << endl;
@@ -136,15 +139,15 @@ int test_read(int argc,char**argv)
   ListPeople(address_book);
   return 0;
 }
-int main(int argc, char**argv)
+int
+main(int argc, char** argv)
 {
   // Verify that the version of the library that we linked against is
   // compatible with the version of the headers we compiled against.
   GOOGLE_PROTOBUF_VERIFY_VERSION;
-   test_write(argc,argv);
-   test_read(argc,argv);
+  test_write(argc, argv);
+  test_read(argc, argv);
   // Optional:  Delete all global objects allocated by libprotobuf.
   google::protobuf::ShutdownProtobufLibrary();
-   return 0;
+  return 0;
 }
-

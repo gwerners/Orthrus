@@ -3,11 +3,13 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-void init_sample(const char*vlr);
-void print_sample();
-void remove_sample();
+void
+init_sample(const char* vlr);
+void
+print_sample();
+void
+remove_sample();
 #ifdef __cplusplus
 }
 #endif
 #endif
-

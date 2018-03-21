@@ -2,127 +2,133 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-//libuv
-#include "uv.h"
-#include "task.h"
+// libuv
 #include "logger.h"
+#include "task.h"
+#include "uv.h"
 
 #include "lua_utils.h"
 
-void close_state(lua_State **L)
+void
+close_state(lua_State** L)
 {
-   lua_close(*L);
+  lua_close(*L);
 }
 
-int LogWithColor(lua_State *L)
+int
+LogWithColor(lua_State* L)
 {
-   int ret = lua_isboolean(L, 1);
-   if(ret){
-      ret= lua_toboolean(L, 1);
-      if(ret)
-         EnabledLog |= LOG_COLOR;
-      else
-         EnabledLog &= ~LOG_COLOR;
+  int ret = lua_isboolean(L, 1);
+  if (ret) {
+    ret = lua_toboolean(L, 1);
+    if (ret)
+      EnabledLog |= LOG_COLOR;
+    else
+      EnabledLog &= ~LOG_COLOR;
 
-      log_debug("LogWithColor[%s]",ret?"true":"false");
+    log_debug("LogWithColor[%s]", ret ? "true" : "false");
 
-   }else{
-      log_debug("LogWithColor not boolean!");
-   }
-   return 0;
+  } else {
+    log_debug("LogWithColor not boolean!");
+  }
+  return 0;
 }
 
-int PrintPID(lua_State *L)
+int
+PrintPID(lua_State* L)
 {
-   log_debug("PID : %d", getpid());
-   log_debug("Parent's PID: %d", getppid());
-   return 0;
+  log_debug("PID : %d", getpid());
+  log_debug("Parent's PID: %d", getppid());
+  return 0;
 }
 
 static void
-WalkParameters(lua_State *L, const char *name, int *registry, int n,char *buffer)
+WalkParameters(lua_State* L,
+               const char* name,
+               int* registry,
+               int n,
+               char* buffer)
 {
-   int i;
-   strcat(buffer,name);
+  int i;
+  strcat(buffer, name);
 
-   for (i = 0; i < n; ++i)
-   {
-      lua_rawgeti(L, LUA_REGISTRYINDEX, registry[i]);
-      strcat(buffer,lua_tostring(L, -1));
-   }
-   free(registry);
+  for (i = 0; i < n; ++i) {
+    lua_rawgeti(L, LUA_REGISTRYINDEX, registry[i]);
+    strcat(buffer, lua_tostring(L, -1));
+  }
+  free(registry);
 }
 
-int LuaBuildLogLine(lua_State *L,char *buffer)
+int
+LuaBuildLogLine(lua_State* L, char* buffer)
 {
-   const char *NAME = luaL_checkstring(L, 1);
-   int *registry;
-   int i, n;
+  const char* NAME = luaL_checkstring(L, 1);
+  int* registry;
+  int i, n;
 
-   /* remove the name parameter from the stack */
-   lua_remove(L, 1);
+  /* remove the name parameter from the stack */
+  lua_remove(L, 1);
 
-   /* check how many arguments are left */
-   n = lua_gettop(L);
+  /* check how many arguments are left */
+  n = lua_gettop(L);
 
-   /* create an array of registry entries */
-   registry = (int*)calloc(n, sizeof (int));
-   for (i = n; i > 0; --i)
-      registry[i-1] = luaL_ref(L, LUA_REGISTRYINDEX);
+  /* create an array of registry entries */
+  registry = (int*)calloc(n, sizeof(int));
+  for (i = n; i > 0; --i)
+    registry[i - 1] = luaL_ref(L, LUA_REGISTRYINDEX);
 
-   WalkParameters(L, NAME, registry, n, buffer);
+  WalkParameters(L, NAME, registry, n, buffer);
 
-   return 0;
+  return 0;
 }
 
-
-int LuaLogDebug(lua_State *L)
+int
+LuaLogDebug(lua_State* L)
 {
-   char buffer[1024];
-   buffer[0]='\0';
-   if(EnabledLog & LOG_DEBUG)
-   {
-      LuaBuildLogLine(L,(char*)&buffer);
-      log_debug("<lua_script>%s<lua_script>",buffer);
-   }
-   return 0;
+  char buffer[1024];
+  buffer[0] = '\0';
+  if (EnabledLog & LOG_DEBUG) {
+    LuaBuildLogLine(L, (char*)&buffer);
+    log_debug("<lua_script>%s<lua_script>", buffer);
+  }
+  return 0;
 }
 
-int LuaLogError(lua_State *L)
+int
+LuaLogError(lua_State* L)
 {
-   char buffer[1024];
-   buffer[0]='\0';
-   if(EnabledLog & LOG_ERROR)
-   {
-      LuaBuildLogLine(L,(char*)&buffer);
-      log_error("<lua_script>%s<lua_script>",buffer);
-   }
-   return 0;
+  char buffer[1024];
+  buffer[0] = '\0';
+  if (EnabledLog & LOG_ERROR) {
+    LuaBuildLogLine(L, (char*)&buffer);
+    log_error("<lua_script>%s<lua_script>", buffer);
+  }
+  return 0;
 }
 
-int LuaLogWarning(lua_State *L)
+int
+LuaLogWarning(lua_State* L)
 {
-   char buffer[1024];
-   buffer[0]='\0';
+  char buffer[1024];
+  buffer[0] = '\0';
 
-   if(EnabledLog & LOG_WARNING)
-   {
-      LuaBuildLogLine(L,(char*)&buffer);
-      log_warning("<lua_script>%s<lua_script>",buffer);
-   }
-   return 0;
+  if (EnabledLog & LOG_WARNING) {
+    LuaBuildLogLine(L, (char*)&buffer);
+    log_warning("<lua_script>%s<lua_script>", buffer);
+  }
+  return 0;
 }
 
-int LuaLogInfo(lua_State *L)
+int
+LuaLogInfo(lua_State* L)
 {
-   char buffer[1024];
-   buffer[0]='\0';
-   if(EnabledLog & LOG_INFO)
-   {
-      LuaBuildLogLine(L,(char*)&buffer);
-      log_info("<lua_script>%s<lua_script>",buffer);
-   }
-   return 0;
+  char buffer[1024];
+  buffer[0] = '\0';
+  if (EnabledLog & LOG_INFO) {
+    LuaBuildLogLine(L, (char*)&buffer);
+    log_info("<lua_script>%s<lua_script>", buffer);
+  }
+  return 0;
 }
 
 /*static void iterate_and_print(lua_State *L, int index,int tab)
@@ -167,11 +173,12 @@ static int AddClient(lua_State *L)
    return 0;
 }
 */
-int SetRoot(lua_State *L)
+int
+SetRoot(lua_State* L)
 {
-   const char *root = luaL_checkstring(L, 1);
-   log_debug("wwwroot=%s",root);
-   return 0;
+  const char* root = luaL_checkstring(L, 1);
+  log_debug("wwwroot=%s", root);
+  return 0;
 }
 /*
 static void IterateTable(lua_State *L, int index,int line)
@@ -203,29 +210,49 @@ static int RunHandlers(lua_State *L)
 
 */
 
-int EnableLog(lua_State *L)
+int
+EnableLog(lua_State* L)
 {
-   int bit = luaL_checkint(L,1);
-   switch(bit)
-   {
-      case LOG_DEBUG:  EnabledLog |= LOG_DEBUG;break;//    (0x1 << 0)
-      case LOG_ERROR:  EnabledLog |= LOG_ERROR;break;//    (0x1 << 1)
-      case LOG_WARNING:EnabledLog |= LOG_WARNING;break;//  (0x1 << 2)
-      case LOG_INFO:   EnabledLog |= LOG_INFO;break;//     (0x1 << 3)
-      case LOG_COLOR:  EnabledLog |= LOG_COLOR;break;//    (0x1 << 4)
-   }
-   return 0;
+  int bit = luaL_checkint(L, 1);
+  switch (bit) {
+    case LOG_DEBUG:
+      EnabledLog |= LOG_DEBUG;
+      break; //    (0x1 << 0)
+    case LOG_ERROR:
+      EnabledLog |= LOG_ERROR;
+      break; //    (0x1 << 1)
+    case LOG_WARNING:
+      EnabledLog |= LOG_WARNING;
+      break; //  (0x1 << 2)
+    case LOG_INFO:
+      EnabledLog |= LOG_INFO;
+      break; //     (0x1 << 3)
+    case LOG_COLOR:
+      EnabledLog |= LOG_COLOR;
+      break; //    (0x1 << 4)
+  }
+  return 0;
 }
-int DisableLog(lua_State *L)
+int
+DisableLog(lua_State* L)
 {
-   int bit = luaL_checkint(L,1);
-   switch(bit)
-   {
-      case LOG_DEBUG:  EnabledLog &= ~LOG_DEBUG;break;//    (0x1 << 0)
-      case LOG_ERROR:  EnabledLog &= ~LOG_ERROR;break;//    (0x1 << 1)
-      case LOG_WARNING:EnabledLog &= ~LOG_WARNING;break;//  (0x1 << 2)
-      case LOG_INFO:   EnabledLog &= ~LOG_INFO;break;//     (0x1 << 3)
-      case LOG_COLOR:  EnabledLog &= ~LOG_COLOR;break;//    (0x1 << 4)
-   }
-   return 0;
+  int bit = luaL_checkint(L, 1);
+  switch (bit) {
+    case LOG_DEBUG:
+      EnabledLog &= ~LOG_DEBUG;
+      break; //    (0x1 << 0)
+    case LOG_ERROR:
+      EnabledLog &= ~LOG_ERROR;
+      break; //    (0x1 << 1)
+    case LOG_WARNING:
+      EnabledLog &= ~LOG_WARNING;
+      break; //  (0x1 << 2)
+    case LOG_INFO:
+      EnabledLog &= ~LOG_INFO;
+      break; //     (0x1 << 3)
+    case LOG_COLOR:
+      EnabledLog &= ~LOG_COLOR;
+      break; //    (0x1 << 4)
+  }
+  return 0;
 }

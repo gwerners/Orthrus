@@ -14,7 +14,8 @@
 
      You should have received a copy of the GNU Lesser General Public
      License along with this library; if not, write to the Free Software
-     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+   USA
 */
 
 /**
@@ -87,9 +88,8 @@
 #define MHD_MICROHTTPD_H
 
 #ifdef __cplusplus
-extern "C"
-{
-#if 0                           /* keep Emacsens' auto-indent happy */
+extern "C" {
+#if 0 /* keep Emacsens' auto-indent happy */
 }
 #endif
 #endif
@@ -110,14 +110,14 @@ extern "C"
 #include <sys/types.h>
 #if defined(_WIN32) && !defined(__CYGWIN__)
 #include <ws2tcpip.h>
-#if defined(_MSC_FULL_VER) && !defined (_SSIZE_T_DEFINED)
+#if defined(_MSC_FULL_VER) && !defined(_SSIZE_T_DEFINED)
 #define _SSIZE_T_DEFINED
 typedef intptr_t ssize_t;
 #endif // !_SSIZE_T_DEFINED */
 #else
-#include <unistd.h>
-#include <sys/time.h>
 #include <sys/socket.h>
+#include <sys/time.h>
+#include <unistd.h>
 #endif
 #endif
 
@@ -154,21 +154,21 @@ typedef intptr_t ssize_t;
 #ifdef UINT64_MAX
 #define MHD_SIZE_UNKNOWN UINT64_MAX
 #else
-#define MHD_SIZE_UNKNOWN  ((uint64_t) -1LL)
+#define MHD_SIZE_UNKNOWN ((uint64_t)-1LL)
 #endif
 
 #ifdef SIZE_MAX
 #define MHD_CONTENT_READER_END_OF_STREAM SIZE_MAX
 #define MHD_CONTENT_READER_END_WITH_ERROR (SIZE_MAX - 1)
 #else
-#define MHD_CONTENT_READER_END_OF_STREAM ((size_t) -1LL)
-#define MHD_CONTENT_READER_END_WITH_ERROR (((size_t) -1LL) - 1)
+#define MHD_CONTENT_READER_END_OF_STREAM ((size_t)-1LL)
+#define MHD_CONTENT_READER_END_WITH_ERROR (((size_t)-1LL) - 1)
 #endif
 
 #ifndef _MHD_EXTERN
 #if defined(_WIN32) && defined(MHD_W32LIB)
 #define _MHD_EXTERN extern
-#elif defined (_WIN32) && defined(MHD_W32DLL)
+#elif defined(_WIN32) && defined(MHD_W32DLL)
 /* Define MHD_W32DLL when using MHD as W32 .DLL to speed up linker a little */
 #define _MHD_EXTERN __declspec(dllimport)
 #else
@@ -216,7 +216,6 @@ typedef SOCKET MHD_socket;
 #define MHD_LONG_LONG_PRINTF "ll"
 #define MHD_UNSIGNED_LONG_LONG_PRINTF "%llu"
 #endif
-
 
 /**
  * @defgroup httpcode HTTP response codes.
@@ -353,7 +352,8 @@ typedef SOCKET MHD_socket;
 #define MHD_HTTP_HEADER_VIA "Via"
 #define MHD_HTTP_HEADER_WARNING "Warning"
 #define MHD_HTTP_HEADER_WWW_AUTHENTICATE "WWW-Authenticate"
-#define MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN "Access-Control-Allow-Origin"
+#define MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN                            \
+  "Access-Control-Allow-Origin"
 
 /** @} */ /* end of group headers */
 
@@ -390,11 +390,11 @@ typedef SOCKET MHD_socket;
  * See also: http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4
  * @{
  */
-#define MHD_HTTP_POST_ENCODING_FORM_URLENCODED "application/x-www-form-urlencoded"
+#define MHD_HTTP_POST_ENCODING_FORM_URLENCODED                                 \
+  "application/x-www-form-urlencoded"
 #define MHD_HTTP_POST_ENCODING_MULTIPART_FORMDATA "multipart/form-data"
 
 /** @} */ /* end of group postenc */
-
 
 /**
  * @brief Handle for the daemon (listening on a socket for HTTP traffic).
@@ -423,7 +423,6 @@ struct MHD_Response;
  * @ingroup response
  */
 struct MHD_PostProcessor;
-
 
 /**
  * @brief Flags for the `struct MHD_Daemon`.
@@ -527,7 +526,8 @@ enum MHD_FLAG
    * This option is only available on Linux; using the option on
    * non-Linux systems will cause #MHD_start_daemon to fail.
    */
-  MHD_USE_EPOLL_INTERNALLY_LINUX_ONLY = MHD_USE_SELECT_INTERNALLY | MHD_USE_EPOLL_LINUX_ONLY,
+  MHD_USE_EPOLL_INTERNALLY_LINUX_ONLY =
+    MHD_USE_SELECT_INTERNALLY | MHD_USE_EPOLL_LINUX_ONLY,
 
   /**
    * Force MHD to use a signal pipe to notify the event loop (of
@@ -576,7 +576,6 @@ enum MHD_FLAG
 
 };
 
-
 /**
  * Type of a callback function used for logging by MHD.
  *
@@ -585,8 +584,7 @@ enum MHD_FLAG
  * @param ap arguments to @a fm
  * @ingroup logging
  */
-typedef void (*MHD_LogCallback)(void *cls, const char *fm, va_list ap);
-
+typedef void (*MHD_LogCallback)(void* cls, const char* fm, va_list ap);
 
 /**
  * @brief MHD options.
@@ -666,7 +664,8 @@ enum MHD_OPTION
    * logging.  This option should be followed by two arguments, the first
    * one must be of the form
    *
-   *     void * my_logger(void *cls, const char *uri, struct MHD_Connection *con)
+   *     void * my_logger(void *cls, const char *uri, struct MHD_Connection
+   * *con)
    *
    * where the return value will be passed as
    * (`* con_cls`) in calls to the #MHD_AccessHandlerCallback
@@ -886,7 +885,6 @@ enum MHD_OPTION
 
 };
 
-
 /**
  * Entry in an #MHD_OPTION_ARRAY.
  */
@@ -909,10 +907,8 @@ struct MHD_OptionItem
    * Pointer option value (use NULL for options taking no arguments
    * or only an integer option).
    */
-  void *ptr_value;
-
+  void* ptr_value;
 };
-
 
 /**
  * The `enum MHD_ValueKind` specifies the source of
@@ -957,7 +953,6 @@ enum MHD_ValueKind
    */
   MHD_FOOTER_KIND = 16
 };
-
 
 /**
  * The `enum MHD_RequestTerminationCode` specifies reasons
@@ -1016,7 +1011,6 @@ enum MHD_RequestTerminationCode
 
 };
 
-
 /**
  * The `enum MHD_ConnectionNotificationCode` specifies types
  * of connection notifications.
@@ -1038,7 +1032,6 @@ enum MHD_ConnectionNotificationCode
   MHD_CONNECTION_NOTIFY_CLOSED = 1
 
 };
-
 
 /**
  * Information about a connection.
@@ -1064,31 +1057,30 @@ union MHD_ConnectionInfo
   /**
    * GNUtls session handle, of type "gnutls_session_t".
    */
-  void * /* gnutls_session_t */ tls_session;
+  void* /* gnutls_session_t */ tls_session;
 
   /**
    * GNUtls client certificate handle, of type "gnutls_x509_crt_t".
    */
-  void * /* gnutls_x509_crt_t */ client_cert;
+  void* /* gnutls_x509_crt_t */ client_cert;
 
   /**
    * Address information for the client.
    */
-  struct sockaddr *client_addr;
+  struct sockaddr* client_addr;
 
   /**
    * Which daemon manages this connection (useful in case there are many
    * daemons running).
    */
-  struct MHD_Daemon *daemon;
+  struct MHD_Daemon* daemon;
 
   /**
    * Socket-specific client context.  Points to the same address as
    * the "socket_context" of the #MHD_NotifyConnectionCallback.
    */
-  void **socket_context;
+  void** socket_context;
 };
-
 
 /**
  * Values of this enum are used to specify what
@@ -1159,7 +1151,6 @@ enum MHD_ConnectionInfoType
 
 };
 
-
 /**
  * Values of this enum are used to specify what
  * information about a deamon is desired.
@@ -1195,7 +1186,6 @@ enum MHD_DaemonInfoType
   MHD_DAEMON_INFO_CURRENT_CONNECTIONS
 };
 
-
 /**
  * Callback for serious error condition. The default action is to print
  * an error message and `abort()`.
@@ -1206,11 +1196,10 @@ enum MHD_DaemonInfoType
  * @param reason error detail, may be NULL
  * @ingroup logging
  */
-typedef void
-(*MHD_PanicCallback) (void *cls,
-                      const char *file,
-                      unsigned int line,
-                      const char *reason);
+typedef void (*MHD_PanicCallback)(void* cls,
+                                  const char* file,
+                                  unsigned int line,
+                                  const char* reason);
 
 /**
  * Allow or deny a client to connect.
@@ -1220,11 +1209,9 @@ typedef void
  * @param addrlen length of @a addr
  * @return #MHD_YES if connection is allowed, #MHD_NO if not
  */
-typedef int
-(*MHD_AcceptPolicyCallback) (void *cls,
-                             const struct sockaddr *addr,
-                             socklen_t addrlen);
-
+typedef int (*MHD_AcceptPolicyCallback)(void* cls,
+                                        const struct sockaddr* addr,
+                                        socklen_t addrlen);
 
 /**
  * A client has requested the given url using the given method
@@ -1265,16 +1252,14 @@ typedef int
  *         #MHD_NO if the socket must be closed due to a serios
  *         error while handling the request
  */
-typedef int
-(*MHD_AccessHandlerCallback) (void *cls,
-                              struct MHD_Connection *connection,
-                              const char *url,
-                              const char *method,
-                              const char *version,
-                              const char *upload_data,
-                              size_t *upload_data_size,
-                              void **con_cls);
-
+typedef int (*MHD_AccessHandlerCallback)(void* cls,
+                                         struct MHD_Connection* connection,
+                                         const char* url,
+                                         const char* method,
+                                         const char* version,
+                                         const char* upload_data,
+                                         size_t* upload_data_size,
+                                         void** con_cls);
 
 /**
  * Signature of the callback used by MHD to notify the
@@ -1288,11 +1273,11 @@ typedef int
  * @see #MHD_OPTION_NOTIFY_COMPLETED
  * @ingroup request
  */
-typedef void
-(*MHD_RequestCompletedCallback) (void *cls,
-                                 struct MHD_Connection *connection,
-                                 void **con_cls,
-                                 enum MHD_RequestTerminationCode toe);
+typedef void (*MHD_RequestCompletedCallback)(
+  void* cls,
+  struct MHD_Connection* connection,
+  void** con_cls,
+  enum MHD_RequestTerminationCode toe);
 
 /**
  * Signature of the callback used by MHD to notify the
@@ -1313,12 +1298,11 @@ typedef void
  * @see #MHD_OPTION_NOTIFY_CONNECTION
  * @ingroup request
  */
-typedef void
-(*MHD_NotifyConnectionCallback) (void *cls,
-                                 struct MHD_Connection *connection,
-                                 void **socket_context,
-                                 enum MHD_ConnectionNotificationCode toe);
-
+typedef void (*MHD_NotifyConnectionCallback)(
+  void* cls,
+  struct MHD_Connection* connection,
+  void** socket_context,
+  enum MHD_ConnectionNotificationCode toe);
 
 /**
  * Iterator over key-value pairs.  This iterator
@@ -1335,12 +1319,10 @@ typedef void
  *         #MHD_NO to abort the iteration
  * @ingroup request
  */
-typedef int
-(*MHD_KeyValueIterator) (void *cls,
-                         enum MHD_ValueKind kind,
-                         const char *key,
-                         const char *value);
-
+typedef int (*MHD_KeyValueIterator)(void* cls,
+                                    enum MHD_ValueKind kind,
+                                    const char* key,
+                                    const char* value);
 
 /**
  * Callback used by libmicrohttpd in order to obtain content.  The
@@ -1386,12 +1368,10 @@ typedef int
  *    #MHD_CONTENT_READER_END_WITH_ERROR and #MHD_CONTENT_READER_END_OF_STREAM.
  *    This is not a limitation of MHD but rather of the HTTP protocol.
  */
-typedef ssize_t
-(*MHD_ContentReaderCallback) (void *cls,
-                              uint64_t pos,
-                              char *buf,
-                              size_t max);
-
+typedef ssize_t (*MHD_ContentReaderCallback)(void* cls,
+                                             uint64_t pos,
+                                             char* buf,
+                                             size_t max);
 
 /**
  * This method is called by libmicrohttpd if we
@@ -1402,9 +1382,7 @@ typedef ssize_t
  * @param cls closure
  * @ingroup response
  */
-typedef void
-(*MHD_ContentReaderFreeCallback) (void *cls);
-
+typedef void (*MHD_ContentReaderFreeCallback)(void* cls);
 
 /**
  * Iterator over key-value pairs where the value
@@ -1425,16 +1403,15 @@ typedef void
  * @return #MHD_YES to continue iterating,
  *         #MHD_NO to abort the iteration
  */
-typedef int
-(*MHD_PostDataIterator) (void *cls,
-                         enum MHD_ValueKind kind,
-                         const char *key,
-                         const char *filename,
-                         const char *content_type,
-                         const char *transfer_encoding,
-                         const char *data,
-                         uint64_t off,
-                         size_t size);
+typedef int (*MHD_PostDataIterator)(void* cls,
+                                    enum MHD_ValueKind kind,
+                                    const char* key,
+                                    const char* filename,
+                                    const char* content_type,
+                                    const char* transfer_encoding,
+                                    const char* data,
+                                    uint64_t off,
+                                    size_t size);
 
 /* **************** Daemon handling functions ***************** */
 
@@ -1455,13 +1432,14 @@ typedef int
  * @return NULL on error, handle to daemon on success
  * @ingroup event
  */
-_MHD_EXTERN struct MHD_Daemon *
-MHD_start_daemon_va (unsigned int flags,
-		     uint16_t port,
-		     MHD_AcceptPolicyCallback apc, void *apc_cls,
-		     MHD_AccessHandlerCallback dh, void *dh_cls,
-		     va_list ap);
-
+_MHD_EXTERN struct MHD_Daemon*
+MHD_start_daemon_va(unsigned int flags,
+                    uint16_t port,
+                    MHD_AcceptPolicyCallback apc,
+                    void* apc_cls,
+                    MHD_AccessHandlerCallback dh,
+                    void* dh_cls,
+                    va_list ap);
 
 /**
  * Start a webserver on the given port.  Variadic version of
@@ -1479,13 +1457,14 @@ MHD_start_daemon_va (unsigned int flags,
  * @return NULL on error, handle to daemon on success
  * @ingroup event
  */
-_MHD_EXTERN struct MHD_Daemon *
-MHD_start_daemon (unsigned int flags,
-		  uint16_t port,
-		  MHD_AcceptPolicyCallback apc, void *apc_cls,
-		  MHD_AccessHandlerCallback dh, void *dh_cls,
-		  ...);
-
+_MHD_EXTERN struct MHD_Daemon*
+MHD_start_daemon(unsigned int flags,
+                 uint16_t port,
+                 MHD_AcceptPolicyCallback apc,
+                 void* apc_cls,
+                 MHD_AccessHandlerCallback dh,
+                 void* dh_cls,
+                 ...);
 
 /**
  * Stop accepting connections from the listening socket.  Allows
@@ -1507,8 +1486,7 @@ MHD_start_daemon (unsigned int flags,
  * @ingroup specialized
  */
 _MHD_EXTERN MHD_socket
-MHD_quiesce_daemon (struct MHD_Daemon *daemon);
-
+MHD_quiesce_daemon(struct MHD_Daemon* daemon);
 
 /**
  * Shutdown an HTTP daemon.
@@ -1517,8 +1495,7 @@ MHD_quiesce_daemon (struct MHD_Daemon *daemon);
  * @ingroup event
  */
 _MHD_EXTERN void
-MHD_stop_daemon (struct MHD_Daemon *daemon);
-
+MHD_stop_daemon(struct MHD_Daemon* daemon);
 
 /**
  * Add another client connection to the set of connections managed by
@@ -1550,11 +1527,10 @@ MHD_stop_daemon (struct MHD_Daemon *daemon);
  * @ingroup specialized
  */
 _MHD_EXTERN int
-MHD_add_connection (struct MHD_Daemon *daemon,
-		    MHD_socket client_socket,
-		    const struct sockaddr *addr,
-		    socklen_t addrlen);
-
+MHD_add_connection(struct MHD_Daemon* daemon,
+                   MHD_socket client_socket,
+                   const struct sockaddr* addr,
+                   socklen_t addrlen);
 
 /**
  * Obtain the `select()` sets for this daemon.
@@ -1576,12 +1552,11 @@ MHD_add_connection (struct MHD_Daemon *daemon,
  * @ingroup event
  */
 _MHD_EXTERN int
-MHD_get_fdset (struct MHD_Daemon *daemon,
-               fd_set *read_fd_set,
-               fd_set *write_fd_set,
-	       fd_set *except_fd_set,
-	       MHD_socket *max_fd);
-
+MHD_get_fdset(struct MHD_Daemon* daemon,
+              fd_set* read_fd_set,
+              fd_set* write_fd_set,
+              fd_set* except_fd_set,
+              MHD_socket* max_fd);
 
 /**
  * Obtain the `select()` sets for this daemon.
@@ -1605,13 +1580,12 @@ MHD_get_fdset (struct MHD_Daemon *daemon,
  * @ingroup event
  */
 _MHD_EXTERN int
-MHD_get_fdset2 (struct MHD_Daemon *daemon,
-               fd_set *read_fd_set,
-               fd_set *write_fd_set,
-               fd_set *except_fd_set,
-               MHD_socket *max_fd,
+MHD_get_fdset2(struct MHD_Daemon* daemon,
+               fd_set* read_fd_set,
+               fd_set* write_fd_set,
+               fd_set* except_fd_set,
+               MHD_socket* max_fd,
                unsigned int fd_setsize);
-
 
 /**
  * Obtain the `select()` sets for this daemon.
@@ -1632,9 +1606,14 @@ MHD_get_fdset2 (struct MHD_Daemon *daemon,
  *         fit fd_set.
  * @ingroup event
  */
-#define MHD_get_fdset(daemon,read_fd_set,write_fd_set,except_fd_set,max_fd) \
-  MHD_get_fdset2((daemon),(read_fd_set),(write_fd_set),(except_fd_set),(max_fd),FD_SETSIZE)
-
+#define MHD_get_fdset(                                                         \
+  daemon, read_fd_set, write_fd_set, except_fd_set, max_fd)                    \
+  MHD_get_fdset2((daemon),                                                     \
+                 (read_fd_set),                                                \
+                 (write_fd_set),                                               \
+                 (except_fd_set),                                              \
+                 (max_fd),                                                     \
+                 FD_SETSIZE)
 
 /**
  * Obtain timeout value for `select()` for this daemon (only needed if
@@ -1651,9 +1630,7 @@ MHD_get_fdset2 (struct MHD_Daemon *daemon,
  * @ingroup event
  */
 _MHD_EXTERN int
-MHD_get_timeout (struct MHD_Daemon *daemon,
-		 MHD_UNSIGNED_LONG_LONG *timeout);
-
+MHD_get_timeout(struct MHD_Daemon* daemon, MHD_UNSIGNED_LONG_LONG* timeout);
 
 /**
  * Run webserver operations (without blocking unless in client
@@ -1675,8 +1652,7 @@ MHD_get_timeout (struct MHD_Daemon *daemon,
  * @ingroup event
  */
 _MHD_EXTERN int
-MHD_run (struct MHD_Daemon *daemon);
-
+MHD_run(struct MHD_Daemon* daemon);
 
 /**
  * Run webserver operations. This method should be called by clients
@@ -1698,13 +1674,10 @@ MHD_run (struct MHD_Daemon *daemon);
  * @ingroup event
  */
 _MHD_EXTERN int
-MHD_run_from_select (struct MHD_Daemon *daemon,
-		     const fd_set *read_fd_set,
-		     const fd_set *write_fd_set,
-		     const fd_set *except_fd_set);
-
-
-
+MHD_run_from_select(struct MHD_Daemon* daemon,
+                    const fd_set* read_fd_set,
+                    const fd_set* write_fd_set,
+                    const fd_set* except_fd_set);
 
 /* **************** Connection handling functions ***************** */
 
@@ -1720,10 +1693,10 @@ MHD_run_from_select (struct MHD_Daemon *daemon,
  * @ingroup request
  */
 _MHD_EXTERN int
-MHD_get_connection_values (struct MHD_Connection *connection,
-                           enum MHD_ValueKind kind,
-                           MHD_KeyValueIterator iterator, void *iterator_cls);
-
+MHD_get_connection_values(struct MHD_Connection* connection,
+                          enum MHD_ValueKind kind,
+                          MHD_KeyValueIterator iterator,
+                          void* iterator_cls);
 
 /**
  * This function can be used to add an entry to the HTTP headers of a
@@ -1751,11 +1724,10 @@ MHD_get_connection_values (struct MHD_Connection *connection,
  * @ingroup request
  */
 _MHD_EXTERN int
-MHD_set_connection_value (struct MHD_Connection *connection,
-                          enum MHD_ValueKind kind,
-                          const char *key,
-			  const char *value);
-
+MHD_set_connection_value(struct MHD_Connection* connection,
+                         enum MHD_ValueKind kind,
+                         const char* key,
+                         const char* value);
 
 /**
  * Sets the global error handler to a different implementation.  @a cb
@@ -1774,8 +1746,7 @@ MHD_set_connection_value (struct MHD_Connection *connection,
  * @ingroup logging
  */
 _MHD_EXTERN void
-MHD_set_panic_func (MHD_PanicCallback cb, void *cls);
-
+MHD_set_panic_func(MHD_PanicCallback cb, void* cls);
 
 /**
  * Process escape sequences ('%HH') Updates val in place; the
@@ -1787,8 +1758,7 @@ MHD_set_panic_func (MHD_PanicCallback cb, void *cls);
  *  shorter afterwards due to elimination of escape sequences)
  */
 _MHD_EXTERN size_t
-MHD_http_unescape (char *val);
-
+MHD_http_unescape(char* val);
 
 /**
  * Get a particular header value.  If multiple
@@ -1796,15 +1766,15 @@ MHD_http_unescape (char *val);
  *
  * @param connection connection to get values from
  * @param kind what kind of value are we looking for
- * @param key the header to look for, NULL to lookup 'trailing' value without a key
+ * @param key the header to look for, NULL to lookup 'trailing' value without a
+ * key
  * @return NULL if no such item was found
  * @ingroup request
  */
-_MHD_EXTERN const char *
-MHD_lookup_connection_value (struct MHD_Connection *connection,
-			     enum MHD_ValueKind kind,
-			     const char *key);
-
+_MHD_EXTERN const char*
+MHD_lookup_connection_value(struct MHD_Connection* connection,
+                            enum MHD_ValueKind kind,
+                            const char* key);
 
 /**
  * Queue a response to be transmitted to the client (as soon as
@@ -1818,10 +1788,9 @@ MHD_lookup_connection_value (struct MHD_Connection *connection,
  * @ingroup response
  */
 _MHD_EXTERN int
-MHD_queue_response (struct MHD_Connection *connection,
-                    unsigned int status_code,
-		    struct MHD_Response *response);
-
+MHD_queue_response(struct MHD_Connection* connection,
+                   unsigned int status_code,
+                   struct MHD_Response* response);
 
 /**
  * Suspend handling of network data for a given connection.  This can
@@ -1851,8 +1820,7 @@ MHD_queue_response (struct MHD_Connection *connection,
  * @param connection the connection to suspend
  */
 _MHD_EXTERN void
-MHD_suspend_connection (struct MHD_Connection *connection);
-
+MHD_suspend_connection(struct MHD_Connection* connection);
 
 /**
  * Resume handling of network data for suspended connection.  It is
@@ -1863,11 +1831,9 @@ MHD_suspend_connection (struct MHD_Connection *connection);
  * @param connection the connection to resume
  */
 _MHD_EXTERN void
-MHD_resume_connection (struct MHD_Connection *connection);
-
+MHD_resume_connection(struct MHD_Connection* connection);
 
 /* **************** Response manipulation functions ***************** */
-
 
 /**
  * Flags for special handling of responses.
@@ -1888,7 +1854,6 @@ enum MHD_ResponseFlags
 
 };
 
-
 /**
  * MHD options (for future extensions).
  */
@@ -1900,7 +1865,6 @@ enum MHD_ResponseOptions
   MHD_RO_END = 0
 };
 
-
 /**
  * Set special flags and options for a response.
  *
@@ -1910,16 +1874,16 @@ enum MHD_ResponseOptions
  * @return #MHD_YES on success, #MHD_NO on error
  */
 _MHD_EXTERN int
-MHD_set_response_options (struct MHD_Response *response,
-                          enum MHD_ResponseFlags flags,
-                          ...);
-
+MHD_set_response_options(struct MHD_Response* response,
+                         enum MHD_ResponseFlags flags,
+                         ...);
 
 /**
  * Create a response object.  The response object can be extended with
  * header information and then be used any number of times.
  *
- * @param size size of the data portion of the response, #MHD_SIZE_UNKNOWN for unknown
+ * @param size size of the data portion of the response, #MHD_SIZE_UNKNOWN for
+ * unknown
  * @param block_size preferred block size for querying crc (advisory only,
  *                   MHD may still call @a crc using smaller chunks); this
  *                   is essentially the buffer size used for IO, clients
@@ -1931,12 +1895,12 @@ MHD_set_response_options (struct MHD_Response *response,
  * @return NULL on error (i.e. invalid arguments, out of memory)
  * @ingroup response
  */
-_MHD_EXTERN struct MHD_Response *
-MHD_create_response_from_callback (uint64_t size,
-				   size_t block_size,
-				   MHD_ContentReaderCallback crc, void *crc_cls,
-				   MHD_ContentReaderFreeCallback crfc);
-
+_MHD_EXTERN struct MHD_Response*
+MHD_create_response_from_callback(uint64_t size,
+                                  size_t block_size,
+                                  MHD_ContentReaderCallback crc,
+                                  void* crc_cls,
+                                  MHD_ContentReaderFreeCallback crfc);
 
 /**
  * Create a response object.  The response object can be extended with
@@ -1952,12 +1916,11 @@ MHD_create_response_from_callback (uint64_t size,
  * @deprecated use #MHD_create_response_from_buffer instead
  * @ingroup response
  */
-_MHD_EXTERN struct MHD_Response *
-MHD_create_response_from_data (size_t size,
-			       void *data,
-			       int must_free,
-			       int must_copy);
-
+_MHD_EXTERN struct MHD_Response*
+MHD_create_response_from_data(size_t size,
+                              void* data,
+                              int must_free,
+                              int must_copy);
 
 /**
  * Specification for how MHD should treat the memory buffer
@@ -1994,7 +1957,6 @@ enum MHD_ResponseMemoryMode
 
 };
 
-
 /**
  * Create a response object.  The response object can be extended with
  * header information and then be used any number of times.
@@ -2005,11 +1967,10 @@ enum MHD_ResponseMemoryMode
  * @return NULL on error (i.e. invalid arguments, out of memory)
  * @ingroup response
  */
-_MHD_EXTERN struct MHD_Response *
-MHD_create_response_from_buffer (size_t size,
-				 void *buffer,
-				 enum MHD_ResponseMemoryMode mode);
-
+_MHD_EXTERN struct MHD_Response*
+MHD_create_response_from_buffer(size_t size,
+                                void* buffer,
+                                enum MHD_ResponseMemoryMode mode);
 
 /**
  * Create a response object.  The response object can be extended with
@@ -2022,10 +1983,8 @@ MHD_create_response_from_buffer (size_t size,
  * @return NULL on error (i.e. invalid arguments, out of memory)
  * @ingroup response
  */
-_MHD_EXTERN struct MHD_Response *
-MHD_create_response_from_fd (size_t size,
-			     int fd);
-
+_MHD_EXTERN struct MHD_Response*
+MHD_create_response_from_fd(size_t size, int fd);
 
 /**
  * Create a response object.  The response object can be extended with
@@ -2043,11 +2002,8 @@ MHD_create_response_from_fd (size_t size,
  * @return NULL on error (i.e. invalid arguments, out of memory)
  * @ingroup response
  */
-_MHD_EXTERN struct MHD_Response *
-MHD_create_response_from_fd_at_offset (size_t size,
-				       int fd,
-				       off_t offset);
-
+_MHD_EXTERN struct MHD_Response*
+MHD_create_response_from_fd_at_offset(size_t size, int fd, off_t offset);
 
 #if 0
 /**
@@ -2196,8 +2152,7 @@ MHD_create_response_for_upgrade (MHD_UpgradeHandler upgrade_handler,
  * @ingroup response
  */
 _MHD_EXTERN void
-MHD_destroy_response (struct MHD_Response *response);
-
+MHD_destroy_response(struct MHD_Response* response);
 
 /**
  * Add a header line to the response.
@@ -2210,10 +2165,9 @@ MHD_destroy_response (struct MHD_Response *response);
  * @ingroup response
  */
 _MHD_EXTERN int
-MHD_add_response_header (struct MHD_Response *response,
-                         const char *header,
-			 const char *content);
-
+MHD_add_response_header(struct MHD_Response* response,
+                        const char* header,
+                        const char* content);
 
 /**
  * Add a footer line to the response.
@@ -2225,10 +2179,9 @@ MHD_add_response_header (struct MHD_Response *response,
  * @ingroup response
  */
 _MHD_EXTERN int
-MHD_add_response_footer (struct MHD_Response *response,
-                         const char *footer,
-			 const char *content);
-
+MHD_add_response_footer(struct MHD_Response* response,
+                        const char* footer,
+                        const char* content);
 
 /**
  * Delete a header (or footer) line from the response.
@@ -2240,10 +2193,9 @@ MHD_add_response_footer (struct MHD_Response *response,
  * @ingroup response
  */
 _MHD_EXTERN int
-MHD_del_response_header (struct MHD_Response *response,
-                         const char *header,
-			 const char *content);
-
+MHD_del_response_header(struct MHD_Response* response,
+                        const char* header,
+                        const char* content);
 
 /**
  * Get all of the headers (and footers) added to a response.
@@ -2256,9 +2208,9 @@ MHD_del_response_header (struct MHD_Response *response,
  * @ingroup response
  */
 _MHD_EXTERN int
-MHD_get_response_headers (struct MHD_Response *response,
-                          MHD_KeyValueIterator iterator, void *iterator_cls);
-
+MHD_get_response_headers(struct MHD_Response* response,
+                         MHD_KeyValueIterator iterator,
+                         void* iterator_cls);
 
 /**
  * Get a particular header (or footer) from the response.
@@ -2268,10 +2220,8 @@ MHD_get_response_headers (struct MHD_Response *response,
  * @return NULL if header does not exist
  * @ingroup response
  */
-_MHD_EXTERN const char *
-MHD_get_response_header (struct MHD_Response *response,
-			 const char *key);
-
+_MHD_EXTERN const char*
+MHD_get_response_header(struct MHD_Response* response, const char* key);
 
 /* ********************** PostProcessor functions ********************** */
 
@@ -2300,11 +2250,11 @@ MHD_get_response_header (struct MHD_Response *response,
  *         otherwise a PP handle
  * @ingroup request
  */
-_MHD_EXTERN struct MHD_PostProcessor *
-MHD_create_post_processor (struct MHD_Connection *connection,
-			   size_t buffer_size,
-			   MHD_PostDataIterator iter, void *iter_cls);
-
+_MHD_EXTERN struct MHD_PostProcessor*
+MHD_create_post_processor(struct MHD_Connection* connection,
+                          size_t buffer_size,
+                          MHD_PostDataIterator iter,
+                          void* iter_cls);
 
 /**
  * Parse and process POST data.  Call this function when POST data is
@@ -2320,9 +2270,9 @@ MHD_create_post_processor (struct MHD_Connection *connection,
  * @ingroup request
  */
 _MHD_EXTERN int
-MHD_post_process (struct MHD_PostProcessor *pp,
-                  const char *post_data, size_t post_data_len);
-
+MHD_post_process(struct MHD_PostProcessor* pp,
+                 const char* post_data,
+                 size_t post_data_len);
 
 /**
  * Release PostProcessor resources.
@@ -2335,11 +2285,9 @@ MHD_post_process (struct MHD_PostProcessor *pp,
  * @ingroup request
  */
 _MHD_EXTERN int
-MHD_destroy_post_processor (struct MHD_PostProcessor *pp);
-
+MHD_destroy_post_processor(struct MHD_PostProcessor* pp);
 
 /* ********************* Digest Authentication functions *************** */
-
 
 /**
  * Constant to indicate that the nonce of the provided
@@ -2347,7 +2295,6 @@ MHD_destroy_post_processor (struct MHD_PostProcessor *pp);
  * @ingroup authentication
  */
 #define MHD_INVALID_NONCE -1
-
 
 /**
  * Get the username from the authorization header sent by the client
@@ -2357,9 +2304,8 @@ MHD_destroy_post_processor (struct MHD_PostProcessor *pp);
  * 			to the username if found
  * @ingroup authentication
  */
-_MHD_EXTERN char *
-MHD_digest_auth_get_username (struct MHD_Connection *connection);
-
+_MHD_EXTERN char*
+MHD_digest_auth_get_username(struct MHD_Connection* connection);
 
 /**
  * Authenticates the authorization header sent by the client
@@ -2375,12 +2321,11 @@ MHD_digest_auth_get_username (struct MHD_Connection *connection);
  * @ingroup authentication
  */
 _MHD_EXTERN int
-MHD_digest_auth_check (struct MHD_Connection *connection,
-		       const char *realm,
-		       const char *username,
-		       const char *password,
-		       unsigned int nonce_timeout);
-
+MHD_digest_auth_check(struct MHD_Connection* connection,
+                      const char* realm,
+                      const char* username,
+                      const char* password,
+                      unsigned int nonce_timeout);
 
 /**
  * Queues a response to request authentication from the client
@@ -2397,15 +2342,15 @@ MHD_digest_auth_check (struct MHD_Connection *connection,
  * @ingroup authentication
  */
 _MHD_EXTERN int
-MHD_queue_auth_fail_response (struct MHD_Connection *connection,
-			      const char *realm,
-			      const char *opaque,
-			      struct MHD_Response *response,
-			      int signal_stale);
-
+MHD_queue_auth_fail_response(struct MHD_Connection* connection,
+                             const char* realm,
+                             const char* opaque,
+                             struct MHD_Response* response,
+                             int signal_stale);
 
 /**
- * Get the username and password from the basic authorization header sent by the client
+ * Get the username and password from the basic authorization header sent by the
+ * client
  *
  * @param connection The MHD connection structure
  * @param password a pointer for the password
@@ -2413,10 +2358,9 @@ MHD_queue_auth_fail_response (struct MHD_Connection *connection,
  * 			to the username if found
  * @ingroup authentication
  */
-_MHD_EXTERN char *
-MHD_basic_auth_get_username_password (struct MHD_Connection *connection,
-				      char** password);
-
+_MHD_EXTERN char*
+MHD_basic_auth_get_username_password(struct MHD_Connection* connection,
+                                     char** password);
 
 /**
  * Queues a response to request basic authentication from the client
@@ -2431,12 +2375,11 @@ MHD_basic_auth_get_username_password (struct MHD_Connection *connection,
  * @ingroup authentication
  */
 _MHD_EXTERN int
-MHD_queue_basic_auth_fail_response (struct MHD_Connection *connection,
-				    const char *realm,
-				    struct MHD_Response *response);
+MHD_queue_basic_auth_fail_response(struct MHD_Connection* connection,
+                                   const char* realm,
+                                   struct MHD_Response* response);
 
 /* ********************** generic query functions ********************** */
-
 
 /**
  * Obtain information about the given connection.
@@ -2448,11 +2391,10 @@ MHD_queue_basic_auth_fail_response (struct MHD_Connection *connection,
  *         (or if the @a info_type is unknown)
  * @ingroup specialized
  */
-_MHD_EXTERN const union MHD_ConnectionInfo *
-MHD_get_connection_info (struct MHD_Connection *connection,
-			 enum MHD_ConnectionInfoType info_type,
-			 ...);
-
+_MHD_EXTERN const union MHD_ConnectionInfo*
+MHD_get_connection_info(struct MHD_Connection* connection,
+                        enum MHD_ConnectionInfoType info_type,
+                        ...);
 
 /**
  * MHD connection options.  Given to #MHD_set_connection_option to
@@ -2470,7 +2412,6 @@ enum MHD_CONNECTION_OPTION
 
 };
 
-
 /**
  * Set a custom option for the given connection, overriding defaults.
  *
@@ -2481,10 +2422,9 @@ enum MHD_CONNECTION_OPTION
  * @ingroup specialized
  */
 _MHD_EXTERN int
-MHD_set_connection_option (struct MHD_Connection *connection,
-			   enum MHD_CONNECTION_OPTION option,
-			   ...);
-
+MHD_set_connection_option(struct MHD_Connection* connection,
+                          enum MHD_CONNECTION_OPTION option,
+                          ...);
 
 /**
  * Information about an MHD daemon.
@@ -2515,7 +2455,6 @@ union MHD_DaemonInfo
   unsigned int num_connections;
 };
 
-
 /**
  * Obtain information about the given daemon
  * (not fully implemented!).
@@ -2527,11 +2466,10 @@ union MHD_DaemonInfo
  *         (or if the @a info_type is unknown)
  * @ingroup specialized
  */
-_MHD_EXTERN const union MHD_DaemonInfo *
-MHD_get_daemon_info (struct MHD_Daemon *daemon,
-		     enum MHD_DaemonInfoType info_type,
-		     ...);
-
+_MHD_EXTERN const union MHD_DaemonInfo*
+MHD_get_daemon_info(struct MHD_Daemon* daemon,
+                    enum MHD_DaemonInfoType info_type,
+                    ...);
 
 /**
  * Obtain the version of this library
@@ -2540,8 +2478,7 @@ MHD_get_daemon_info (struct MHD_Daemon *daemon,
  * @ingroup specialized
  */
 _MHD_EXTERN const char*
-MHD_get_version (void);
-
+MHD_get_version(void);
 
 /**
  * Types of information about MHD features,
@@ -2641,7 +2578,6 @@ enum MHD_FEATURE
   MHD_FEATURE_POSTPROCESSOR = 13
 };
 
-
 /**
  * Get information about supported MHD features.
  * Indicate that MHD was compiled with or without support for
@@ -2656,8 +2592,7 @@ enum MHD_FEATURE
 _MHD_EXTERN int
 MHD_is_feature_supported(enum MHD_FEATURE feature);
 
-
-#if 0                           /* keep Emacsens' auto-indent happy */
+#if 0 /* keep Emacsens' auto-indent happy */
 {
 #endif
 #ifdef __cplusplus

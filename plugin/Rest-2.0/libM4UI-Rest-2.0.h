@@ -1,7 +1,6 @@
 #ifndef library_h
 #define library_h
 
-
 #define USE_UV_PLUGIN
 
 #ifndef USE_UV_PLUGIN
@@ -12,10 +11,10 @@
 
 #include "http_parser.h"
 
-//type!
-#define HTTP_REQUEST  0
+// type!
+#define HTTP_REQUEST 0
 #define HTTP_RESPONSE 1
-#define HTTP_BOTH     2
+#define HTTP_BOTH 2
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,18 +29,18 @@ extern "C" {
 #define HTTP_MAX_ELEMENT_SIZE 2048
 #define HTTP_MAX_CHUNKS 16
 
-#define HTTP_NONE  0
+#define HTTP_NONE 0
 #define HTTP_FIELD 1
 #define HTTP_VALUE 2
-//enum http_parser_type
-#define HTTP_REQUEST  0
+// enum http_parser_type
+#define HTTP_REQUEST 0
 #define HTTP_RESPONSE 1
-#define HTTP_BOTH     2
+#define HTTP_BOTH 2
 struct http_message
 {
-  const char *name; // for debugging purposes
-  const char *raw;
-  const char *scheme;
+  const char* name; // for debugging purposes
+  const char* raw;
+  const char* scheme;
   int type;
   unsigned int method;
   int status_code;
@@ -52,12 +51,12 @@ struct http_message
   char query_string[HTTP_MAX_ELEMENT_SIZE];
   char body[HTTP_MAX_ELEMENT_SIZE];
   size_t body_size;
-  const char *host;
-  const char *userinfo;
+  const char* host;
+  const char* userinfo;
   uint16_t port;
   int num_headers;
-  int last_header_element;//HTTP_NONE | HTTP_FIELD | HTTP_VALUE
-  char headers [HTTP_MAX_HEADERS][2][HTTP_MAX_ELEMENT_SIZE];
+  int last_header_element; // HTTP_NONE | HTTP_FIELD | HTTP_VALUE
+  char headers[HTTP_MAX_HEADERS][2][HTTP_MAX_ELEMENT_SIZE];
   int should_keep_alive;
 
   int num_chunks;
@@ -65,7 +64,7 @@ struct http_message
   int chunk_lengths[HTTP_MAX_CHUNKS];
 
   char session[65];
-  const char *upgrade;
+  const char* upgrade;
 
   unsigned short http_major;
   unsigned short http_minor;
@@ -81,23 +80,39 @@ struct http_message
 struct ScannerPlugin
 {
 #ifndef USE_UV_PLUGIN
-   void* handle;
+  void* handle;
 #else
-   uv_lib_t *handle;
+  uv_lib_t* handle;
 #endif
-   unsigned long (*p_version)(void);
-   void* (*p_init)(int type);
-   void (*p_destroy)(void *p);
-   int (*p_scan)(void *p,const char*name,const char * input,size_t ilen,char **path,char **output, size_t olen );
-   const char*(*p_str_err)(int err);
+  unsigned long (*p_version)(void);
+  void* (*p_init)(int type);
+  void (*p_destroy)(void* p);
+  int (*p_scan)(void* p,
+                const char* name,
+                const char* input,
+                size_t ilen,
+                char** path,
+                char** output,
+                size_t olen);
+  const char* (*p_str_err)(int err);
 };
 
-
-unsigned long version(void);
-void* init (int type);
-void destroy (void *p);
-int scan(void *p,const char*name,const char * input,size_t ilen,char **path,char **output, size_t olen );
-const char* str_err(int err);
+unsigned long
+version(void);
+void*
+init(int type);
+void
+destroy(void* p);
+int
+scan(void* p,
+     const char* name,
+     const char* input,
+     size_t ilen,
+     char** path,
+     char** output,
+     size_t olen);
+const char*
+str_err(int err);
 
 #ifdef __cplusplus
 }

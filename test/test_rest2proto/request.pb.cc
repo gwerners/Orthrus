@@ -6,14 +6,14 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/once.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/wire_format.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 // @@protoc_insertion_point(includes)
 
 namespace m4u_interfaces {
@@ -31,10 +31,11 @@ const ::google::protobuf::Descriptor* MessageBlock_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   MessageBlock_reflection_ = NULL;
 
-}  // namespace
+} // namespace
 
-
-void protobuf_AssignDesc_request_2eproto() {
+void
+protobuf_AssignDesc_request_2eproto()
+{
   protobuf_AddDesc_request_2eproto();
   const ::google::protobuf::FileDescriptor* file =
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
@@ -47,8 +48,8 @@ void protobuf_AssignDesc_request_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, params_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, body_),
   };
-  Request_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+  Request_reflection_ = ::google::protobuf::internal::
+    GeneratedMessageReflection::NewGeneratedMessageReflection(
       Request_descriptor_,
       Request::default_instance_,
       Request_offsets_,
@@ -56,15 +57,17 @@ void protobuf_AssignDesc_request_2eproto() {
       -1,
       -1,
       sizeof(Request),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request, _is_default_instance_));
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request,
+                                                     _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request,
+                                                     _is_default_instance_));
   Request_Parameters_descriptor_ = Request_descriptor_->nested_type(0);
   static const int Request_Parameters_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request_Parameters, key_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request_Parameters, value_),
   };
-  Request_Parameters_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+  Request_Parameters_reflection_ = ::google::protobuf::internal::
+    GeneratedMessageReflection::NewGeneratedMessageReflection(
       Request_Parameters_descriptor_,
       Request_Parameters::default_instance_,
       Request_Parameters_offsets_,
@@ -72,15 +75,17 @@ void protobuf_AssignDesc_request_2eproto() {
       -1,
       -1,
       sizeof(Request_Parameters),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request_Parameters, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request_Parameters, _is_default_instance_));
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request_Parameters,
+                                                     _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Request_Parameters,
+                                                     _is_default_instance_));
   Request_MethodType_descriptor_ = Request_descriptor_->enum_type(0);
   MessageBlock_descriptor_ = file->message_type(1);
   static const int MessageBlock_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageBlock, request_),
   };
-  MessageBlock_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+  MessageBlock_reflection_ = ::google::protobuf::internal::
+    GeneratedMessageReflection::NewGeneratedMessageReflection(
       MessageBlock_descriptor_,
       MessageBlock::default_instance_,
       MessageBlock_offsets_,
@@ -88,31 +93,39 @@ void protobuf_AssignDesc_request_2eproto() {
       -1,
       -1,
       sizeof(MessageBlock),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageBlock, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageBlock, _is_default_instance_));
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageBlock,
+                                                     _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(MessageBlock,
+                                                     _is_default_instance_));
 }
 
 namespace {
 
 GOOGLE_PROTOBUF_DECLARE_ONCE(protobuf_AssignDescriptors_once_);
-inline void protobuf_AssignDescriptorsOnce() {
+inline void
+protobuf_AssignDescriptorsOnce()
+{
   ::google::protobuf::GoogleOnceInit(&protobuf_AssignDescriptors_once_,
-                 &protobuf_AssignDesc_request_2eproto);
+                                     &protobuf_AssignDesc_request_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) {
+void
+protobuf_RegisterTypes(const ::std::string&)
+{
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Request_descriptor_, &Request::default_instance());
+    Request_descriptor_, &Request::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Request_Parameters_descriptor_, &Request_Parameters::default_instance());
+    Request_Parameters_descriptor_, &Request_Parameters::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      MessageBlock_descriptor_, &MessageBlock::default_instance());
+    MessageBlock_descriptor_, &MessageBlock::default_instance());
 }
 
-}  // namespace
+} // namespace
 
-void protobuf_ShutdownFile_request_2eproto() {
+void
+protobuf_ShutdownFile_request_2eproto()
+{
   delete Request::default_instance_;
   delete Request_reflection_;
   delete Request_Parameters::default_instance_;
@@ -121,24 +134,33 @@ void protobuf_ShutdownFile_request_2eproto() {
   delete MessageBlock_reflection_;
 }
 
-void protobuf_AddDesc_request_2eproto() {
+void
+protobuf_AddDesc_request_2eproto()
+{
   static bool already_here = false;
-  if (already_here) return;
+  if (already_here)
+    return;
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\rrequest.proto\022\016m4u_interfaces\"\232\002\n\007Requ"
-    "est\022\014\n\004path\030\001 \001(\t\0220\n\004type\030\002 \001(\0162\".m4u_in"
+    "est\022\014\n\004path\030\001 \001(\t\0220\n\004type\030\002 "
+    "\001(\0162\".m4u_in"
     "terfaces.Request.MethodType\0222\n\006params\030\003 "
     "\003(\0132\".m4u_interfaces.Request.Parameters\022"
-    "\014\n\004body\030\004 \001(\t\032(\n\nParameters\022\013\n\003key\030\001 \001(\t"
-    "\022\r\n\005value\030\002 \001(\t\"c\n\nMethodType\022\007\n\003GET\020\000\022\010"
-    "\n\004HEAD\020\001\022\010\n\004POST\020\002\022\007\n\003PUT\020\003\022\n\n\006DELETE\020\004\022"
-    "\013\n\007CONNECT\020\005\022\013\n\007OPTIONS\020\006\022\t\n\005TRACE\020\007\"8\n\014"
+    "\014\n\004body\030\004 "
+    "\001(\t\032(\n\nParameters\022\013\n\003key\030\001 \001(\t"
+    "\022\r\n\005value\030\002 "
+    "\001(\t\"c\n\nMethodType\022\007\n\003GET\020\000\022\010"
+    "\n\004HEAD\020\001\022\010\n\004POST\020\002\022\007\n\003PUT\020\003\022"
+    "\n\n\006DELETE\020\004\022"
+    "\013\n\007CONNECT\020\005\022\013\n\007OPTIONS\020\006\022\t\n\005TRACE"
+    "\020\007\"8\n\014"
     "MessageBlock\022(\n\007request\030\001 \003(\0132\027.m4u_inte"
     "rfaces.RequestB+\n\032com.m4u_interfaces.req"
-    "uestB\rRequestProtosb\006proto3", 427);
+    "uestB\rRequestProtosb\006proto3",
+    427);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "request.proto", &protobuf_RegisterTypes);
   Request::default_instance_ = new Request();
@@ -147,34 +169,43 @@ void protobuf_AddDesc_request_2eproto() {
   Request::default_instance_->InitAsDefaultInstance();
   Request_Parameters::default_instance_->InitAsDefaultInstance();
   MessageBlock::default_instance_->InitAsDefaultInstance();
-  ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_request_2eproto);
+  ::google::protobuf::internal::OnShutdown(
+    &protobuf_ShutdownFile_request_2eproto);
 }
 
 // Force AddDescriptors() to be called at static initialization time.
-struct StaticDescriptorInitializer_request_2eproto {
-  StaticDescriptorInitializer_request_2eproto() {
+struct StaticDescriptorInitializer_request_2eproto
+{
+  StaticDescriptorInitializer_request_2eproto()
+  {
     protobuf_AddDesc_request_2eproto();
   }
 } static_descriptor_initializer_request_2eproto_;
 
 namespace {
 
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
+static void
+MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
+static void
+MergeFromFail(int line)
+{
   GOOGLE_CHECK(false) << __FILE__ << ":" << line;
 }
 
-}  // namespace
-
+} // namespace
 
 // ===================================================================
 
-const ::google::protobuf::EnumDescriptor* Request_MethodType_descriptor() {
+const ::google::protobuf::EnumDescriptor*
+Request_MethodType_descriptor()
+{
   protobuf_AssignDescriptorsOnce();
   return Request_MethodType_descriptor_;
 }
-bool Request_MethodType_IsValid(int value) {
-  switch(value) {
+bool
+Request_MethodType_IsValid(int value)
+{
+  switch (value) {
     case 0:
     case 1:
     case 2:
@@ -201,68 +232,91 @@ const Request_MethodType Request::TRACE;
 const Request_MethodType Request::MethodType_MIN;
 const Request_MethodType Request::MethodType_MAX;
 const int Request::MethodType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Request_Parameters::kKeyFieldNumber;
 const int Request_Parameters::kValueFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Request_Parameters::Request_Parameters()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message()
+  , _internal_metadata_(NULL)
+{
   SharedCtor();
   // @@protoc_insertion_point(constructor:m4u_interfaces.Request.Parameters)
 }
 
-void Request_Parameters::InitAsDefaultInstance() {
+void
+Request_Parameters::InitAsDefaultInstance()
+{
   _is_default_instance_ = true;
 }
 
 Request_Parameters::Request_Parameters(const Request_Parameters& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message()
+  , _internal_metadata_(NULL)
+{
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:m4u_interfaces.Request.Parameters)
 }
 
-void Request_Parameters::SharedCtor() {
-    _is_default_instance_ = false;
+void
+Request_Parameters::SharedCtor()
+{
+  _is_default_instance_ = false;
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  key_.UnsafeSetDefault(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-Request_Parameters::~Request_Parameters() {
+Request_Parameters::~Request_Parameters()
+{
   // @@protoc_insertion_point(destructor:m4u_interfaces.Request.Parameters)
   SharedDtor();
 }
 
-void Request_Parameters::SharedDtor() {
-  key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request_Parameters::SharedDtor()
+{
+  key_.DestroyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
 
-void Request_Parameters::SetCachedSize(int size) const {
+void
+Request_Parameters::SetCachedSize(int size) const
+{
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* Request_Parameters::descriptor() {
+const ::google::protobuf::Descriptor*
+Request_Parameters::descriptor()
+{
   protobuf_AssignDescriptorsOnce();
   return Request_Parameters_descriptor_;
 }
 
-const Request_Parameters& Request_Parameters::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_request_2eproto();
+const Request_Parameters&
+Request_Parameters::default_instance()
+{
+  if (default_instance_ == NULL)
+    protobuf_AddDesc_request_2eproto();
   return *default_instance_;
 }
 
 Request_Parameters* Request_Parameters::default_instance_ = NULL;
 
-Request_Parameters* Request_Parameters::New(::google::protobuf::Arena* arena) const {
+Request_Parameters*
+Request_Parameters::New(::google::protobuf::Arena* arena) const
+{
   Request_Parameters* n = new Request_Parameters;
   if (arena != NULL) {
     arena->Own(n);
@@ -270,51 +324,66 @@ Request_Parameters* Request_Parameters::New(::google::protobuf::Arena* arena) co
   return n;
 }
 
-void Request_Parameters::Clear() {
-  key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request_Parameters::Clear()
+{
+  key_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  value_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-bool Request_Parameters::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+bool
+Request_Parameters::MergePartialFromCodedStream(
+  ::google::protobuf::io::CodedInputStream* input)
+{
+#define DO_(EXPRESSION)                                                        \
+  if (!(EXPRESSION))                                                           \
+  goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:m4u_interfaces.Request.Parameters)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair<::google::protobuf::uint32, bool> p =
+      input->ReadTagWithCutoff(127);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+      ::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional string key = 1;
       case 1: {
         if (tag == 10) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_key()));
+            input, this->mutable_key()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->key().data(), this->key().length(),
+            this->key().data(),
+            this->key().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "m4u_interfaces.Request.Parameters.key"));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_value;
+        if (input->ExpectTag(18))
+          goto parse_value;
         break;
       }
 
       // optional string value = 2;
       case 2: {
         if (tag == 18) {
-         parse_value:
+        parse_value:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_value()));
+            input, this->mutable_value()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->value().data(), this->value().length(),
+            this->value().data(),
+            this->value().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "m4u_interfaces.Request.Parameters.value"));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) goto success;
+        if (input->ExpectAtEnd())
+          goto success;
         break;
       }
 
@@ -322,10 +391,12 @@ bool Request_Parameters::MergePartialFromCodedStream(
       handle_unusual:
         if (tag == 0 ||
             ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+              ::google::protobuf::internal::WireFormatLite::
+                WIRETYPE_END_GROUP) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(
+          ::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
@@ -339,13 +410,16 @@ failure:
 #undef DO_
 }
 
-void Request_Parameters::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
+void
+Request_Parameters::SerializeWithCachedSizes(
+  ::google::protobuf::io::CodedOutputStream* output) const
+{
   // @@protoc_insertion_point(serialize_start:m4u_interfaces.Request.Parameters)
   // optional string key = 1;
   if (this->key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->key().data(), this->key().length(),
+      this->key().data(),
+      this->key().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.Parameters.key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -355,7 +429,8 @@ void Request_Parameters::SerializeWithCachedSizes(
   // optional string value = 2;
   if (this->value().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->value().data(), this->value().length(),
+      this->value().data(),
+      this->value().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.Parameters.value");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -365,50 +440,52 @@ void Request_Parameters::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:m4u_interfaces.Request.Parameters)
 }
 
-::google::protobuf::uint8* Request_Parameters::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8*
+Request_Parameters::SerializeWithCachedSizesToArray(
+  ::google::protobuf::uint8* target) const
+{
   // @@protoc_insertion_point(serialize_to_array_start:m4u_interfaces.Request.Parameters)
   // optional string key = 1;
   if (this->key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->key().data(), this->key().length(),
+      this->key().data(),
+      this->key().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.Parameters.key");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->key(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      1, this->key(), target);
   }
 
   // optional string value = 2;
   if (this->value().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->value().data(), this->value().length(),
+      this->value().data(),
+      this->value().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.Parameters.value");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->value(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      2, this->value(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:m4u_interfaces.Request.Parameters)
   return target;
 }
 
-int Request_Parameters::ByteSize() const {
+int
+Request_Parameters::ByteSize() const
+{
   int total_size = 0;
 
   // optional string key = 1;
   if (this->key().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->key());
+    total_size +=
+      1 + ::google::protobuf::internal::WireFormatLite::StringSize(this->key());
   }
 
   // optional string value = 2;
   if (this->value().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->value());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                        this->value());
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -417,11 +494,14 @@ int Request_Parameters::ByteSize() const {
   return total_size;
 }
 
-void Request_Parameters::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const Request_Parameters* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Request_Parameters>(
-          &from);
+void
+Request_Parameters::MergeFrom(const ::google::protobuf::Message& from)
+{
+  if (GOOGLE_PREDICT_FALSE(&from == this))
+    MergeFromFail(__LINE__);
+  const Request_Parameters* source =
+    ::google::protobuf::internal::DynamicCastToGenerated<
+      const Request_Parameters>(&from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -429,47 +509,68 @@ void Request_Parameters::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void Request_Parameters::MergeFrom(const Request_Parameters& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+void
+Request_Parameters::MergeFrom(const Request_Parameters& from)
+{
+  if (GOOGLE_PREDICT_FALSE(&from == this))
+    MergeFromFail(__LINE__);
   if (from.key().size() > 0) {
 
-    key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
+    key_.AssignWithDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
   }
   if (from.value().size() > 0) {
 
-    value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
+    value_.AssignWithDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      from.value_);
   }
 }
 
-void Request_Parameters::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
+void
+Request_Parameters::CopyFrom(const ::google::protobuf::Message& from)
+{
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void Request_Parameters::CopyFrom(const Request_Parameters& from) {
-  if (&from == this) return;
+void
+Request_Parameters::CopyFrom(const Request_Parameters& from)
+{
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool Request_Parameters::IsInitialized() const {
+bool
+Request_Parameters::IsInitialized() const
+{
 
   return true;
 }
 
-void Request_Parameters::Swap(Request_Parameters* other) {
-  if (other == this) return;
+void
+Request_Parameters::Swap(Request_Parameters* other)
+{
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void Request_Parameters::InternalSwap(Request_Parameters* other) {
+void
+Request_Parameters::InternalSwap(Request_Parameters* other)
+{
   key_.Swap(&other->key_);
   value_.Swap(&other->value_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata Request_Parameters::GetMetadata() const {
+::google::protobuf::Metadata
+Request_Parameters::GetMetadata() const
+{
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = Request_Parameters_descriptor_;
@@ -477,73 +578,95 @@ void Request_Parameters::InternalSwap(Request_Parameters* other) {
   return metadata;
 }
 
-
-// -------------------------------------------------------------------
+  // -------------------------------------------------------------------
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Request::kPathFieldNumber;
 const int Request::kTypeFieldNumber;
 const int Request::kParamsFieldNumber;
 const int Request::kBodyFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Request::Request()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message()
+  , _internal_metadata_(NULL)
+{
   SharedCtor();
   // @@protoc_insertion_point(constructor:m4u_interfaces.Request)
 }
 
-void Request::InitAsDefaultInstance() {
+void
+Request::InitAsDefaultInstance()
+{
   _is_default_instance_ = true;
 }
 
 Request::Request(const Request& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message()
+  , _internal_metadata_(NULL)
+{
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:m4u_interfaces.Request)
 }
 
-void Request::SharedCtor() {
-    _is_default_instance_ = false;
+void
+Request::SharedCtor()
+{
+  _is_default_instance_ = false;
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  path_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  path_.UnsafeSetDefault(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
-  body_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  body_.UnsafeSetDefault(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-Request::~Request() {
+Request::~Request()
+{
   // @@protoc_insertion_point(destructor:m4u_interfaces.Request)
   SharedDtor();
 }
 
-void Request::SharedDtor() {
-  path_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  body_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request::SharedDtor()
+{
+  path_.DestroyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  body_.DestroyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
   }
 }
 
-void Request::SetCachedSize(int size) const {
+void
+Request::SetCachedSize(int size) const
+{
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* Request::descriptor() {
+const ::google::protobuf::Descriptor*
+Request::descriptor()
+{
   protobuf_AssignDescriptorsOnce();
   return Request_descriptor_;
 }
 
-const Request& Request::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_request_2eproto();
+const Request&
+Request::default_instance()
+{
+  if (default_instance_ == NULL)
+    protobuf_AddDesc_request_2eproto();
   return *default_instance_;
 }
 
 Request* Request::default_instance_ = NULL;
 
-Request* Request::New(::google::protobuf::Arena* arena) const {
+Request*
+Request::New(::google::protobuf::Arena* arena) const
+{
   Request* n = new Request;
   if (arena != NULL) {
     arena->Own(n);
@@ -551,86 +674,105 @@ Request* Request::New(::google::protobuf::Arena* arena) const {
   return n;
 }
 
-void Request::Clear() {
-  path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request::Clear()
+{
+  path_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   type_ = 0;
-  body_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  body_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
   params_.Clear();
 }
 
-bool Request::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+bool
+Request::MergePartialFromCodedStream(
+  ::google::protobuf::io::CodedInputStream* input)
+{
+#define DO_(EXPRESSION)                                                        \
+  if (!(EXPRESSION))                                                           \
+  goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:m4u_interfaces.Request)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair<::google::protobuf::uint32, bool> p =
+      input->ReadTagWithCutoff(127);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+      ::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional string path = 1;
       case 1: {
         if (tag == 10) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_path()));
+            input, this->mutable_path()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->path().data(), this->path().length(),
+            this->path().data(),
+            this->path().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "m4u_interfaces.Request.path"));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_type;
+        if (input->ExpectTag(16))
+          goto parse_type;
         break;
       }
 
       // optional .m4u_interfaces.Request.MethodType type = 2;
       case 2: {
         if (tag == 16) {
-         parse_type:
+        parse_type:
           int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_type(static_cast< ::m4u_interfaces::Request_MethodType >(value));
+               int,
+               ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+            input, &value)));
+          set_type(static_cast<::m4u_interfaces::Request_MethodType>(value));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_params;
+        if (input->ExpectTag(26))
+          goto parse_params;
         break;
       }
 
       // repeated .m4u_interfaces.Request.Parameters params = 3;
       case 3: {
         if (tag == 26) {
-         parse_params:
+        parse_params:
           DO_(input->IncrementRecursionDepth());
-         parse_loop_params:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
-                input, add_params()));
+        parse_loop_params:
+          DO_(::google::protobuf::internal::WireFormatLite::
+                ReadMessageNoVirtualNoRecursionDepth(input, add_params()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_loop_params;
+        if (input->ExpectTag(26))
+          goto parse_loop_params;
         input->UnsafeDecrementRecursionDepth();
-        if (input->ExpectTag(34)) goto parse_body;
+        if (input->ExpectTag(34))
+          goto parse_body;
         break;
       }
 
       // optional string body = 4;
       case 4: {
         if (tag == 34) {
-         parse_body:
+        parse_body:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_body()));
+            input, this->mutable_body()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->body().data(), this->body().length(),
+            this->body().data(),
+            this->body().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "m4u_interfaces.Request.body"));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectAtEnd()) goto success;
+        if (input->ExpectAtEnd())
+          goto success;
         break;
       }
 
@@ -638,10 +780,12 @@ bool Request::MergePartialFromCodedStream(
       handle_unusual:
         if (tag == 0 ||
             ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+              ::google::protobuf::internal::WireFormatLite::
+                WIRETYPE_END_GROUP) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(
+          ::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
@@ -655,13 +799,16 @@ failure:
 #undef DO_
 }
 
-void Request::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
+void
+Request::SerializeWithCachedSizes(
+  ::google::protobuf::io::CodedOutputStream* output) const
+{
   // @@protoc_insertion_point(serialize_start:m4u_interfaces.Request)
   // optional string path = 1;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->path().data(), this->path().length(),
+      this->path().data(),
+      this->path().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.path");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -683,7 +830,8 @@ void Request::SerializeWithCachedSizes(
   // optional string body = 4;
   if (this->body().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->body().data(), this->body().length(),
+      this->body().data(),
+      this->body().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.body");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
@@ -693,18 +841,20 @@ void Request::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:m4u_interfaces.Request)
 }
 
-::google::protobuf::uint8* Request::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8*
+Request::SerializeWithCachedSizesToArray(
+  ::google::protobuf::uint8* target) const
+{
   // @@protoc_insertion_point(serialize_to_array_start:m4u_interfaces.Request)
   // optional string path = 1;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->path().data(), this->path().length(),
+      this->path().data(),
+      this->path().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.path");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->path(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      1, this->path(), target);
   }
 
   // optional .m4u_interfaces.Request.MethodType type = 2;
@@ -716,46 +866,45 @@ void Request::SerializeWithCachedSizes(
   // repeated .m4u_interfaces.Request.Parameters params = 3;
   for (unsigned int i = 0, n = this->params_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->params(i), target);
+      WriteMessageNoVirtualToArray(3, this->params(i), target);
   }
 
   // optional string body = 4;
   if (this->body().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->body().data(), this->body().length(),
+      this->body().data(),
+      this->body().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "m4u_interfaces.Request.body");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->body(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      4, this->body(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:m4u_interfaces.Request)
   return target;
 }
 
-int Request::ByteSize() const {
+int
+Request::ByteSize() const
+{
   int total_size = 0;
 
   // optional string path = 1;
   if (this->path().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->path());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                        this->path());
   }
 
   // optional .m4u_interfaces.Request.MethodType type = 2;
   if (this->type() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+    total_size +=
+      1 + ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
   }
 
   // optional string body = 4;
   if (this->body().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->body());
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                        this->body());
   }
 
   // repeated .m4u_interfaces.Request.Parameters params = 3;
@@ -772,11 +921,13 @@ int Request::ByteSize() const {
   return total_size;
 }
 
-void Request::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const Request* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Request>(
-          &from);
+void
+Request::MergeFrom(const ::google::protobuf::Message& from)
+{
+  if (GOOGLE_PREDICT_FALSE(&from == this))
+    MergeFromFail(__LINE__);
+  const Request* source =
+    ::google::protobuf::internal::DynamicCastToGenerated<const Request>(&from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -784,44 +935,62 @@ void Request::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void Request::MergeFrom(const Request& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+void
+Request::MergeFrom(const Request& from)
+{
+  if (GOOGLE_PREDICT_FALSE(&from == this))
+    MergeFromFail(__LINE__);
   params_.MergeFrom(from.params_);
   if (from.path().size() > 0) {
 
-    path_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.path_);
+    path_.AssignWithDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.path_);
   }
   if (from.type() != 0) {
     set_type(from.type());
   }
   if (from.body().size() > 0) {
 
-    body_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.body_);
+    body_.AssignWithDefault(
+      &::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.body_);
   }
 }
 
-void Request::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
+void
+Request::CopyFrom(const ::google::protobuf::Message& from)
+{
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void Request::CopyFrom(const Request& from) {
-  if (&from == this) return;
+void
+Request::CopyFrom(const Request& from)
+{
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool Request::IsInitialized() const {
+bool
+Request::IsInitialized() const
+{
 
   return true;
 }
 
-void Request::Swap(Request* other) {
-  if (other == this) return;
+void
+Request::Swap(Request* other)
+{
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void Request::InternalSwap(Request* other) {
+void
+Request::InternalSwap(Request* other)
+{
   path_.Swap(&other->path_);
   std::swap(type_, other->type_);
   params_.UnsafeArenaSwap(&other->params_);
@@ -830,7 +999,9 @@ void Request::InternalSwap(Request* other) {
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata Request::GetMetadata() const {
+::google::protobuf::Metadata
+Request::GetMetadata() const
+{
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = Request_descriptor_;
@@ -842,88 +1013,134 @@ void Request::InternalSwap(Request* other) {
 // Request_Parameters
 
 // optional string key = 1;
-void Request_Parameters::clear_key() {
-  key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request_Parameters::clear_key()
+{
+  key_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& Request_Parameters::key() const {
+const ::std::string&
+Request_Parameters::key() const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.Request.Parameters.key)
-  return key_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return key_.GetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request_Parameters::set_key(const ::std::string& value) {
-  
-  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+void
+Request_Parameters::set_key(const ::std::string& value)
+{
+
+  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+                  value);
   // @@protoc_insertion_point(field_set:m4u_interfaces.Request.Parameters.key)
 }
- void Request_Parameters::set_key(const char* value) {
-  
-  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+void
+Request_Parameters::set_key(const char* value)
+{
+
+  key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+                  ::std::string(value));
   // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.Parameters.key)
 }
- void Request_Parameters::set_key(const char* value, size_t size) {
-  
+void
+Request_Parameters::set_key(const char* value, size_t size)
+{
+
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+                  ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.Parameters.key)
 }
- ::std::string* Request_Parameters::mutable_key() {
-  
+::std::string*
+Request_Parameters::mutable_key()
+{
+
   // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.Parameters.key)
-  return key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return key_.MutableNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* Request_Parameters::release_key() {
-  
-  return key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::std::string*
+Request_Parameters::release_key()
+{
+
+  return key_.ReleaseNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request_Parameters::set_allocated_key(::std::string* key) {
+void
+Request_Parameters::set_allocated_key(::std::string* key)
+{
   if (key != NULL) {
-    
+
   } else {
-    
   }
-  key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), key);
+  key_.SetAllocatedNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), key);
   // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.Parameters.key)
 }
 
 // optional string value = 2;
-void Request_Parameters::clear_value() {
-  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request_Parameters::clear_value()
+{
+  value_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& Request_Parameters::value() const {
+const ::std::string&
+Request_Parameters::value() const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.Request.Parameters.value)
-  return value_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return value_.GetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request_Parameters::set_value(const ::std::string& value) {
-  
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+void
+Request_Parameters::set_value(const ::std::string& value)
+{
+
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:m4u_interfaces.Request.Parameters.value)
 }
- void Request_Parameters::set_value(const char* value) {
-  
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+void
+Request_Parameters::set_value(const char* value)
+{
+
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    ::std::string(value));
   // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.Parameters.value)
 }
- void Request_Parameters::set_value(const char* value, size_t size) {
-  
-  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+void
+Request_Parameters::set_value(const char* value, size_t size)
+{
+
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.Parameters.value)
 }
- ::std::string* Request_Parameters::mutable_value() {
-  
+::std::string*
+Request_Parameters::mutable_value()
+{
+
   // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.Parameters.value)
-  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return value_.MutableNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* Request_Parameters::release_value() {
-  
-  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::std::string*
+Request_Parameters::release_value()
+{
+
+  return value_.ReleaseNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request_Parameters::set_allocated_value(::std::string* value) {
+void
+Request_Parameters::set_allocated_value(::std::string* value)
+{
   if (value != NULL) {
-    
+
   } else {
-    
   }
-  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  value_.SetAllocatedNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.Parameters.value)
 }
 
@@ -932,194 +1149,276 @@ void Request_Parameters::clear_value() {
 // Request
 
 // optional string path = 1;
-void Request::clear_path() {
-  path_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request::clear_path()
+{
+  path_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& Request::path() const {
+const ::std::string&
+Request::path() const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.Request.path)
-  return path_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return path_.GetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request::set_path(const ::std::string& value) {
-  
-  path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+void
+Request::set_path(const ::std::string& value)
+{
+
+  path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+                   value);
   // @@protoc_insertion_point(field_set:m4u_interfaces.Request.path)
 }
- void Request::set_path(const char* value) {
-  
-  path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+void
+Request::set_path(const char* value)
+{
+
+  path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+                   ::std::string(value));
   // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.path)
 }
- void Request::set_path(const char* value, size_t size) {
-  
+void
+Request::set_path(const char* value, size_t size)
+{
+
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+                   ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.path)
 }
- ::std::string* Request::mutable_path() {
-  
+::std::string*
+Request::mutable_path()
+{
+
   // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.path)
-  return path_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return path_.MutableNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* Request::release_path() {
-  
-  return path_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::std::string*
+Request::release_path()
+{
+
+  return path_.ReleaseNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request::set_allocated_path(::std::string* path) {
+void
+Request::set_allocated_path(::std::string* path)
+{
   if (path != NULL) {
-    
+
   } else {
-    
   }
-  path_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), path);
+  path_.SetAllocatedNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), path);
   // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.path)
 }
 
 // optional .m4u_interfaces.Request.MethodType type = 2;
-void Request::clear_type() {
+void
+Request::clear_type()
+{
   type_ = 0;
 }
- ::m4u_interfaces::Request_MethodType Request::type() const {
+::m4u_interfaces::Request_MethodType
+Request::type() const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.Request.type)
-  return static_cast< ::m4u_interfaces::Request_MethodType >(type_);
+  return static_cast<::m4u_interfaces::Request_MethodType>(type_);
 }
- void Request::set_type(::m4u_interfaces::Request_MethodType value) {
-  
+void
+Request::set_type(::m4u_interfaces::Request_MethodType value)
+{
+
   type_ = value;
   // @@protoc_insertion_point(field_set:m4u_interfaces.Request.type)
 }
 
 // repeated .m4u_interfaces.Request.Parameters params = 3;
-int Request::params_size() const {
+int
+Request::params_size() const
+{
   return params_.size();
 }
-void Request::clear_params() {
+void
+Request::clear_params()
+{
   params_.Clear();
 }
-const ::m4u_interfaces::Request_Parameters& Request::params(int index) const {
+const ::m4u_interfaces::Request_Parameters&
+Request::params(int index) const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.Request.params)
   return params_.Get(index);
 }
-::m4u_interfaces::Request_Parameters* Request::mutable_params(int index) {
+::m4u_interfaces::Request_Parameters*
+Request::mutable_params(int index)
+{
   // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.params)
   return params_.Mutable(index);
 }
-::m4u_interfaces::Request_Parameters* Request::add_params() {
+::m4u_interfaces::Request_Parameters*
+Request::add_params()
+{
   // @@protoc_insertion_point(field_add:m4u_interfaces.Request.params)
   return params_.Add();
 }
-::google::protobuf::RepeatedPtrField< ::m4u_interfaces::Request_Parameters >*
-Request::mutable_params() {
+::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request_Parameters>*
+Request::mutable_params()
+{
   // @@protoc_insertion_point(field_mutable_list:m4u_interfaces.Request.params)
   return &params_;
 }
-const ::google::protobuf::RepeatedPtrField< ::m4u_interfaces::Request_Parameters >&
-Request::params() const {
+const ::google::protobuf::RepeatedPtrField<
+  ::m4u_interfaces::Request_Parameters>&
+Request::params() const
+{
   // @@protoc_insertion_point(field_list:m4u_interfaces.Request.params)
   return params_;
 }
 
 // optional string body = 4;
-void Request::clear_body() {
-  body_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void
+Request::clear_body()
+{
+  body_.ClearToEmptyNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- const ::std::string& Request::body() const {
+const ::std::string&
+Request::body() const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.Request.body)
-  return body_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return body_.GetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request::set_body(const ::std::string& value) {
-  
-  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+void
+Request::set_body(const ::std::string& value)
+{
+
+  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+                   value);
   // @@protoc_insertion_point(field_set:m4u_interfaces.Request.body)
 }
- void Request::set_body(const char* value) {
-  
-  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+void
+Request::set_body(const char* value)
+{
+
+  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+                   ::std::string(value));
   // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.body)
 }
- void Request::set_body(const char* value, size_t size) {
-  
+void
+Request::set_body(const char* value, size_t size)
+{
+
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+                   ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.body)
 }
- ::std::string* Request::mutable_body() {
-  
+::std::string*
+Request::mutable_body()
+{
+
   // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.body)
-  return body_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return body_.MutableNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- ::std::string* Request::release_body() {
-  
-  return body_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+::std::string*
+Request::release_body()
+{
+
+  return body_.ReleaseNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
- void Request::set_allocated_body(::std::string* body) {
+void
+Request::set_allocated_body(::std::string* body)
+{
   if (body != NULL) {
-    
+
   } else {
-    
   }
-  body_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), body);
+  body_.SetAllocatedNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), body);
   // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.body)
 }
 
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+#endif // PROTOBUF_INLINE_NOT_IN_HEADERS
 
-// ===================================================================
+  // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int MessageBlock::kRequestFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 MessageBlock::MessageBlock()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message()
+  , _internal_metadata_(NULL)
+{
   SharedCtor();
   // @@protoc_insertion_point(constructor:m4u_interfaces.MessageBlock)
 }
 
-void MessageBlock::InitAsDefaultInstance() {
+void
+MessageBlock::InitAsDefaultInstance()
+{
   _is_default_instance_ = true;
 }
 
 MessageBlock::MessageBlock(const MessageBlock& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message()
+  , _internal_metadata_(NULL)
+{
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:m4u_interfaces.MessageBlock)
 }
 
-void MessageBlock::SharedCtor() {
-    _is_default_instance_ = false;
+void
+MessageBlock::SharedCtor()
+{
+  _is_default_instance_ = false;
   _cached_size_ = 0;
 }
 
-MessageBlock::~MessageBlock() {
+MessageBlock::~MessageBlock()
+{
   // @@protoc_insertion_point(destructor:m4u_interfaces.MessageBlock)
   SharedDtor();
 }
 
-void MessageBlock::SharedDtor() {
+void
+MessageBlock::SharedDtor()
+{
   if (this != default_instance_) {
   }
 }
 
-void MessageBlock::SetCachedSize(int size) const {
+void
+MessageBlock::SetCachedSize(int size) const
+{
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* MessageBlock::descriptor() {
+const ::google::protobuf::Descriptor*
+MessageBlock::descriptor()
+{
   protobuf_AssignDescriptorsOnce();
   return MessageBlock_descriptor_;
 }
 
-const MessageBlock& MessageBlock::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_request_2eproto();
+const MessageBlock&
+MessageBlock::default_instance()
+{
+  if (default_instance_ == NULL)
+    protobuf_AddDesc_request_2eproto();
   return *default_instance_;
 }
 
 MessageBlock* MessageBlock::default_instance_ = NULL;
 
-MessageBlock* MessageBlock::New(::google::protobuf::Arena* arena) const {
+MessageBlock*
+MessageBlock::New(::google::protobuf::Arena* arena) const
+{
   MessageBlock* n = new MessageBlock;
   if (arena != NULL) {
     arena->Own(n);
@@ -1127,33 +1426,44 @@ MessageBlock* MessageBlock::New(::google::protobuf::Arena* arena) const {
   return n;
 }
 
-void MessageBlock::Clear() {
+void
+MessageBlock::Clear()
+{
   request_.Clear();
 }
 
-bool MessageBlock::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+bool
+MessageBlock::MergePartialFromCodedStream(
+  ::google::protobuf::io::CodedInputStream* input)
+{
+#define DO_(EXPRESSION)                                                        \
+  if (!(EXPRESSION))                                                           \
+  goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:m4u_interfaces.MessageBlock)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair<::google::protobuf::uint32, bool> p =
+      input->ReadTagWithCutoff(127);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+      ::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated .m4u_interfaces.Request request = 1;
       case 1: {
         if (tag == 10) {
           DO_(input->IncrementRecursionDepth());
-         parse_loop_request:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
-                input, add_request()));
+        parse_loop_request:
+          DO_(::google::protobuf::internal::WireFormatLite::
+                ReadMessageNoVirtualNoRecursionDepth(input, add_request()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(10)) goto parse_loop_request;
+        if (input->ExpectTag(10))
+          goto parse_loop_request;
         input->UnsafeDecrementRecursionDepth();
-        if (input->ExpectAtEnd()) goto success;
+        if (input->ExpectAtEnd())
+          goto success;
         break;
       }
 
@@ -1161,10 +1471,12 @@ bool MessageBlock::MergePartialFromCodedStream(
       handle_unusual:
         if (tag == 0 ||
             ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+              ::google::protobuf::internal::WireFormatLite::
+                WIRETYPE_END_GROUP) {
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
+        DO_(
+          ::google::protobuf::internal::WireFormatLite::SkipField(input, tag));
         break;
       }
     }
@@ -1178,8 +1490,10 @@ failure:
 #undef DO_
 }
 
-void MessageBlock::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
+void
+MessageBlock::SerializeWithCachedSizes(
+  ::google::protobuf::io::CodedOutputStream* output) const
+{
   // @@protoc_insertion_point(serialize_start:m4u_interfaces.MessageBlock)
   // repeated .m4u_interfaces.Request request = 1;
   for (unsigned int i = 0, n = this->request_size(); i < n; i++) {
@@ -1190,21 +1504,24 @@ void MessageBlock::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:m4u_interfaces.MessageBlock)
 }
 
-::google::protobuf::uint8* MessageBlock::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8*
+MessageBlock::SerializeWithCachedSizesToArray(
+  ::google::protobuf::uint8* target) const
+{
   // @@protoc_insertion_point(serialize_to_array_start:m4u_interfaces.MessageBlock)
   // repeated .m4u_interfaces.Request request = 1;
   for (unsigned int i = 0, n = this->request_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->request(i), target);
+      WriteMessageNoVirtualToArray(1, this->request(i), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:m4u_interfaces.MessageBlock)
   return target;
 }
 
-int MessageBlock::ByteSize() const {
+int
+MessageBlock::ByteSize() const
+{
   int total_size = 0;
 
   // repeated .m4u_interfaces.Request request = 1;
@@ -1221,11 +1538,14 @@ int MessageBlock::ByteSize() const {
   return total_size;
 }
 
-void MessageBlock::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const MessageBlock* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const MessageBlock>(
-          &from);
+void
+MessageBlock::MergeFrom(const ::google::protobuf::Message& from)
+{
+  if (GOOGLE_PREDICT_FALSE(&from == this))
+    MergeFromFail(__LINE__);
+  const MessageBlock* source =
+    ::google::protobuf::internal::DynamicCastToGenerated<const MessageBlock>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1233,39 +1553,57 @@ void MessageBlock::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void MessageBlock::MergeFrom(const MessageBlock& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+void
+MessageBlock::MergeFrom(const MessageBlock& from)
+{
+  if (GOOGLE_PREDICT_FALSE(&from == this))
+    MergeFromFail(__LINE__);
   request_.MergeFrom(from.request_);
 }
 
-void MessageBlock::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
+void
+MessageBlock::CopyFrom(const ::google::protobuf::Message& from)
+{
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void MessageBlock::CopyFrom(const MessageBlock& from) {
-  if (&from == this) return;
+void
+MessageBlock::CopyFrom(const MessageBlock& from)
+{
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool MessageBlock::IsInitialized() const {
+bool
+MessageBlock::IsInitialized() const
+{
 
   return true;
 }
 
-void MessageBlock::Swap(MessageBlock* other) {
-  if (other == this) return;
+void
+MessageBlock::Swap(MessageBlock* other)
+{
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void MessageBlock::InternalSwap(MessageBlock* other) {
+void
+MessageBlock::InternalSwap(MessageBlock* other)
+{
   request_.UnsafeArenaSwap(&other->request_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata MessageBlock::GetMetadata() const {
+::google::protobuf::Metadata
+MessageBlock::GetMetadata() const
+{
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = MessageBlock_descriptor_;
@@ -1277,39 +1615,51 @@ void MessageBlock::InternalSwap(MessageBlock* other) {
 // MessageBlock
 
 // repeated .m4u_interfaces.Request request = 1;
-int MessageBlock::request_size() const {
+int
+MessageBlock::request_size() const
+{
   return request_.size();
 }
-void MessageBlock::clear_request() {
+void
+MessageBlock::clear_request()
+{
   request_.Clear();
 }
-const ::m4u_interfaces::Request& MessageBlock::request(int index) const {
+const ::m4u_interfaces::Request&
+MessageBlock::request(int index) const
+{
   // @@protoc_insertion_point(field_get:m4u_interfaces.MessageBlock.request)
   return request_.Get(index);
 }
-::m4u_interfaces::Request* MessageBlock::mutable_request(int index) {
+::m4u_interfaces::Request*
+MessageBlock::mutable_request(int index)
+{
   // @@protoc_insertion_point(field_mutable:m4u_interfaces.MessageBlock.request)
   return request_.Mutable(index);
 }
-::m4u_interfaces::Request* MessageBlock::add_request() {
+::m4u_interfaces::Request*
+MessageBlock::add_request()
+{
   // @@protoc_insertion_point(field_add:m4u_interfaces.MessageBlock.request)
   return request_.Add();
 }
-::google::protobuf::RepeatedPtrField< ::m4u_interfaces::Request >*
-MessageBlock::mutable_request() {
+::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>*
+MessageBlock::mutable_request()
+{
   // @@protoc_insertion_point(field_mutable_list:m4u_interfaces.MessageBlock.request)
   return &request_;
 }
-const ::google::protobuf::RepeatedPtrField< ::m4u_interfaces::Request >&
-MessageBlock::request() const {
+const ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>&
+MessageBlock::request() const
+{
   // @@protoc_insertion_point(field_list:m4u_interfaces.MessageBlock.request)
   return request_;
 }
 
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+#endif // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace m4u_interfaces
+} // namespace m4u_interfaces
 
 // @@protoc_insertion_point(global_scope)
