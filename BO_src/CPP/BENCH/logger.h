@@ -15,19 +15,14 @@
 #define LOG_COLOR    (0x1 << 4)
 
 
-#define exeName "   BENCH"
+#define exeName "    Core"
 
 extern int EnabledLog;
 extern FILE* log_output;
-#ifdef __cplusplus
-extern "C" {
-#endif
-const char *timestamp();
-void InitializeLog();
-#ifdef __cplusplus
-}
-#endif
 
+const char *timestamp();
+
+void InitializeLog(FILE *out);
 
 //next line make log more "clean"
 //#define BASIC_LOG

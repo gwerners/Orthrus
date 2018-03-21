@@ -15,14 +15,14 @@
 #define LOG_COLOR    (0x1 << 4)
 
 
-#define exeName "    USSD"
+#define exeName "    Core"
 
 extern int EnabledLog;
 extern FILE* log_output;
 
 const char *timestamp();
 
-void InitializeLog();
+void InitializeLog(FILE *out);
 
 //next line make log more "clean"
 //#define BASIC_LOG

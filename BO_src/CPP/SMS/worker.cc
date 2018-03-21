@@ -205,7 +205,7 @@ int main()
    // compatible with the version of the headers we compiled against.
    GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-   InitializeLog();
+   InitializeLog(stdout);
    EnabledLog=LOG_COLOR|LOG_INFO|LOG_ERROR;
    //;test_write(argc,argv);
    //test_read(argc,argv);

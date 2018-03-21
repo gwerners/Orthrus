@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int EnabledLog=LOG_COLOR|LOG_DEBUG|LOG_INFO|LOG_WARNING|LOG_ERROR;//
+int EnabledLog=LOG_INFO|LOG_DEBUG|LOG_WARNING|LOG_ERROR;
 FILE* log_output=NULL;
 
 const char *timestamp()
@@ -19,7 +19,7 @@ const char *timestamp()
    //ltime=time(NULL);
    struct tm _tm,*tm;
    struct timeb tmb;
-	
+
 /*    long            ms; // Milliseconds
     time_t          s;  // Seconds
     struct timespec spec;
@@ -38,8 +38,19 @@ const char *timestamp()
    return (const char*)&timestamp;
 }
 
+const char * banner=
+"   ▒█████   ██▀███  ▄▄▄█████▓ ██░ ██  ██▀███   █    ██   ██████ \n"
+"  ▒██▒  ██▒▓██ ▒ ██▒▓  ██▒ ▓▒▓██░ ██▒▓██ ▒ ██▒ ██  ▓██▒▒██    ▒ \n"
+"  ▒██░  ██▒▓██ ░▄█ ▒▒ ▓██░ ▒░▒██▀▀██░▓██ ░▄█ ▒▓██  ▒██░░ ▓██▄   \n"
+"  ▒██   ██░▒██▀▀█▄  ░ ▓██▓ ░ ░▓█ ░██ ▒██▀▀█▄  ▓▓█  ░██░  ▒   ██▒\n"
+"  ░ ████▓▒░░██▓ ▒██▒  ▒██▒ ░ ░▓█▒░██▓░██▓ ▒██▒▒▒█████▓ ▒██████▒▒\n"
+"  ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░  ▒ ░░    ▒ ░░▒░▒░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░\n"
+"    ░ ▒ ▒░   ░▒ ░ ▒░    ░     ▒ ░▒░ ░  ░▒ ░ ▒░░░▒░ ░ ░ ░ ░▒  ░ ░\n"
+"  ░ ░ ░ ▒    ░░   ░   ░       ░  ░░ ░  ░░   ░  ░░░ ░ ░ ░  ░  ░  \n"
+"      ░ ░     ░               ░  ░  ░   ░        ░           ░  \n";
 
-void InitializeLog()
+void InitializeLog(FILE *out)
 {
-   log_output=stderr;
+   log_output=out;
+   fwrite(banner,sizeof(char),strlen(banner),log_output);
 }

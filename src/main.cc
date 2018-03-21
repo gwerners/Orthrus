@@ -443,16 +443,16 @@ void after_write(uv_write_t *req, int status)
 void after_read_admin(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
 {
    uv_shutdown_t* sreq;
-   char *body="<body> HA </body>";
-    if (nread < 0) {
-        if (nread != UV_EOF)
-            log_error("Read error %s", uv_err_name(nread));
-        if (buf->base) free(buf->base);
-        sreq = (uv_shutdown_t*) malloc(sizeof *sreq);
-        uv_shutdown(sreq, client, after_shutdown);
-        return;
-    }
-    log_debug("received[%s]",buf->base);
+   char *body=(char*)"<body> HA </body>";
+   if (nread < 0) {
+       if (nread != UV_EOF)
+           log_error("Read error %s", uv_err_name(nread));
+       if (buf->base) free(buf->base);
+       sreq = (uv_shutdown_t*) malloc(sizeof *sreq);
+       uv_shutdown(sreq, client, after_shutdown);
+       return;
+   }
+   log_debug("received[%s]",buf->base);
 
    //basic close
    if(strncmp(buf->base,"quit",4)==0)//close stream
@@ -610,7 +610,7 @@ void after_read(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
          req = (write_req_t*) malloc(sizeof(write_req_t));
          /*req->buf.base = strdup("a");//uv_buf_init("a", 1);
          req->buf.len  = 1;*/
-         req->buf = uv_buf_init("a", 1);
+         req->buf = uv_buf_init((char*)"a", 1);
 
          uv_write2((uv_write_t*)req, (uv_stream_t*) &worker->pipe, &req->buf, 1, (uv_stream_t*) client, after_write);
          p_service->round_robin_counter = (p_service->round_robin_counter + 1) % p_service->instances;
@@ -699,7 +699,7 @@ void on_connection_admin(uv_stream_t *server, int status)
       ret = uv_tcp_getpeername((const uv_tcp_t*)client, &peername, &namelen);
       check_sockname(&peername, "127.0.0.1", 0/*anything match*/, "client");
       //invoke_cgi_script(client,"tick");
-      char *answer="<input admin command>";
+      char *answer=(char*)"<input admin command>";
       write_req_t *req = (write_req_t *) malloc(sizeof(write_req_t));
       /*req->buf.base = strdup(answer);//uv_buf_init(answer, strlen(answer));
       req->buf.len  = strlen(answer)+1;*/

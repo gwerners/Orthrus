@@ -13,10 +13,7 @@
 #include "request.pb.h"
 #include "response.pb.h"
 
-extern "C"
-{
 #include "lua_utils.h"
-}
 
 
 
@@ -64,7 +61,7 @@ void echo_write(uv_write_t *req, int status)
         log_error("Write error %s", uv_err_name(status));
     }
 
-   wr = (write_req_t*) req;   
+   wr = (write_req_t*) req;
    if(wr)free(wr);
 }
 void readed(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
@@ -156,20 +153,20 @@ void on_new_connection(uv_stream_t *q, ssize_t nread, const uv_buf_t *buf)
     if(buf->base)free(buf->base);
 }
 
-int main() 
+int main()
 {
    // Verify that the version of the library that we linked against is
    // compatible with the version of the headers we compiled against.
    GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-   InitializeLog();
+   InitializeLog(stdout);
 
    RunConfiguration("init.lua");
 
    // Optional:  Delete all global objects allocated by libprotobuf.
    //google::protobuf::ShutdownProtobufLibrary();
    loop = uv_default_loop();
-   
+
    uv_pipe_init(loop, &queue, 1 /* ipc */);
    uv_pipe_open(&queue, 0);
 

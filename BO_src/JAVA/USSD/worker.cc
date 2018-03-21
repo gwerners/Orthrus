@@ -54,7 +54,7 @@ uv_pipe_t stdout_pipe;
 m4u_interfaces::RequestBlock req_msg;
 m4u_interfaces::ResponseBlock res_msg;
 
-char *default_class_path="-Djava.class.path=.";
+char *default_class_path=(char*)"-Djava.class.path=.";
 
 void alloc_buffer(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)
 {
@@ -280,7 +280,7 @@ int main(int argc, char**argv)
    // compatible with the version of the headers we compiled against.
    GOOGLE_PROTOBUF_VERIFY_VERSION;
    
-   InitializeLog();
+   InitializeLog(stdout);
 
    EnabledLog=LOG_COLOR|LOG_INFO|LOG_WARNING|LOG_ERROR;
 

@@ -166,7 +166,7 @@ int main(int argc, char**argv)
 
    m4u_interfaces::Request msg;
 
-   InitializeLog();
+   InitializeLog(stdout);
 
    fd=1;//stdout
 

@@ -1,10 +1,11 @@
 
 #include "logger.h"
 #include "lua_utils.h"
+extern "C"{
 #include <lua.h>
 #include <lualib.h>
 #include <lauxlib.h>
-
+}
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -99,38 +100,38 @@ void Run_Lua()
     l = lua_open();
     luaL_openlibs(l);
 
-	//Get/Set for integer
-	lua_register(l, "SetX", SetX);
+   //Get/Set for integer
+   lua_register(l, "SetX", SetX);
    lua_register(l, "GetX", GetX);
-	
-	//set x
-	x = 0;
+   
+   //set x
+   x = 0;
 
-	int status;
+   int status;
 
-	//execute script
+   //execute script
    //change current dir to scripts dir!
    if(chdir("scripts"))
    {
       log_info("problem changing current dir to 'scripts' to run lua files!");
    }
 
-	status = luaL_loadfile(l,"init.lua");
+   status = luaL_loadfile(l,"init.lua");
    lua_setglobal(l,"bogus");
-	if (status != 0)
-	{
-		lua_pop(l, 0);      
-		printf ("Error loading file\n");
-	}
+   if (status != 0)
+   {
+      lua_pop(l, 0);      
+      printf ("Error loading file\n");
+   }
    for(i=0;i<HOW_MANY_TIMES;i++){
       lua_getglobal(l,"bogus");
       lua_pcall( l, 0, 0, 0 );  // .. or whatever args you use to pcall
    }
-	report(l, status);
+   report(l, status);
 #ifndef DISABLE_PRINTING
-	printf("x value after script [%d]\n",x);
+   printf("x value after script [%d]\n",x);
 #endif
-	//Remember to destroy the Lua State 
+   //Remember to destroy the Lua State 
     lua_close(l);
 
 }
@@ -139,27 +140,27 @@ void Run_Lua()
 
 char *ReadFile(const char *script_name)
 {
-	char *str_buff;
-	
-	struct stat stat_buffer;
-	size_t file_size,numread;
-	FILE *input;
-	if(stat(script_name,&stat_buffer)!=0)
+   char *str_buff;
+   
+   struct stat stat_buffer;
+   size_t file_size,numread;
+   FILE *input;
+   if(stat(script_name,&stat_buffer)!=0)
     {
        return NULL;
     } 
-	input = fopen(script_name, "r");
-	file_size=stat_buffer.st_size;
-	str_buff=(char*)malloc(file_size+1);
+   input = fopen(script_name, "r");
+   file_size=stat_buffer.st_size;
+   str_buff=(char*)malloc(file_size+1);
     numread = fread((char*)str_buff,sizeof(char),file_size,input);
-	str_buff[numread]='\0';
+   str_buff[numread]='\0';
     if(numread<=0)
     {
-		free(str_buff);
-		return NULL;
+      free(str_buff);
+      return NULL;
     }
-	fclose(input);
-	return str_buff;
+   fclose(input);
+   return str_buff;
 }
 
 int LogWithColor(lua_State *L)
@@ -327,7 +328,7 @@ char * RunLuaPage(const char*func)
 int RunConfiguration(const char *filename)
 {
    int ret;
-   char *path;
+   char path[PATH_MAX+1];
    L = luaL_newstate();
 
    if (!L)
@@ -350,22 +351,23 @@ int RunConfiguration(const char *filename)
 
    lua_register(L, "SetHTML", SetHTML);
 
-   path = getwd(NULL);
-   log_debug("current dir",path);
-   free(path);
+   if(! getcwd(path,PATH_MAX)){
+      log_error("unable to get current path!i[%d-%s]",errno,strerror(errno));
+   }
+   log_debug("current dir[%s]",path);
    //change current dir to scripts dir!
    if(chdir("BO/CPP/BENCH/scripts"))
    {
       log_info("problem changing current dir to 'scripts' to run lua files!");
    }
 
-	ret = luaL_loadfile(L,filename);
+   ret = luaL_loadfile(L,filename);
    lua_setglobal(L,"GetPerformancePage");
-	if (ret != 0)
-	{
-		lua_pop(L, 0);      
-		log_error ("Error loading file\n");
-	}
+   if (ret != 0)
+   {
+      lua_pop(L, 0);      
+      log_error ("Error loading file\n");
+   }
 
    return 0;
 }
