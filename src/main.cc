@@ -125,7 +125,7 @@ static void get_process_parent_id(const pid_t pid, pid_t * ppid)
 		}
 		fclose(fp);
 	}
-   
+
 }
 void cleanup_bo()
 {
@@ -558,7 +558,7 @@ void after_read(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
                   _log_debug_("\\n\n");
                else
                   _log_debug_("%02X", buf->base[i]);
-          } 
+          }
       }*/
    }
    if(path){
@@ -589,7 +589,7 @@ void after_read(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
          p_service=NULL;
          req = (write_req_t*) malloc(sizeof(write_req_t));
          const char* r404="HTTP/1.1 404 Not Found\r\nContent-Length: 35\r\nConnection: close\r\n\r\n<html><h1>404 NOT FOUND</h1></html>\r\n";
-         
+
          /*req->buf.base = strdup((char*)r404); //= uv_buf_init((char*)r404, strlen(r404)+1);
          req->buf.len  = strlen(r404)+1;*/
          req->buf = uv_buf_init((char*)r404, strlen(r404)+1);
@@ -606,7 +606,7 @@ void after_read(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)
       if(p_service && p_service ->workers)
       {
          uv_fileno((const uv_handle_t*) client, &fd);
-         worker = &p_service->workers[p_service->round_robin_counter]; 
+         worker = &p_service->workers[p_service->round_robin_counter];
          req = (write_req_t*) malloc(sizeof(write_req_t));
          /*req->buf.base = strdup("a");//uv_buf_init("a", 1);
          req->buf.len  = 1;*/
@@ -1068,9 +1068,12 @@ void test_configuration()
 
 int main(int argc, const char **argv)
 {
+   const char *version="Version 1.0.0";
    GOOGLE_PROTOBUF_VERIFY_VERSION;
    loop = create_loop();
-   InitializeLog();
+   InitializeLog(stdout);
+   log_info("%s",version);
+
    RunConfiguration("scripts/init.lua");
    cleanup_bo();
    //test_configuration();

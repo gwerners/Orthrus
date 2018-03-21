@@ -22,7 +22,7 @@ extern FILE* log_output;
 
 const char *timestamp();
 
-void InitializeLog();
+void InitializeLog(FILE *out);
 
 //next line make log more "clean"
 //#define BASIC_LOG

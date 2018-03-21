@@ -18,3 +18,9 @@ plugin/Rest-2.0/libM4UI-Rest-2.0.so
 plugin/Rest-2.0/request.pb.cc
 plugin/Rest-2.0/request.pb.h
 ._LuaJIT-2.0.3
+src/request.pb.cc
+src/request.pb.h
+src/response.pb.cc
+src/response.pb.h
+libraries/*
+BO/*
