@@ -19,3 +19,11 @@ cd ../../..
 cd BO_src/CPP/BENCH
 ./clean.bash
 cd ../../..
+
+cd plugin/Rest-2.0
+./clean.bash
+cd ../..
+
+cd plugin/Rest-1.0
+./clean.bash
+cd ../..
