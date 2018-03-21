@@ -32,7 +32,7 @@ import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
-import com.m4u_interfaces.request.RequestProtos.Request;
+import com.interfaces.request.RequestProtos.Request;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 class Worker

@@ -47,8 +47,8 @@ uv_pipe_t queue;
 uv_pipe_t stdin_pipe;
 uv_pipe_t stdout_pipe;
 
-m4u_interfaces::RequestBlock req_msg;
-m4u_interfaces::ResponseBlock res_msg;
+interfaces::RequestBlock req_msg;
+interfaces::ResponseBlock res_msg;
 
 uv_stream_t* last_client = NULL;
 uv_stream_t* close_client = NULL;
@@ -107,7 +107,7 @@ new_answer_request(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf)
   page[0] = '\0';
   page2[0] = '\0';
   body[0] = '\0';
-  m4u_interfaces::Request request;
+  interfaces::Request request;
   request.Clear();
   if (nread < 0) {
     if (nread != UV_EOF) {
@@ -157,7 +157,7 @@ new_answer_request(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf)
   if (request.headers_size() > 0) {
     strcat(page, "  <h1>Parameters:</h1>\n");
     for (int j = 0; j < request.headers_size(); j++) {
-      const m4u_interfaces::Request::Header& headers = request.headers(j);
+      const interfaces::Request::Header& headers = request.headers(j);
       strcat(page, "  <p>");
       strcat(page, headers.key().c_str());
       strcat(page, " -> ");

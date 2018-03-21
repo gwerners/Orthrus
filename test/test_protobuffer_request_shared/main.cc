@@ -17,37 +17,37 @@ using namespace std;
 struct ScannerPlugin scanner_plugin;
 
 void
-ListRequests(const m4u_interfaces::MessageBlock& msg)
+ListRequests(const interfaces::MessageBlock& msg)
 {
   for (int i = 0; i < msg.request_size(); i++) {
-    const m4u_interfaces::Request& request = msg.request(i);
+    const interfaces::Request& request = msg.request(i);
     cout << "###########################################" << endl;
     cout << " path: " << request.path() << endl;
 
     cout << " Method : ";
     switch (request.type()) {
-      case m4u_interfaces::Request::GET:
+      case interfaces::Request::GET:
         cout << "GET" << endl;
         break;
-      case m4u_interfaces::Request::HEAD:
+      case interfaces::Request::HEAD:
         cout << "HEAD" << endl;
         break;
-      case m4u_interfaces::Request::POST:
+      case interfaces::Request::POST:
         cout << "POST" << endl;
         break;
-      case m4u_interfaces::Request::PUT:
+      case interfaces::Request::PUT:
         cout << "PUT" << endl;
         break;
-      case m4u_interfaces::Request::DELETE:
+      case interfaces::Request::DELETE:
         cout << "DELETE" << endl;
         break;
-      case m4u_interfaces::Request::CONNECT:
+      case interfaces::Request::CONNECT:
         cout << "CONNECT" << endl;
         break;
-      case m4u_interfaces::Request::OPTIONS:
+      case interfaces::Request::OPTIONS:
         cout << "OPTIONS" << endl;
         break;
-      case m4u_interfaces::Request::TRACE:
+      case interfaces::Request::TRACE:
         cout << "TRACE" << endl;
         break;
     }
@@ -55,7 +55,7 @@ ListRequests(const m4u_interfaces::MessageBlock& msg)
     if (request.params_size() > 0) {
       cout << " Parameters : " << endl;
       for (int j = 0; j < request.params_size(); j++) {
-        const m4u_interfaces::Request::Parameters& parameter =
+        const interfaces::Request::Parameters& parameter =
           request.params(j);
 
         cout << "  " << parameter.key() << ":" << parameter.value() << endl;
@@ -164,7 +164,7 @@ main()
   int ret;
   char *str, *output;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
-  m4u_interfaces::MessageBlock msg;
+  interfaces::MessageBlock msg;
 
   // load plugin
   LoadPlugin("libM4UI-Rest-1.0.so");

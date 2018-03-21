@@ -38,10 +38,10 @@ using namespace std;
 struct ScannerPlugin scanner_plugin;
 
 void
-ListRequests(const m4u_interfaces::RequestBlock& msg)
+ListRequests(const interfaces::RequestBlock& msg)
 {
   for (int i = 0; i < msg.request_size(); i++) {
-    const m4u_interfaces::Request& request = msg.request(i);
+    const interfaces::Request& request = msg.request(i);
     log_debug("###########################################");
     log_debug(" scheme:%s ", request.scheme().c_str());
     log_debug(" name: %s", request.name().c_str());
@@ -85,7 +85,7 @@ ListRequests(const m4u_interfaces::RequestBlock& msg)
     if (request.chunks_size() > 0) {
       log_debug(" Chunks : ");
       for (int j = 0; j < request.chunks_size(); j++) {
-        const m4u_interfaces::Request::Chunk& chunk = request.chunks(j);
+        const interfaces::Request::Chunk& chunk = request.chunks(j);
         log_debug("  %d", chunk.length());
       }
     }
@@ -101,7 +101,7 @@ ListRequests(const m4u_interfaces::RequestBlock& msg)
     if (request.headers_size() > 0) {
       log_debug(" Headers : ");
       for (int j = 0; j < request.headers_size(); j++) {
-        const m4u_interfaces::Request::Header& header = request.headers(j);
+        const interfaces::Request::Header& header = request.headers(j);
         log_debug("  %s: %s", header.key().c_str(), header.value().c_str());
       }
     }
@@ -260,7 +260,7 @@ main()
   int ret;
   char *str, *output, *path;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
-  m4u_interfaces::RequestBlock msg;
+  interfaces::RequestBlock msg;
 
   InitializeLog();
   // load plugin

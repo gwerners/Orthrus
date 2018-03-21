@@ -1925,7 +1925,7 @@ Cache-Control: max-age=0
 */
 
 void
-PromptForRequest(m4u_interfaces::Request* request)
+PromptForRequest(interfaces::Request* request)
 {
   /*cin.ignore(256, '\n');
   cout << "Enter path: ";
@@ -1936,21 +1936,21 @@ PromptForRequest(m4u_interfaces::Request* request)
   string type;
   getline(cin, type);
   if (type == "GET") {
-     request->set_type(m4u_interfaces::Request::GET);
+     request->set_type(interfaces::Request::GET);
   } else if (type == "HEAD") {
-     request->set_type(m4u_interfaces::Request::HEAD);
+     request->set_type(interfaces::Request::HEAD);
   } else if (type == "POST") {
-     request->set_type(m4u_interfaces::Request::POST);
+     request->set_type(interfaces::Request::POST);
   } else if (type == "PUT") {
-     request->set_type(m4u_interfaces::Request::PUT);
+     request->set_type(interfaces::Request::PUT);
   } else if (type == "DELETE") {
-     request->set_type(m4u_interfaces::Request::DELETE);
+     request->set_type(interfaces::Request::DELETE);
   } else if (type == "CONNECT") {
-     request->set_type(m4u_interfaces::Request::CONNECT);
+     request->set_type(interfaces::Request::CONNECT);
   } else if (type == "OPTIONS") {
-     request->set_type(m4u_interfaces::Request::OPTIONS);
+     request->set_type(interfaces::Request::OPTIONS);
   } else if (type == "TRACE") {
-     request->set_type(m4u_interfaces::Request::TRACE);
+     request->set_type(interfaces::Request::TRACE);
   } else {
      cout << "Unknown method type.  Using default." << endl;
   }
@@ -1964,7 +1964,7 @@ PromptForRequest(m4u_interfaces::Request* request)
         break;
      }
 
-     m4u_interfaces::Request::Parameters* parameter = request->add_params();
+     interfaces::Request::Parameters* parameter = request->add_params();
      parameter->set_key(key);
      cout << "value: ";
      string value;

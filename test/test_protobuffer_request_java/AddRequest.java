@@ -1,7 +1,7 @@
 // See README.txt for information and build instructions.
 
-import com.m4u_interfaces.request.RequestProtos.MessageBlock;
-import com.m4u_interfaces.request.RequestProtos.Request;
+import com.interfaces.request.RequestProtos.MessageBlock;
+import com.interfaces.request.RequestProtos.Request;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -13,7 +13,7 @@ OS="$(uname)"
 export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$PATH:$JAVA_HOME/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/jvm/default-java/jre/lib/amd64/server
-export CLASSPATH=`pwd`/BO/JAVA/USSD/com/m4u_interfaces/request:${LIBRARIES}/lib/protobuf-java-3.0.0-beta-1.jar
+export CLASSPATH=`pwd`/BO/JAVA/USSD/com/interfaces/request:${LIBRARIES}/lib/protobuf-java-3.0.0-beta-1.jar
 
 #rpath set the default shared library search path inside the binary!
 RPATH="-Wl,-rpath ./libraries/lib"

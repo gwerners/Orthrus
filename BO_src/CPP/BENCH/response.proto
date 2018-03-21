@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package m4u_interfaces;
+package interfaces;
 
-option java_package = "com.m4u_interfaces.response";
+option java_package = "com.interfaces.response";
 option java_outer_classname = "ResponseProtos";
 
 message Response {

@@ -18,6 +18,9 @@ admin_port=8086
 
 LogWithColor(true)--default is false!
 
+--DisableLog(LOG_DEBUG)--remove any debug entry from log!
+LogDebug("appearing?")
+
 --AbortOnError(true)
 
 PrintPID()
@@ -33,9 +36,9 @@ CreateTcp4AdminServer(admin_port)
 CLASSPATH=
    "-Djava.class.path=" .. os.getenv("PWD") ..
    ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD" ..
-   ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD/com" .. 
-   ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD/com/m4u_interfaces" ..
-   ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD/com/m4u_interfaces/request" ..
+   ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD/com" ..
+   ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD/com/interfaces" ..
+   ":" .. os.getenv("PWD") .. "/BO/JAVA/USSD/com/interfaces/request" ..
    ":" .. os.getenv("PWD") .. "/libraries/lib/protobuf-java-3.0.0-beta-1.jar"
 
 LogInfo(CLASSPATH)
@@ -106,8 +109,7 @@ LogDebug("test RestScanner")
 RestScanner(request)
 LogDebug("test RestScanner ENDED")
 
---DisableLog(LOG_DEBUG)--remove any debug entry from log!
---LogDebug("appearing?")
+
 --server will start event processing:
 ProcessEvents() --will block and do the server stuff...
 

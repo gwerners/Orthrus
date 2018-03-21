@@ -1,3 +1,14 @@
+▒█████   ██▀███  ▄▄▄█████▓ ██░ ██  ██▀███   █    ██   ██████ 
+▒██▒  ██▒▓██ ▒ ██▒▓  ██▒ ▓▒▓██░ ██▒▓██ ▒ ██▒ ██  ▓██▒▒██    ▒
+▒██░  ██▒▓██ ░▄█ ▒▒ ▓██░ ▒░▒██▀▀██░▓██ ░▄█ ▒▓██  ▒██░░ ▓██▄   
+▒██   ██░▒██▀▀█▄  ░ ▓██▓ ░ ░▓█ ░██ ▒██▀▀█▄  ▓▓█  ░██░  ▒   ██▒
+░ ████▓▒░░██▓ ▒██▒  ▒██▒ ░ ░▓█▒░██▓░██▓ ▒██▒▒▒█████▓ ▒██████▒▒
+░ ▒░▒░▒░ ░ ▒▓ ░▒▓░  ▒ ░░    ▒ ░░▒░▒░ ▒▓ ░▒▓░░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░
+ ░ ▒ ▒░   ░▒ ░ ▒░    ░     ▒ ░▒░ ░  ░▒ ░ ▒░░░▒░ ░ ░ ░ ░▒  ░ ░
+░ ░ ░ ▒    ░░   ░   ░       ░  ░░ ░  ░░   ░  ░░░ ░ ░ ░  ░  ░  
+   ░ ░     ░               ░  ░  ░   ░        ░           ░  
+
+
 # Orthrus
 In Greek mythology, Orthrus (Greek: Ὄρθρος, Orthros) or Orthus (Greek: Ὄρθος, Orthos) was, according to the mythographer Apollodorus, a two-headed dog who guarded Geryon's cattle and was killed by Heracles. He was the offspring of the monsters Echidna and Typhon, and the brother of Cerberus, who was also a multi-headed guard dog. This project (as the monster) have more than one "face". It is a REST framework done in C++, Lua, Java and aim to enable multilanguage REST modules.
 
@@ -6,7 +17,7 @@ Directories:
 
 -BO_src - REST modules (C++ and Java)
 
--ksh    - helper ksh functions to build opensource modules
+-bash    - helper ksh functions to build opensource modules
 
 -open_source - copy of used open source libraries
 
@@ -28,6 +39,6 @@ already have the socket descriptor to answer anytime in the future...
 
 3)enable a fast url2module using regular expression.
 
+4)review log library: need to be unified, log to file and check for performance.
 
 Gabriel W Farinas
-

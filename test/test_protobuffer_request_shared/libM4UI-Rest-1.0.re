@@ -23,7 +23,7 @@ extern "C"
 {
 
 static int InternalScanner(
-m4u_interfaces::Request* request,
+interfaces::Request* request,
 const char * cursor, 
 const char * const limit,
 int *var_method,
@@ -32,7 +32,7 @@ int *var_version,
 Position *uri,
 Position *body )
 {
-   m4u_interfaces::Request::Parameters* parameter;
+   interfaces::Request::Parameters* parameter;
    std::string key,value;
    const char * marker;
    const char * ctxmarker;
@@ -60,14 +60,14 @@ Position *body )
 
    /*!re2c
 		""{ *var_method=0;goto lbl_method;}
-		"GET"{ *var_method=1;request->set_type(m4u_interfaces::Request::GET);goto lbl_method;}
-		"HEAD"{ *var_method=2;request->set_type(m4u_interfaces::Request::HEAD);goto lbl_method;}
-		"POST"{ *var_method=3;request->set_type(m4u_interfaces::Request::POST);goto lbl_method;}
-		"PUT"{ *var_method=4;request->set_type(m4u_interfaces::Request::PUT);goto lbl_method;}
-		"DELETE"{ *var_method=5;request->set_type(m4u_interfaces::Request::DELETE);goto lbl_method;}
-		"CONNECT"{ *var_method=6;request->set_type(m4u_interfaces::Request::CONNECT);goto lbl_method;}
-		"OPTIONS"{ *var_method=7;request->set_type(m4u_interfaces::Request::OPTIONS);goto lbl_method;}
-		"TRACE"{ *var_method=8;request->set_type(m4u_interfaces::Request::TRACE);goto lbl_method;}
+		"GET"{ *var_method=1;request->set_type(interfaces::Request::GET);goto lbl_method;}
+		"HEAD"{ *var_method=2;request->set_type(interfaces::Request::HEAD);goto lbl_method;}
+		"POST"{ *var_method=3;request->set_type(interfaces::Request::POST);goto lbl_method;}
+		"PUT"{ *var_method=4;request->set_type(interfaces::Request::PUT);goto lbl_method;}
+		"DELETE"{ *var_method=5;request->set_type(interfaces::Request::DELETE);goto lbl_method;}
+		"CONNECT"{ *var_method=6;request->set_type(interfaces::Request::CONNECT);goto lbl_method;}
+		"OPTIONS"{ *var_method=7;request->set_type(interfaces::Request::OPTIONS);goto lbl_method;}
+		"TRACE"{ *var_method=8;request->set_type(interfaces::Request::TRACE);goto lbl_method;}
    */
 lbl_method:
    if(!*var_method)
@@ -211,7 +211,7 @@ int Scanner(const char * input,const char*limit,char **output, int olen )
    Position uri;
    Position body;
    std::string str_output;
-   m4u_interfaces::MessageBlock msg;
+   interfaces::MessageBlock msg;
    int ret,var_method,var_uri,var_version;
    ret=InternalScanner(msg.add_request(),input, limit,&var_method,&var_uri,&var_version,&uri,&body);
 

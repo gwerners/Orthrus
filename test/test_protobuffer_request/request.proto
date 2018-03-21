@@ -2,9 +2,9 @@
 
 syntax = "proto3";
 
-package m4u_interfaces;
+package interfaces;
 
-option java_package = "com.m4u_interfaces.request";
+option java_package = "com.interfaces.request";
 option java_outer_classname = "RequestProtos";
 
 message Request {

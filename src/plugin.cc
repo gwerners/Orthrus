@@ -90,10 +90,10 @@ LoadScannerPlugin(const char* name)
 {
   memset(&scanner_plugin, 0, sizeof(scanner_plugin));
 #ifndef USE_UV_PLUGIN
-  printf("loading [%s]\n", name);
+  log_debug("loading [%s]\n", name);
   scanner_plugin.handle = dlopen(name, RTLD_LAZY);
   if (!scanner_plugin.handle) {
-    printf("unable to load [%s] due to [%s]\n", name, dlerror());
+    log_debug("unable to load [%s] due to [%s]\n", name, dlerror());
   }
   scanner_plugin.p_version =
     (unsigned long (*)(void))dlsym(scanner_plugin.handle, "version");
@@ -106,13 +106,13 @@ LoadScannerPlugin(const char* name)
   scanner_plugin.p_str_err =
     (const char* (*)(int))dlsym(scanner_plugin.handle, "str_err");
 
-  printf("scanner_plugin.handle[%p]\n", scanner_plugin.handle);
-  printf("scanner_plugin.version[%p]\n", scanner_plugin.p_version);
+  log_debug("scanner_plugin.handle[%p]\n", scanner_plugin.handle);
+  log_debug("scanner_plugin.version[%p]\n", scanner_plugin.p_version);
   fflush(stdout);
 #else
   scanner_plugin.handle = (uv_lib_t*)malloc(sizeof(uv_lib_t));
 
-  printf("Loading %s\n", name);
+  log_debug("Loading %s\n", name);
   if (uv_dlopen(name, scanner_plugin.handle)) {
     fprintf(stderr, "Error: %s\n", uv_dlerror(scanner_plugin.handle));
     return;

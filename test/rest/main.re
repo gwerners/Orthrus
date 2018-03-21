@@ -54,9 +54,9 @@ const char*StrScanErr(int error)
    return "invalid error number";
 }
 
-int scanner(m4u_interfaces::Request* request,const char * cursor, const char * const limit,int *var_method,int *var_uri,int *var_version,Position *uri,Position *body )
+int scanner(interfaces::Request* request,const char * cursor, const char * const limit,int *var_method,int *var_uri,int *var_version,Position *uri,Position *body )
 {
-   m4u_interfaces::Request::Parameters* parameter;
+   interfaces::Request::Parameters* parameter;
    std::string key,value;
    const char * marker;
    const char * ctxmarker;
@@ -84,14 +84,14 @@ int scanner(m4u_interfaces::Request* request,const char * cursor, const char * c
 
    /*!re2c
 		""{ *var_method=0;goto lbl_method;}
-		"GET"{ *var_method=1;request->set_type(m4u_interfaces::Request::GET);goto lbl_method;}
-		"HEAD"{ *var_method=2;request->set_type(m4u_interfaces::Request::HEAD);goto lbl_method;}
-		"POST"{ *var_method=3;request->set_type(m4u_interfaces::Request::POST);goto lbl_method;}
-		"PUT"{ *var_method=4;request->set_type(m4u_interfaces::Request::PUT);goto lbl_method;}
-		"DELETE"{ *var_method=5;request->set_type(m4u_interfaces::Request::DELETE);goto lbl_method;}
-		"CONNECT"{ *var_method=6;request->set_type(m4u_interfaces::Request::CONNECT);goto lbl_method;}
-		"OPTIONS"{ *var_method=7;request->set_type(m4u_interfaces::Request::OPTIONS);goto lbl_method;}
-		"TRACE"{ *var_method=8;request->set_type(m4u_interfaces::Request::TRACE);goto lbl_method;}
+		"GET"{ *var_method=1;request->set_type(interfaces::Request::GET);goto lbl_method;}
+		"HEAD"{ *var_method=2;request->set_type(interfaces::Request::HEAD);goto lbl_method;}
+		"POST"{ *var_method=3;request->set_type(interfaces::Request::POST);goto lbl_method;}
+		"PUT"{ *var_method=4;request->set_type(interfaces::Request::PUT);goto lbl_method;}
+		"DELETE"{ *var_method=5;request->set_type(interfaces::Request::DELETE);goto lbl_method;}
+		"CONNECT"{ *var_method=6;request->set_type(interfaces::Request::CONNECT);goto lbl_method;}
+		"OPTIONS"{ *var_method=7;request->set_type(interfaces::Request::OPTIONS);goto lbl_method;}
+		"TRACE"{ *var_method=8;request->set_type(interfaces::Request::TRACE);goto lbl_method;}
    */
 lbl_method:
    if(!*var_method)
@@ -210,37 +210,37 @@ lbl_expect_body:
    request->set_body(value);
    return 1;
 }
-void ListRequests(const m4u_interfaces::MessageBlock& msg)
+void ListRequests(const interfaces::MessageBlock& msg)
 {
    for (int i = 0; i < msg.request_size(); i++) {
-      const m4u_interfaces::Request& request = msg.request(i);
+      const interfaces::Request& request = msg.request(i);
       cout << "###########################################" << endl;
       cout << " path: " << request.path() << endl;
 
       cout << " Method : ";
       switch (request.type()) {
-         case m4u_interfaces::Request::GET:
+         case interfaces::Request::GET:
             cout << "GET" << endl;
             break;
-         case m4u_interfaces::Request::HEAD:
+         case interfaces::Request::HEAD:
             cout << "HEAD" << endl;
             break;
-         case m4u_interfaces::Request::POST:
+         case interfaces::Request::POST:
             cout << "POST" << endl;
             break;
-         case m4u_interfaces::Request::PUT:
+         case interfaces::Request::PUT:
             cout << "PUT" << endl;
             break;
-         case m4u_interfaces::Request::DELETE:
+         case interfaces::Request::DELETE:
             cout << "DELETE" << endl;
             break;
-         case m4u_interfaces::Request::CONNECT:
+         case interfaces::Request::CONNECT:
             cout << "CONNECT" << endl;
             break;
-         case m4u_interfaces::Request::OPTIONS:
+         case interfaces::Request::OPTIONS:
             cout << "OPTIONS" << endl;
             break;
-         case m4u_interfaces::Request::TRACE:
+         case interfaces::Request::TRACE:
             cout << "TRACE" << endl;
             break;
       }
@@ -249,7 +249,7 @@ void ListRequests(const m4u_interfaces::MessageBlock& msg)
       {
          cout << " Parameters : "<<endl;
          for (int j = 0; j < request.params_size(); j++) {
-            const m4u_interfaces::Request::Parameters& parameter = request.params(j);
+            const interfaces::Request::Parameters& parameter = request.params(j);
 
             cout << "  " << parameter.key() << ":" <<parameter.value() << endl;
          }
@@ -289,7 +289,7 @@ int main ()
    char *str;
    char buffer[127];
    GOOGLE_PROTOBUF_VERIFY_VERSION;
-   m4u_interfaces::MessageBlock msg;
+   interfaces::MessageBlock msg;
 
    str=(char*)malloc(1024);
    strcpy(str,

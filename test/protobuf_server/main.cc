@@ -217,7 +217,7 @@ setup_workers()
 }
 
 void
-PromptForRequest(m4u_interfaces::Request* request)
+PromptForRequest(interfaces::Request* request)
 {
   // cout << "Enter socket: ";
   // int socket;
@@ -233,21 +233,21 @@ PromptForRequest(m4u_interfaces::Request* request)
   string type;
   getline(cin, type);
   if (type == "GET") {
-    request->set_type(m4u_interfaces::Request::GET);
+    request->set_type(interfaces::Request::GET);
   } else if (type == "HEAD") {
-    request->set_type(m4u_interfaces::Request::HEAD);
+    request->set_type(interfaces::Request::HEAD);
   } else if (type == "POST") {
-    request->set_type(m4u_interfaces::Request::POST);
+    request->set_type(interfaces::Request::POST);
   } else if (type == "PUT") {
-    request->set_type(m4u_interfaces::Request::PUT);
+    request->set_type(interfaces::Request::PUT);
   } else if (type == "DELETE") {
-    request->set_type(m4u_interfaces::Request::DELETE);
+    request->set_type(interfaces::Request::DELETE);
   } else if (type == "CONNECT") {
-    request->set_type(m4u_interfaces::Request::CONNECT);
+    request->set_type(interfaces::Request::CONNECT);
   } else if (type == "OPTIONS") {
-    request->set_type(m4u_interfaces::Request::OPTIONS);
+    request->set_type(interfaces::Request::OPTIONS);
   } else if (type == "TRACE") {
-    request->set_type(m4u_interfaces::Request::TRACE);
+    request->set_type(interfaces::Request::TRACE);
   } else {
     cout << "Unknown method type.  Using default." << endl;
   }
@@ -261,7 +261,7 @@ PromptForRequest(m4u_interfaces::Request* request)
       break;
     }
 
-    m4u_interfaces::Request::Parameters* parameter = request->add_params();
+    interfaces::Request::Parameters* parameter = request->add_params();
     parameter->set_key(key);
     cout << "value: ";
     string value;
@@ -272,38 +272,38 @@ PromptForRequest(m4u_interfaces::Request* request)
   getline(cin, *request->mutable_body());
 }
 void
-ListRequests(const m4u_interfaces::MessageBlock& msg)
+ListRequests(const interfaces::MessageBlock& msg)
 {
   for (int i = 0; i < msg.request_size(); i++) {
-    const m4u_interfaces::Request& request = msg.request(i);
+    const interfaces::Request& request = msg.request(i);
     cout << "###########################################" << endl;
     // cout << " socket: " << request.socket() << endl;
     cout << " path: " << request.path() << endl;
 
     cout << " Method : ";
     switch (request.type()) {
-      case m4u_interfaces::Request::GET:
+      case interfaces::Request::GET:
         cout << "GET" << endl;
         break;
-      case m4u_interfaces::Request::HEAD:
+      case interfaces::Request::HEAD:
         cout << "HEAD" << endl;
         break;
-      case m4u_interfaces::Request::POST:
+      case interfaces::Request::POST:
         cout << "POST" << endl;
         break;
-      case m4u_interfaces::Request::PUT:
+      case interfaces::Request::PUT:
         cout << "PUT" << endl;
         break;
-      case m4u_interfaces::Request::DELETE:
+      case interfaces::Request::DELETE:
         cout << "DELETE" << endl;
         break;
-      case m4u_interfaces::Request::CONNECT:
+      case interfaces::Request::CONNECT:
         cout << "CONNECT" << endl;
         break;
-      case m4u_interfaces::Request::OPTIONS:
+      case interfaces::Request::OPTIONS:
         cout << "OPTIONS" << endl;
         break;
-      case m4u_interfaces::Request::TRACE:
+      case interfaces::Request::TRACE:
         cout << "TRACE" << endl;
         break;
     }
@@ -311,7 +311,7 @@ ListRequests(const m4u_interfaces::MessageBlock& msg)
     if (request.params_size() > 0) {
       cout << " Parameters : " << endl;
       for (int j = 0; j < request.params_size(); j++) {
-        const m4u_interfaces::Request::Parameters& parameter =
+        const interfaces::Request::Parameters& parameter =
           request.params(j);
 
         cout << "  " << parameter.key() << ":" << parameter.value() << endl;
@@ -330,7 +330,7 @@ test_write(int argc, char** argv)
     return -1;
   }
 
-  m4u_interfaces::MessageBlock msg;
+  interfaces::MessageBlock msg;
 
   {
     // Read the existing request
@@ -366,7 +366,7 @@ test_read(int argc, char** argv)
     return -1;
   }
 
-  m4u_interfaces::MessageBlock msg;
+  interfaces::MessageBlock msg;
 
   {
     // Read the existing request

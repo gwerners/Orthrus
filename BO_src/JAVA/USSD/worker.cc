@@ -73,8 +73,8 @@ uv_pipe_t queue;
 uv_pipe_t stdin_pipe;
 uv_pipe_t stdout_pipe;
 
-m4u_interfaces::RequestBlock req_msg;
-m4u_interfaces::ResponseBlock res_msg;
+interfaces::RequestBlock req_msg;
+interfaces::ResponseBlock res_msg;
 
 char* default_class_path = (char*)"-Djava.class.path=.";
 
@@ -100,12 +100,12 @@ after_shutdown(uv_shutdown_t* req, int status)
   }
 }
 void
-FillRequest(m4u_interfaces::Request* request)
+FillRequest(interfaces::Request* request)
 {
   std::string key;
   std::string value;
-  m4u_interfaces::Request::Header* headers;
-  m4u_interfaces::Request::Chunk* chunks;
+  interfaces::Request::Header* headers;
+  interfaces::Request::Chunk* chunks;
   request->set_scheme("http");
   request->set_name("ussd");
   request->set_raw("raw request");
@@ -132,7 +132,7 @@ FillRequest(m4u_interfaces::Request* request)
   request->set_session("@#$@%@#$@!#$@#$%&%(O%IJHFSF@#%@B%@#$%@B#");
 }
 void
-ListRequests(const m4u_interfaces::Request& request)
+ListRequests(const interfaces::Request& request)
 {
   log_debug("###########################################");
   log_debug(" scheme:%s ", request.scheme().c_str());
@@ -158,7 +158,7 @@ ListRequests(const m4u_interfaces::Request& request)
   if (request.chunks_size() > 0) {
     log_debug(" Chunks : ");
     for (int j = 0; j < request.chunks_size(); j++) {
-      const m4u_interfaces::Request::Chunk& chunk = request.chunks(j);
+      const interfaces::Request::Chunk& chunk = request.chunks(j);
       log_debug("  %d", chunk.length());
     }
   }
@@ -170,7 +170,7 @@ ListRequests(const m4u_interfaces::Request& request)
   if (request.headers_size() > 0) {
     log_debug(" Headers : ");
     for (int j = 0; j < request.headers_size(); j++) {
-      const m4u_interfaces::Request::Header& header = request.headers(j);
+      const interfaces::Request::Header& header = request.headers(j);
       log_debug("  %s: %s", header.key().c_str(), header.value().c_str());
     }
   }
@@ -205,7 +205,7 @@ new_answer_request(uv_stream_t* q, ssize_t nread, const uv_buf_t* buf)
   HANDLE(q);
   HANDLE(buf);
 #ifdef DEBUG_ME
-  m4u_interfaces::Request msg;
+  interfaces::Request msg;
 #endif
   log_debug("java called to answer client->");
 #ifdef DEBUG_ME

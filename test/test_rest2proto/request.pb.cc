@@ -16,7 +16,7 @@
 #include <google/protobuf/wire_format_lite_inl.h>
 // @@protoc_insertion_point(includes)
 
-namespace m4u_interfaces {
+namespace interfaces {
 
 namespace {
 
@@ -144,11 +144,11 @@ protobuf_AddDesc_request_2eproto()
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rrequest.proto\022\016m4u_interfaces\"\232\002\n\007Requ"
+    "\n\rrequest.proto\022\016interfaces\"\232\002\n\007Requ"
     "est\022\014\n\004path\030\001 \001(\t\0220\n\004type\030\002 "
-    "\001(\0162\".m4u_in"
+    "\001(\0162\".in"
     "terfaces.Request.MethodType\0222\n\006params\030\003 "
-    "\003(\0132\".m4u_interfaces.Request.Parameters\022"
+    "\003(\0132\".interfaces.Request.Parameters\022"
     "\014\n\004body\030\004 "
     "\001(\t\032(\n\nParameters\022\013\n\003key\030\001 \001(\t"
     "\022\r\n\005value\030\002 "
@@ -157,8 +157,8 @@ protobuf_AddDesc_request_2eproto()
     "\n\n\006DELETE\020\004\022"
     "\013\n\007CONNECT\020\005\022\013\n\007OPTIONS\020\006\022\t\n\005TRACE"
     "\020\007\"8\n\014"
-    "MessageBlock\022(\n\007request\030\001 \003(\0132\027.m4u_inte"
-    "rfaces.RequestB+\n\032com.m4u_interfaces.req"
+    "MessageBlock\022(\n\007request\030\001 \003(\0132\027.inte"
+    "rfaces.RequestB+\n\032com.interfaces.req"
     "uestB\rRequestProtosb\006proto3",
     427);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
@@ -243,7 +243,7 @@ Request_Parameters::Request_Parameters()
   , _internal_metadata_(NULL)
 {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(constructor:interfaces.Request.Parameters)
 }
 
 void
@@ -258,7 +258,7 @@ Request_Parameters::Request_Parameters(const Request_Parameters& from)
 {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(copy_constructor:interfaces.Request.Parameters)
 }
 
 void
@@ -275,7 +275,7 @@ Request_Parameters::SharedCtor()
 
 Request_Parameters::~Request_Parameters()
 {
-  // @@protoc_insertion_point(destructor:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(destructor:interfaces.Request.Parameters)
   SharedDtor();
 }
 
@@ -341,7 +341,7 @@ Request_Parameters::MergePartialFromCodedStream(
   if (!(EXPRESSION))                                                           \
   goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(parse_start:interfaces.Request.Parameters)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p =
       input->ReadTagWithCutoff(127);
@@ -359,7 +359,7 @@ Request_Parameters::MergePartialFromCodedStream(
             this->key().data(),
             this->key().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "m4u_interfaces.Request.Parameters.key"));
+            "interfaces.Request.Parameters.key"));
         } else {
           goto handle_unusual;
         }
@@ -378,7 +378,7 @@ Request_Parameters::MergePartialFromCodedStream(
             this->value().data(),
             this->value().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "m4u_interfaces.Request.Parameters.value"));
+            "interfaces.Request.Parameters.value"));
         } else {
           goto handle_unusual;
         }
@@ -402,10 +402,10 @@ Request_Parameters::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(parse_success:interfaces.Request.Parameters)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(parse_failure:interfaces.Request.Parameters)
   return false;
 #undef DO_
 }
@@ -414,14 +414,14 @@ void
 Request_Parameters::SerializeWithCachedSizes(
   ::google::protobuf::io::CodedOutputStream* output) const
 {
-  // @@protoc_insertion_point(serialize_start:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(serialize_start:interfaces.Request.Parameters)
   // optional string key = 1;
   if (this->key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->key().data(),
       this->key().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.Parameters.key");
+      "interfaces.Request.Parameters.key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->key(), output);
   }
@@ -432,26 +432,26 @@ Request_Parameters::SerializeWithCachedSizes(
       this->value().data(),
       this->value().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.Parameters.value");
+      "interfaces.Request.Parameters.value");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->value(), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(serialize_end:interfaces.Request.Parameters)
 }
 
 ::google::protobuf::uint8*
 Request_Parameters::SerializeWithCachedSizesToArray(
   ::google::protobuf::uint8* target) const
 {
-  // @@protoc_insertion_point(serialize_to_array_start:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(serialize_to_array_start:interfaces.Request.Parameters)
   // optional string key = 1;
   if (this->key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->key().data(),
       this->key().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.Parameters.key");
+      "interfaces.Request.Parameters.key");
     target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
       1, this->key(), target);
   }
@@ -462,12 +462,12 @@ Request_Parameters::SerializeWithCachedSizesToArray(
       this->value().data(),
       this->value().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.Parameters.value");
+      "interfaces.Request.Parameters.value");
     target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
       2, this->value(), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(serialize_to_array_end:interfaces.Request.Parameters)
   return target;
 }
 
@@ -592,7 +592,7 @@ Request::Request()
   , _internal_metadata_(NULL)
 {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:m4u_interfaces.Request)
+  // @@protoc_insertion_point(constructor:interfaces.Request)
 }
 
 void
@@ -607,7 +607,7 @@ Request::Request(const Request& from)
 {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:m4u_interfaces.Request)
+  // @@protoc_insertion_point(copy_constructor:interfaces.Request)
 }
 
 void
@@ -625,7 +625,7 @@ Request::SharedCtor()
 
 Request::~Request()
 {
-  // @@protoc_insertion_point(destructor:m4u_interfaces.Request)
+  // @@protoc_insertion_point(destructor:interfaces.Request)
   SharedDtor();
 }
 
@@ -693,7 +693,7 @@ Request::MergePartialFromCodedStream(
   if (!(EXPRESSION))                                                           \
   goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:m4u_interfaces.Request)
+  // @@protoc_insertion_point(parse_start:interfaces.Request)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p =
       input->ReadTagWithCutoff(127);
@@ -711,7 +711,7 @@ Request::MergePartialFromCodedStream(
             this->path().data(),
             this->path().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "m4u_interfaces.Request.path"));
+            "interfaces.Request.path"));
         } else {
           goto handle_unusual;
         }
@@ -720,7 +720,7 @@ Request::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .m4u_interfaces.Request.MethodType type = 2;
+      // optional .interfaces.Request.MethodType type = 2;
       case 2: {
         if (tag == 16) {
         parse_type:
@@ -729,7 +729,7 @@ Request::MergePartialFromCodedStream(
                int,
                ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
             input, &value)));
-          set_type(static_cast<::m4u_interfaces::Request_MethodType>(value));
+          set_type(static_cast<::interfaces::Request_MethodType>(value));
         } else {
           goto handle_unusual;
         }
@@ -738,7 +738,7 @@ Request::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .m4u_interfaces.Request.Parameters params = 3;
+      // repeated .interfaces.Request.Parameters params = 3;
       case 3: {
         if (tag == 26) {
         parse_params:
@@ -767,7 +767,7 @@ Request::MergePartialFromCodedStream(
             this->body().data(),
             this->body().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "m4u_interfaces.Request.body"));
+            "interfaces.Request.body"));
         } else {
           goto handle_unusual;
         }
@@ -791,10 +791,10 @@ Request::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:m4u_interfaces.Request)
+  // @@protoc_insertion_point(parse_success:interfaces.Request)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:m4u_interfaces.Request)
+  // @@protoc_insertion_point(parse_failure:interfaces.Request)
   return false;
 #undef DO_
 }
@@ -803,25 +803,25 @@ void
 Request::SerializeWithCachedSizes(
   ::google::protobuf::io::CodedOutputStream* output) const
 {
-  // @@protoc_insertion_point(serialize_start:m4u_interfaces.Request)
+  // @@protoc_insertion_point(serialize_start:interfaces.Request)
   // optional string path = 1;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->path().data(),
       this->path().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.path");
+      "interfaces.Request.path");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->path(), output);
   }
 
-  // optional .m4u_interfaces.Request.MethodType type = 2;
+  // optional .interfaces.Request.MethodType type = 2;
   if (this->type() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->type(), output);
   }
 
-  // repeated .m4u_interfaces.Request.Parameters params = 3;
+  // repeated .interfaces.Request.Parameters params = 3;
   for (unsigned int i = 0, n = this->params_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->params(i), output);
@@ -833,37 +833,37 @@ Request::SerializeWithCachedSizes(
       this->body().data(),
       this->body().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.body");
+      "interfaces.Request.body");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->body(), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:m4u_interfaces.Request)
+  // @@protoc_insertion_point(serialize_end:interfaces.Request)
 }
 
 ::google::protobuf::uint8*
 Request::SerializeWithCachedSizesToArray(
   ::google::protobuf::uint8* target) const
 {
-  // @@protoc_insertion_point(serialize_to_array_start:m4u_interfaces.Request)
+  // @@protoc_insertion_point(serialize_to_array_start:interfaces.Request)
   // optional string path = 1;
   if (this->path().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->path().data(),
       this->path().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.path");
+      "interfaces.Request.path");
     target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
       1, this->path(), target);
   }
 
-  // optional .m4u_interfaces.Request.MethodType type = 2;
+  // optional .interfaces.Request.MethodType type = 2;
   if (this->type() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->type(), target);
   }
 
-  // repeated .m4u_interfaces.Request.Parameters params = 3;
+  // repeated .interfaces.Request.Parameters params = 3;
   for (unsigned int i = 0, n = this->params_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(3, this->params(i), target);
@@ -875,12 +875,12 @@ Request::SerializeWithCachedSizesToArray(
       this->body().data(),
       this->body().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "m4u_interfaces.Request.body");
+      "interfaces.Request.body");
     target = ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
       4, this->body(), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:m4u_interfaces.Request)
+  // @@protoc_insertion_point(serialize_to_array_end:interfaces.Request)
   return target;
 }
 
@@ -895,7 +895,7 @@ Request::ByteSize() const
                         this->path());
   }
 
-  // optional .m4u_interfaces.Request.MethodType type = 2;
+  // optional .interfaces.Request.MethodType type = 2;
   if (this->type() != 0) {
     total_size +=
       1 + ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
@@ -907,7 +907,7 @@ Request::ByteSize() const
                         this->body());
   }
 
-  // repeated .m4u_interfaces.Request.Parameters params = 3;
+  // repeated .interfaces.Request.Parameters params = 3;
   total_size += 1 * this->params_size();
   for (int i = 0; i < this->params_size(); i++) {
     total_size +=
@@ -1022,7 +1022,7 @@ Request_Parameters::clear_key()
 const ::std::string&
 Request_Parameters::key() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_get:interfaces.Request.Parameters.key)
   return key_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1032,7 +1032,7 @@ Request_Parameters::set_key(const ::std::string& value)
 
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                   value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set:interfaces.Request.Parameters.key)
 }
 void
 Request_Parameters::set_key(const char* value)
@@ -1040,7 +1040,7 @@ Request_Parameters::set_key(const char* value)
 
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                   ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.Parameters.key)
 }
 void
 Request_Parameters::set_key(const char* value, size_t size)
@@ -1048,13 +1048,13 @@ Request_Parameters::set_key(const char* value, size_t size)
 
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                   ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.Parameters.key)
 }
 ::std::string*
 Request_Parameters::mutable_key()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.Parameters.key)
   return key_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1074,7 +1074,7 @@ Request_Parameters::set_allocated_key(::std::string* key)
   }
   key_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), key);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.Parameters.key)
 }
 
 // optional string value = 2;
@@ -1087,7 +1087,7 @@ Request_Parameters::clear_value()
 const ::std::string&
 Request_Parameters::value() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_get:interfaces.Request.Parameters.value)
   return value_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1097,7 +1097,7 @@ Request_Parameters::set_value(const ::std::string& value)
 
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set:interfaces.Request.Parameters.value)
 }
 void
 Request_Parameters::set_value(const char* value)
@@ -1106,7 +1106,7 @@ Request_Parameters::set_value(const char* value)
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.Parameters.value)
 }
 void
 Request_Parameters::set_value(const char* value, size_t size)
@@ -1115,13 +1115,13 @@ Request_Parameters::set_value(const char* value, size_t size)
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.Parameters.value)
 }
 ::std::string*
 Request_Parameters::mutable_value()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.Parameters.value)
   return value_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1141,7 +1141,7 @@ Request_Parameters::set_allocated_value(::std::string* value)
   }
   value_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.Parameters.value)
 }
 
 // -------------------------------------------------------------------
@@ -1158,7 +1158,7 @@ Request::clear_path()
 const ::std::string&
 Request::path() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_get:interfaces.Request.path)
   return path_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1168,7 +1168,7 @@ Request::set_path(const ::std::string& value)
 
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set:interfaces.Request.path)
 }
 void
 Request::set_path(const char* value)
@@ -1176,7 +1176,7 @@ Request::set_path(const char* value)
 
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.path)
 }
 void
 Request::set_path(const char* value, size_t size)
@@ -1184,13 +1184,13 @@ Request::set_path(const char* value, size_t size)
 
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.path)
 }
 ::std::string*
 Request::mutable_path()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.path)
   return path_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1210,30 +1210,30 @@ Request::set_allocated_path(::std::string* path)
   }
   path_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), path);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.path)
 }
 
-// optional .m4u_interfaces.Request.MethodType type = 2;
+// optional .interfaces.Request.MethodType type = 2;
 void
 Request::clear_type()
 {
   type_ = 0;
 }
-::m4u_interfaces::Request_MethodType
+::interfaces::Request_MethodType
 Request::type() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.type)
-  return static_cast<::m4u_interfaces::Request_MethodType>(type_);
+  // @@protoc_insertion_point(field_get:interfaces.Request.type)
+  return static_cast<::interfaces::Request_MethodType>(type_);
 }
 void
-Request::set_type(::m4u_interfaces::Request_MethodType value)
+Request::set_type(::interfaces::Request_MethodType value)
 {
 
   type_ = value;
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.type)
+  // @@protoc_insertion_point(field_set:interfaces.Request.type)
 }
 
-// repeated .m4u_interfaces.Request.Parameters params = 3;
+// repeated .interfaces.Request.Parameters params = 3;
 int
 Request::params_size() const
 {
@@ -1244,35 +1244,35 @@ Request::clear_params()
 {
   params_.Clear();
 }
-const ::m4u_interfaces::Request_Parameters&
+const ::interfaces::Request_Parameters&
 Request::params(int index) const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_get:interfaces.Request.params)
   return params_.Get(index);
 }
-::m4u_interfaces::Request_Parameters*
+::interfaces::Request_Parameters*
 Request::mutable_params(int index)
 {
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.params)
   return params_.Mutable(index);
 }
-::m4u_interfaces::Request_Parameters*
+::interfaces::Request_Parameters*
 Request::add_params()
 {
-  // @@protoc_insertion_point(field_add:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_add:interfaces.Request.params)
   return params_.Add();
 }
-::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request_Parameters>*
+::google::protobuf::RepeatedPtrField<::interfaces::Request_Parameters>*
 Request::mutable_params()
 {
-  // @@protoc_insertion_point(field_mutable_list:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_mutable_list:interfaces.Request.params)
   return &params_;
 }
 const ::google::protobuf::RepeatedPtrField<
-  ::m4u_interfaces::Request_Parameters>&
+  ::interfaces::Request_Parameters>&
 Request::params() const
 {
-  // @@protoc_insertion_point(field_list:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_list:interfaces.Request.params)
   return params_;
 }
 
@@ -1286,7 +1286,7 @@ Request::clear_body()
 const ::std::string&
 Request::body() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_get:interfaces.Request.body)
   return body_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1296,7 +1296,7 @@ Request::set_body(const ::std::string& value)
 
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set:interfaces.Request.body)
 }
 void
 Request::set_body(const char* value)
@@ -1304,7 +1304,7 @@ Request::set_body(const char* value)
 
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.body)
 }
 void
 Request::set_body(const char* value, size_t size)
@@ -1312,13 +1312,13 @@ Request::set_body(const char* value, size_t size)
 
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.body)
 }
 ::std::string*
 Request::mutable_body()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.body)
   return body_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1338,7 +1338,7 @@ Request::set_allocated_body(::std::string* body)
   }
   body_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), body);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.body)
 }
 
 #endif // PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -1354,7 +1354,7 @@ MessageBlock::MessageBlock()
   , _internal_metadata_(NULL)
 {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(constructor:interfaces.MessageBlock)
 }
 
 void
@@ -1369,7 +1369,7 @@ MessageBlock::MessageBlock(const MessageBlock& from)
 {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(copy_constructor:interfaces.MessageBlock)
 }
 
 void
@@ -1381,7 +1381,7 @@ MessageBlock::SharedCtor()
 
 MessageBlock::~MessageBlock()
 {
-  // @@protoc_insertion_point(destructor:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(destructor:interfaces.MessageBlock)
   SharedDtor();
 }
 
@@ -1440,7 +1440,7 @@ MessageBlock::MergePartialFromCodedStream(
   if (!(EXPRESSION))                                                           \
   goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(parse_start:interfaces.MessageBlock)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p =
       input->ReadTagWithCutoff(127);
@@ -1449,7 +1449,7 @@ MessageBlock::MergePartialFromCodedStream(
       goto handle_unusual;
     switch (
       ::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .m4u_interfaces.Request request = 1;
+      // repeated .interfaces.Request request = 1;
       case 1: {
         if (tag == 10) {
           DO_(input->IncrementRecursionDepth());
@@ -1482,10 +1482,10 @@ MessageBlock::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(parse_success:interfaces.MessageBlock)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(parse_failure:interfaces.MessageBlock)
   return false;
 #undef DO_
 }
@@ -1494,28 +1494,28 @@ void
 MessageBlock::SerializeWithCachedSizes(
   ::google::protobuf::io::CodedOutputStream* output) const
 {
-  // @@protoc_insertion_point(serialize_start:m4u_interfaces.MessageBlock)
-  // repeated .m4u_interfaces.Request request = 1;
+  // @@protoc_insertion_point(serialize_start:interfaces.MessageBlock)
+  // repeated .interfaces.Request request = 1;
   for (unsigned int i = 0, n = this->request_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->request(i), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(serialize_end:interfaces.MessageBlock)
 }
 
 ::google::protobuf::uint8*
 MessageBlock::SerializeWithCachedSizesToArray(
   ::google::protobuf::uint8* target) const
 {
-  // @@protoc_insertion_point(serialize_to_array_start:m4u_interfaces.MessageBlock)
-  // repeated .m4u_interfaces.Request request = 1;
+  // @@protoc_insertion_point(serialize_to_array_start:interfaces.MessageBlock)
+  // repeated .interfaces.Request request = 1;
   for (unsigned int i = 0, n = this->request_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(1, this->request(i), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(serialize_to_array_end:interfaces.MessageBlock)
   return target;
 }
 
@@ -1524,7 +1524,7 @@ MessageBlock::ByteSize() const
 {
   int total_size = 0;
 
-  // repeated .m4u_interfaces.Request request = 1;
+  // repeated .interfaces.Request request = 1;
   total_size += 1 * this->request_size();
   for (int i = 0; i < this->request_size(); i++) {
     total_size +=
@@ -1614,7 +1614,7 @@ MessageBlock::GetMetadata() const
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // MessageBlock
 
-// repeated .m4u_interfaces.Request request = 1;
+// repeated .interfaces.Request request = 1;
 int
 MessageBlock::request_size() const
 {
@@ -1625,34 +1625,34 @@ MessageBlock::clear_request()
 {
   request_.Clear();
 }
-const ::m4u_interfaces::Request&
+const ::interfaces::Request&
 MessageBlock::request(int index) const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_get:interfaces.MessageBlock.request)
   return request_.Get(index);
 }
-::m4u_interfaces::Request*
+::interfaces::Request*
 MessageBlock::mutable_request(int index)
 {
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_mutable:interfaces.MessageBlock.request)
   return request_.Mutable(index);
 }
-::m4u_interfaces::Request*
+::interfaces::Request*
 MessageBlock::add_request()
 {
-  // @@protoc_insertion_point(field_add:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_add:interfaces.MessageBlock.request)
   return request_.Add();
 }
-::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>*
+::google::protobuf::RepeatedPtrField<::interfaces::Request>*
 MessageBlock::mutable_request()
 {
-  // @@protoc_insertion_point(field_mutable_list:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_mutable_list:interfaces.MessageBlock.request)
   return &request_;
 }
-const ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>&
+const ::google::protobuf::RepeatedPtrField<::interfaces::Request>&
 MessageBlock::request() const
 {
-  // @@protoc_insertion_point(field_list:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_list:interfaces.MessageBlock.request)
   return request_;
 }
 
@@ -1660,6 +1660,6 @@ MessageBlock::request() const
 
 // @@protoc_insertion_point(namespace_scope)
 
-} // namespace m4u_interfaces
+} // namespace interfaces
 
 // @@protoc_insertion_point(global_scope)

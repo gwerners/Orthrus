@@ -20,7 +20,7 @@ using namespace std;
 struct ScannerPlugin scanner_plugin;
 
 void
-ListRequests(const m4u_interfaces::MessageBlock& msg)
+ListRequests(const interfaces::MessageBlock& msg)
 {
   /*
      string name            = 1;
@@ -59,7 +59,7 @@ ListRequests(const m4u_interfaces::MessageBlock& msg)
      repeated Headers headers = 23;
   */
   for (int i = 0; i < msg.request_size(); i++) {
-    const m4u_interfaces::Request& request = msg.request(i);
+    const interfaces::Request& request = msg.request(i);
     cout << "###########################################" << endl;
     cout << " name: " << request.name() << endl;
     COUT_ME(raw)
@@ -102,7 +102,7 @@ ListRequests(const m4u_interfaces::MessageBlock& msg)
     if (request.chunks_size() > 0) {
       cout << " Chunks : " << endl;
       for (int j = 0; j < request.chunks_size(); j++) {
-        const m4u_interfaces::Request::Chunk& chunk = request.chunks(j);
+        const interfaces::Request::Chunk& chunk = request.chunks(j);
         cout << "  " << chunk.length() << endl;
       }
     }
@@ -118,7 +118,7 @@ ListRequests(const m4u_interfaces::MessageBlock& msg)
     if (request.headers_size() > 0) {
       cout << " Headers : " << endl;
       for (int j = 0; j < request.headers_size(); j++) {
-        const m4u_interfaces::Request::Header& header = request.headers(j);
+        const interfaces::Request::Header& header = request.headers(j);
 
         cout << "  " << header.key() << ":" << header.value() << endl;
       }
@@ -269,7 +269,7 @@ main()
   int ret;
   char *str, *output;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
-  m4u_interfaces::MessageBlock msg;
+  interfaces::MessageBlock msg;
 
   // load plugin
   LoadPlugin("libM4UI-Rest-1.0.so");

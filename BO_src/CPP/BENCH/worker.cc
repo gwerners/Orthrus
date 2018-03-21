@@ -49,8 +49,8 @@ uv_pipe_t queue;
 uv_pipe_t stdin_pipe;
 uv_pipe_t stdout_pipe;
 
-m4u_interfaces::RequestBlock req_msg;
-m4u_interfaces::ResponseBlock res_msg;
+interfaces::RequestBlock req_msg;
+interfaces::ResponseBlock res_msg;
 
 uv_stream_t* last_client = NULL;
 uv_stream_t* close_client = NULL;

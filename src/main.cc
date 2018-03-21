@@ -572,7 +572,7 @@ after_read(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf)
   Service* p_service;
   const char* service_name = "M4U_CORE";
   const char* match;
-  m4u_interfaces::Request request;
+  interfaces::Request request;
   size_t nmatch = 1;
   regmatch_t pmatch[1];
   int ret;
@@ -1161,9 +1161,9 @@ test_configuration()
     ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD"
     ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD/com"
     ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD/com/"
-    "m4u_interfaces"
+    "interfaces"
     ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD/com/"
-    "m4u_interfaces/request"
+    "interfaces/request"
     ":/home/gabrielfarinas/M4U_Interfaces/server/libraries/lib/"
     "protobuf-java-3.0.0-beta-1.jar";
 

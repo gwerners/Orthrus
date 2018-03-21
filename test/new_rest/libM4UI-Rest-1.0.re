@@ -250,14 +250,14 @@ static size_t parse(http_parser *parser,const char *buf, size_t len)
    nparsed = http_parser_execute(parser, &settings, buf, len);
    return nparsed;
 }
-void convert2protobuffer(m4u_interfaces::Request* request,struct http_message *message)
+void convert2protobuffer(interfaces::Request* request,struct http_message *message)
 {
 
    /*int i;
    std::string key;
    std::string value;
-   m4u_interfaces::Request::Header* headers;
-   m4u_interfaces::Request::Chunk* chunks;
+   interfaces::Request::Header* headers;
+   interfaces::Request::Chunk* chunks;
 
    *request->mutable_name() = message->name;
    *request->mutable_raw() = message->raw;
@@ -310,7 +310,7 @@ int scan(void *p,const char * input,size_t ilen,char **output, size_t olen )
    std::string str_output;
    http_parser *parser=(http_parser *)p;
    enum http_errno err;
-   m4u_interfaces::MessageBlock msg;
+   interfaces::MessageBlock msg;
 
    memset(&message,0,sizeof(message));
 

@@ -30,7 +30,7 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
-namespace m4u_interfaces {
+namespace interfaces {
 
 // Internal implementation detail -- do not call these.
 void
@@ -169,7 +169,7 @@ public:
   ::std::string* release_value();
   void set_allocated_value(::std::string* value);
 
-  // @@protoc_insertion_point(class_scope:m4u_interfaces.Request.Parameters)
+  // @@protoc_insertion_point(class_scope:interfaces.Request.Parameters)
 private:
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
@@ -293,23 +293,23 @@ public:
   ::std::string* release_path();
   void set_allocated_path(::std::string* path);
 
-  // optional .m4u_interfaces.Request.MethodType type = 2;
+  // optional .interfaces.Request.MethodType type = 2;
   void clear_type();
   static const int kTypeFieldNumber = 2;
-  ::m4u_interfaces::Request_MethodType type() const;
-  void set_type(::m4u_interfaces::Request_MethodType value);
+  ::interfaces::Request_MethodType type() const;
+  void set_type(::interfaces::Request_MethodType value);
 
-  // repeated .m4u_interfaces.Request.Parameters params = 3;
+  // repeated .interfaces.Request.Parameters params = 3;
   int params_size() const;
   void clear_params();
   static const int kParamsFieldNumber = 3;
-  const ::m4u_interfaces::Request_Parameters& params(int index) const;
-  ::m4u_interfaces::Request_Parameters* mutable_params(int index);
-  ::m4u_interfaces::Request_Parameters* add_params();
-  ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request_Parameters>*
+  const ::interfaces::Request_Parameters& params(int index) const;
+  ::interfaces::Request_Parameters* mutable_params(int index);
+  ::interfaces::Request_Parameters* add_params();
+  ::google::protobuf::RepeatedPtrField<::interfaces::Request_Parameters>*
   mutable_params();
   const ::google::protobuf::RepeatedPtrField<
-    ::m4u_interfaces::Request_Parameters>&
+    ::interfaces::Request_Parameters>&
   params() const;
 
   // optional string body = 4;
@@ -323,12 +323,12 @@ public:
   ::std::string* release_body();
   void set_allocated_body(::std::string* body);
 
-  // @@protoc_insertion_point(class_scope:m4u_interfaces.Request)
+  // @@protoc_insertion_point(class_scope:interfaces.Request)
 private:
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
   ::google::protobuf::internal::ArenaStringPtr path_;
-  ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request_Parameters>
+  ::google::protobuf::RepeatedPtrField<::interfaces::Request_Parameters>
     params_;
   ::google::protobuf::internal::ArenaStringPtr body_;
   int type_;
@@ -405,23 +405,23 @@ public:
 
   // accessors -------------------------------------------------------
 
-  // repeated .m4u_interfaces.Request request = 1;
+  // repeated .interfaces.Request request = 1;
   int request_size() const;
   void clear_request();
   static const int kRequestFieldNumber = 1;
-  const ::m4u_interfaces::Request& request(int index) const;
-  ::m4u_interfaces::Request* mutable_request(int index);
-  ::m4u_interfaces::Request* add_request();
-  ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>*
+  const ::interfaces::Request& request(int index) const;
+  ::interfaces::Request* mutable_request(int index);
+  ::interfaces::Request* add_request();
+  ::google::protobuf::RepeatedPtrField<::interfaces::Request>*
   mutable_request();
-  const ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>&
+  const ::google::protobuf::RepeatedPtrField<::interfaces::Request>&
   request() const;
 
-  // @@protoc_insertion_point(class_scope:m4u_interfaces.MessageBlock)
+  // @@protoc_insertion_point(class_scope:interfaces.MessageBlock)
 private:
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request> request_;
+  ::google::protobuf::RepeatedPtrField<::interfaces::Request> request_;
   mutable int _cached_size_;
   friend void protobuf_AddDesc_request_2eproto();
   friend void protobuf_AssignDesc_request_2eproto();
@@ -447,7 +447,7 @@ Request_Parameters::clear_key()
 inline const ::std::string&
 Request_Parameters::key() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_get:interfaces.Request.Parameters.key)
   return key_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -457,7 +457,7 @@ Request_Parameters::set_key(const ::std::string& value)
 
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                   value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set:interfaces.Request.Parameters.key)
 }
 inline void
 Request_Parameters::set_key(const char* value)
@@ -465,7 +465,7 @@ Request_Parameters::set_key(const char* value)
 
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                   ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.Parameters.key)
 }
 inline void
 Request_Parameters::set_key(const char* value, size_t size)
@@ -473,13 +473,13 @@ Request_Parameters::set_key(const char* value, size_t size)
 
   key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                   ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.Parameters.key)
 }
 inline ::std::string*
 Request_Parameters::mutable_key()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.Parameters.key)
   return key_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -499,7 +499,7 @@ Request_Parameters::set_allocated_key(::std::string* key)
   }
   key_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), key);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.Parameters.key)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.Parameters.key)
 }
 
 // optional string value = 2;
@@ -512,7 +512,7 @@ Request_Parameters::clear_value()
 inline const ::std::string&
 Request_Parameters::value() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_get:interfaces.Request.Parameters.value)
   return value_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -522,7 +522,7 @@ Request_Parameters::set_value(const ::std::string& value)
 
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set:interfaces.Request.Parameters.value)
 }
 inline void
 Request_Parameters::set_value(const char* value)
@@ -531,7 +531,7 @@ Request_Parameters::set_value(const char* value)
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.Parameters.value)
 }
 inline void
 Request_Parameters::set_value(const char* value, size_t size)
@@ -540,13 +540,13 @@ Request_Parameters::set_value(const char* value, size_t size)
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.Parameters.value)
 }
 inline ::std::string*
 Request_Parameters::mutable_value()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.Parameters.value)
   return value_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -566,7 +566,7 @@ Request_Parameters::set_allocated_value(::std::string* value)
   }
   value_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.Parameters.value)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.Parameters.value)
 }
 
 // -------------------------------------------------------------------
@@ -583,7 +583,7 @@ Request::clear_path()
 inline const ::std::string&
 Request::path() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_get:interfaces.Request.path)
   return path_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -593,7 +593,7 @@ Request::set_path(const ::std::string& value)
 
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set:interfaces.Request.path)
 }
 inline void
 Request::set_path(const char* value)
@@ -601,7 +601,7 @@ Request::set_path(const char* value)
 
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.path)
 }
 inline void
 Request::set_path(const char* value, size_t size)
@@ -609,13 +609,13 @@ Request::set_path(const char* value, size_t size)
 
   path_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.path)
 }
 inline ::std::string*
 Request::mutable_path()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.path)
   return path_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -635,30 +635,30 @@ Request::set_allocated_path(::std::string* path)
   }
   path_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), path);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.path)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.path)
 }
 
-// optional .m4u_interfaces.Request.MethodType type = 2;
+// optional .interfaces.Request.MethodType type = 2;
 inline void
 Request::clear_type()
 {
   type_ = 0;
 }
-inline ::m4u_interfaces::Request_MethodType
+inline ::interfaces::Request_MethodType
 Request::type() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.type)
-  return static_cast<::m4u_interfaces::Request_MethodType>(type_);
+  // @@protoc_insertion_point(field_get:interfaces.Request.type)
+  return static_cast<::interfaces::Request_MethodType>(type_);
 }
 inline void
-Request::set_type(::m4u_interfaces::Request_MethodType value)
+Request::set_type(::interfaces::Request_MethodType value)
 {
 
   type_ = value;
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.type)
+  // @@protoc_insertion_point(field_set:interfaces.Request.type)
 }
 
-// repeated .m4u_interfaces.Request.Parameters params = 3;
+// repeated .interfaces.Request.Parameters params = 3;
 inline int
 Request::params_size() const
 {
@@ -669,36 +669,36 @@ Request::clear_params()
 {
   params_.Clear();
 }
-inline const ::m4u_interfaces::Request_Parameters&
+inline const ::interfaces::Request_Parameters&
 Request::params(int index) const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_get:interfaces.Request.params)
   return params_.Get(index);
 }
-inline ::m4u_interfaces::Request_Parameters*
+inline ::interfaces::Request_Parameters*
 Request::mutable_params(int index)
 {
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.params)
   return params_.Mutable(index);
 }
-inline ::m4u_interfaces::Request_Parameters*
+inline ::interfaces::Request_Parameters*
 Request::add_params()
 {
-  // @@protoc_insertion_point(field_add:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_add:interfaces.Request.params)
   return params_.Add();
 }
 inline ::google::protobuf::RepeatedPtrField<
-  ::m4u_interfaces::Request_Parameters>*
+  ::interfaces::Request_Parameters>*
 Request::mutable_params()
 {
-  // @@protoc_insertion_point(field_mutable_list:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_mutable_list:interfaces.Request.params)
   return &params_;
 }
 inline const ::google::protobuf::RepeatedPtrField<
-  ::m4u_interfaces::Request_Parameters>&
+  ::interfaces::Request_Parameters>&
 Request::params() const
 {
-  // @@protoc_insertion_point(field_list:m4u_interfaces.Request.params)
+  // @@protoc_insertion_point(field_list:interfaces.Request.params)
   return params_;
 }
 
@@ -712,7 +712,7 @@ Request::clear_body()
 inline const ::std::string&
 Request::body() const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_get:interfaces.Request.body)
   return body_.GetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -722,7 +722,7 @@ Request::set_body(const ::std::string& value)
 
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    value);
-  // @@protoc_insertion_point(field_set:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set:interfaces.Request.body)
 }
 inline void
 Request::set_body(const char* value)
@@ -730,7 +730,7 @@ Request::set_body(const char* value)
 
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set_char:interfaces.Request.body)
 }
 inline void
 Request::set_body(const char* value, size_t size)
@@ -738,13 +738,13 @@ Request::set_body(const char* value, size_t size)
 
   body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
                    ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set_pointer:interfaces.Request.body)
 }
 inline ::std::string*
 Request::mutable_body()
 {
 
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_mutable:interfaces.Request.body)
   return body_.MutableNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -764,14 +764,14 @@ Request::set_allocated_body(::std::string* body)
   }
   body_.SetAllocatedNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), body);
-  // @@protoc_insertion_point(field_set_allocated:m4u_interfaces.Request.body)
+  // @@protoc_insertion_point(field_set_allocated:interfaces.Request.body)
 }
 
 // -------------------------------------------------------------------
 
 // MessageBlock
 
-// repeated .m4u_interfaces.Request request = 1;
+// repeated .interfaces.Request request = 1;
 inline int
 MessageBlock::request_size() const
 {
@@ -782,34 +782,34 @@ MessageBlock::clear_request()
 {
   request_.Clear();
 }
-inline const ::m4u_interfaces::Request&
+inline const ::interfaces::Request&
 MessageBlock::request(int index) const
 {
-  // @@protoc_insertion_point(field_get:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_get:interfaces.MessageBlock.request)
   return request_.Get(index);
 }
-inline ::m4u_interfaces::Request*
+inline ::interfaces::Request*
 MessageBlock::mutable_request(int index)
 {
-  // @@protoc_insertion_point(field_mutable:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_mutable:interfaces.MessageBlock.request)
   return request_.Mutable(index);
 }
-inline ::m4u_interfaces::Request*
+inline ::interfaces::Request*
 MessageBlock::add_request()
 {
-  // @@protoc_insertion_point(field_add:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_add:interfaces.MessageBlock.request)
   return request_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>*
+inline ::google::protobuf::RepeatedPtrField<::interfaces::Request>*
 MessageBlock::mutable_request()
 {
-  // @@protoc_insertion_point(field_mutable_list:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_mutable_list:interfaces.MessageBlock.request)
   return &request_;
 }
-inline const ::google::protobuf::RepeatedPtrField<::m4u_interfaces::Request>&
+inline const ::google::protobuf::RepeatedPtrField<::interfaces::Request>&
 MessageBlock::request() const
 {
-  // @@protoc_insertion_point(field_list:m4u_interfaces.MessageBlock.request)
+  // @@protoc_insertion_point(field_list:interfaces.MessageBlock.request)
   return request_;
 }
 
@@ -820,22 +820,22 @@ MessageBlock::request() const
 
 // @@protoc_insertion_point(namespace_scope)
 
-} // namespace m4u_interfaces
+} // namespace interfaces
 
 #ifndef SWIG
 namespace google {
 namespace protobuf {
 
 template<>
-struct is_proto_enum<::m4u_interfaces::Request_MethodType>
+struct is_proto_enum<::interfaces::Request_MethodType>
   : ::google::protobuf::internal::true_type
 {
 };
 template<>
 inline const EnumDescriptor*
-GetEnumDescriptor<::m4u_interfaces::Request_MethodType>()
+GetEnumDescriptor<::interfaces::Request_MethodType>()
 {
-  return ::m4u_interfaces::Request_MethodType_descriptor();
+  return ::interfaces::Request_MethodType_descriptor();
 }
 
 } // namespace protobuf

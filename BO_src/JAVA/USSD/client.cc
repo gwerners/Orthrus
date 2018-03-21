@@ -52,11 +52,11 @@ jclass cls;
 
 int fd = -1;
 
-m4u_interfaces::RequestBlock req_msg;
-m4u_interfaces::ResponseBlock res_msg;
+interfaces::RequestBlock req_msg;
+interfaces::ResponseBlock res_msg;
 
 void
-ListRequests(const m4u_interfaces::Request& request)
+ListRequests(const interfaces::Request& request)
 {
   log_debug("###########################################");
   log_debug(" scheme:%s ", request.scheme().c_str());
@@ -82,7 +82,7 @@ ListRequests(const m4u_interfaces::Request& request)
   if (request.chunks_size() > 0) {
     log_debug(" Chunks : ");
     for (int j = 0; j < request.chunks_size(); j++) {
-      const m4u_interfaces::Request::Chunk& chunk = request.chunks(j);
+      const interfaces::Request::Chunk& chunk = request.chunks(j);
       log_debug("  %d", chunk.length());
     }
   }
@@ -94,7 +94,7 @@ ListRequests(const m4u_interfaces::Request& request)
   if (request.headers_size() > 0) {
     log_debug(" Headers : ");
     for (int j = 0; j < request.headers_size(); j++) {
-      const m4u_interfaces::Request::Header& header = request.headers(j);
+      const interfaces::Request::Header& header = request.headers(j);
       log_debug("  %s: %s", header.key().c_str(), header.value().c_str());
     }
   }
@@ -143,12 +143,12 @@ CreateJVM(char* classpath)
     return -1;
 }
 void
-FillRequest(m4u_interfaces::Request* request)
+FillRequest(interfaces::Request* request)
 {
   std::string key;
   std::string value;
-  m4u_interfaces::Request::Header* headers;
-  m4u_interfaces::Request::Chunk* chunks;
+  interfaces::Request::Header* headers;
+  interfaces::Request::Chunk* chunks;
   request->set_scheme("http");
   request->set_name("ussd");
   request->set_raw("raw request");
@@ -182,7 +182,7 @@ main(int argc, char** argv)
   GOOGLE_PROTOBUF_VERIFY_VERSION;
   std::string output;
 
-  m4u_interfaces::Request msg;
+  interfaces::Request msg;
 
   InitializeLog(stdout);
 
