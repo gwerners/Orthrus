@@ -1,0 +1,498 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 25.00      0.02     0.02                             uv__write
+ 12.50      0.03     0.01    10001     1.00     1.00  interfaces::Request::SharedDtor()
+ 12.50      0.04     0.01    10000     1.00     1.00  interfaces::Request::SerializeWithCachedSizesToArray(unsigned char*) const
+ 12.50      0.05     0.01                             google::protobuf::StringPrintfVector(char const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+ 12.50      0.06     0.01                             void google::protobuf::Arena::Own<google::protobuf::MessageLite>(google::protobuf::MessageLite*)
+ 12.50      0.07     0.01                             uv__read
+  6.25      0.08     0.01    10000     0.50     1.50  after_read(uv_stream_s*, long, uv_buf_t const*)
+  6.25      0.08     0.01                             close_process_handle(uv_process_s*, long, int)
+  0.00      0.08     0.00   130135     0.00     0.00  timestamp()
+  0.00      0.08     0.00   120285     0.00     0.00  google::protobuf::internal::ArenaStringPtr::CreateInstanceNoArena(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*)
+  0.00      0.08     0.00    40001     0.00     0.00  interfaces::Request_Header::Request_Header()
+  0.00      0.08     0.00    40001     0.00     0.00  interfaces::Request_Header::~Request_Header()
+  0.00      0.08     0.00    40000     0.00     0.00  interfaces::Request_Header::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*)
+  0.00      0.08     0.00    40000     0.00     0.00  google::protobuf::internal::GenericTypeHandler<interfaces::Request_Header>::Delete(interfaces::Request_Header*, google::protobuf::Arena*)
+  0.00      0.08     0.00    40000     0.00     0.00  interfaces::Request_Header::SerializeWithCachedSizesToArray(unsigned char*) const
+  0.00      0.08     0.00    20000     0.00     0.00  after_write(uv_write_s*, int)
+  0.00      0.08     0.00    10001     0.00     1.00  interfaces::Request::~Request()
+  0.00      0.08     0.00    10000     0.00     0.00  on_connection(uv_stream_s*, int)
+  0.00      0.08     0.00    10000     0.00     0.00  check_sockname(sockaddr*, char const*, int, char const*) [clone .constprop.63]
+  0.00      0.08     0.00    10000     0.00     0.00  on_close(uv_handle_s*)
+  0.00      0.08     0.00    10000     0.00     0.00  buf_alloc(uv_handle_s*, unsigned long, uv_buf_t*)
+  0.00      0.08     0.00    10000     0.00     0.00  interfaces::Request::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*)
+  0.00      0.08     0.00    10000     0.00     0.00  interfaces::Request::Clear()
+  0.00      0.08     0.00    10000     0.00     0.00  interfaces::Request::Request()
+  0.00      0.08     0.00    10000     0.00     0.00  void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Chunk>::TypeHandler>()
+  0.00      0.08     0.00    10000     0.00     0.00  void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Header>::TypeHandler>()
+  0.00      0.08     0.00    10000     0.00     0.00  interfaces::RequestBlock::IsInitialized() const
+  0.00      0.08     0.00    10000     0.00     0.00  interfaces::Request::ByteSize() const
+  0.00      0.08     0.00       24     0.00     0.00  get_process_parent_id(int, int*)
+  0.00      0.08     0.00        8     0.00     0.00  LuaBuildLogLine(lua_State*, char*)
+  0.00      0.08     0.00        4     0.00     0.00  LuaLogInfo(lua_State*)
+  0.00      0.08     0.00        4     0.00     0.00  LuaLogDebug(lua_State*)
+  0.00      0.08     0.00        3     0.00     0.00  setup_workers(Service_t*)
+  0.00      0.08     0.00        3     0.00     0.00  add_bo(char const*, int, char const*, int, char const*)
+  0.00      0.08     0.00        3     0.00     0.00  AddBusinessObject(lua_State*)
+  0.00      0.08     0.00        3     0.00     0.00  std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_insert_unique(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> const&)
+  0.00      0.08     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN10interfaces35protobuf_AssignDesc_request_2eprotoEv
+  0.00      0.08     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN10interfaces36protobuf_AssignDesc_response_2eprotoEv
+  0.00      0.08     0.00        1     0.00     0.00  _GLOBAL__sub_I_scanner
+  0.00      0.08     0.00        1     0.00     0.00  _GLOBAL__sub_I_scanner_plugin
+  0.00      0.08     0.00        1     0.00     0.00  LoadPlugin(char const*, void (*)(char const*), void (*)())
+  0.00      0.08     0.00        1     0.00     0.00  close_state(lua_State**)
+  0.00      0.08     0.00        1     0.00     0.00  int_handler(uv_signal_s*, int)
+  0.00      0.08     0.00        1     0.00     0.00  LogWithColor(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  LoadScannerPlugin(char const*)
+  0.00      0.08     0.00        1     0.00     0.00  load_plugin_library(char const*, char const*, char const*)
+  0.00      0.08     0.00        1     0.00     0.00  PrintPID(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  RestScanner(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  EnableSigInt(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  ProcessEvents(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  CreateTcp4Server(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  SetJavaClassPath(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  LoadPluginLibrary(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  ListBusinessObjects(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  CreateTcp4AdminServer(lua_State*)
+  0.00      0.08     0.00        1     0.00     0.00  interfaces::protobuf_AddDesc_request_2eproto()
+  0.00      0.08     0.00        1     0.00     0.00  interfaces::protobuf_AddDesc_response_2eproto()
+  0.00      0.08     0.00        1     0.00     1.00  interfaces::protobuf_ShutdownFile_request_2eproto()
+  0.00      0.08     0.00        1     0.00     0.00  interfaces::protobuf_ShutdownFile_response_2eproto()
+  0.00      0.08     0.00        1     0.00     0.00  interfaces::Request::SharedCtor()
+  0.00      0.08     0.00        1     0.00     0.00  interfaces::Response::~Response()
+  0.00      0.08     0.00        1     0.00     0.00  std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_erase(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >*)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 12.50% of 0.08 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     31.2    0.01    0.01                 uv__read [1]
+                0.01    0.01   10000/10000       after_read(uv_stream_s*, long, uv_buf_t const*) [3]
+                0.00    0.00   10000/10000       buf_alloc(uv_handle_s*, unsigned long, uv_buf_t*) [1695]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     25.0    0.02    0.00                 uv__write [2]
+-----------------------------------------------
+                0.01    0.01   10000/10000       uv__read [1]
+[3]     18.7    0.01    0.01   10000         after_read(uv_stream_s*, long, uv_buf_t const*) [3]
+                0.00    0.01   10000/10001       interfaces::Request::~Request() [5]
+                0.00    0.00   80000/130135      timestamp() [1684]
+                0.00    0.00   10000/10000       interfaces::Request::Request() [1698]
+-----------------------------------------------
+                0.01    0.00   10001/10001       interfaces::Request::~Request() [5]
+[4]     12.5    0.01    0.00   10001         interfaces::Request::SharedDtor() [4]
+-----------------------------------------------
+                0.00    0.00       1/10001       interfaces::protobuf_ShutdownFile_request_2eproto() [11]
+                0.00    0.01   10000/10001       after_read(uv_stream_s*, long, uv_buf_t const*) [3]
+[5]     12.5    0.00    0.01   10001         interfaces::Request::~Request() [5]
+                0.01    0.00   10001/10001       interfaces::Request::SharedDtor() [4]
+                0.00    0.00   40000/40000       google::protobuf::internal::GenericTypeHandler<interfaces::Request_Header>::Delete(interfaces::Request_Header*, google::protobuf::Arena*) [1689]
+-----------------------------------------------
+                0.01    0.00   10000/10000       google::protobuf::MessageLite::AppendPartialToString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) const [9]
+[6]     12.5    0.01    0.00   10000         interfaces::Request::SerializeWithCachedSizesToArray(unsigned char*) const [6]
+                0.00    0.00   40000/40000       interfaces::Request_Header::SerializeWithCachedSizesToArray(unsigned char*) const [1690]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]     12.5    0.01    0.00                 google::protobuf::StringPrintfVector(char const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]     12.5    0.01    0.00                 void google::protobuf::Arena::Own<google::protobuf::MessageLite>(google::protobuf::MessageLite*) [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]     12.5    0.00    0.01                 google::protobuf::MessageLite::AppendPartialToString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) const [9]
+                0.01    0.00   10000/10000       interfaces::Request::SerializeWithCachedSizesToArray(unsigned char*) const [6]
+                0.00    0.00   10000/10000       interfaces::Request::ByteSize() const [1702]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     6.2    0.01    0.00                 close_process_handle(uv_process_s*, long, int) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           google::protobuf::ShutdownProtobufLibrary() [12]
+[11]     0.0    0.00    0.00       1         interfaces::protobuf_ShutdownFile_request_2eproto() [11]
+                0.00    0.00       1/10001       interfaces::Request::~Request() [5]
+                0.00    0.00       1/40001       interfaces::Request_Header::~Request_Header() [1687]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     0.0    0.00    0.00                 google::protobuf::ShutdownProtobufLibrary() [12]
+                0.00    0.00       1/1           interfaces::protobuf_ShutdownFile_request_2eproto() [11]
+                0.00    0.00       1/1           interfaces::protobuf_ShutdownFile_response_2eproto() [1732]
+-----------------------------------------------
+                0.00    0.00       1/130135      int_handler(uv_signal_s*, int) [1717]
+                0.00    0.00       1/130135      SetJavaClassPath(lua_State*) [1726]
+                0.00    0.00       1/130135      ProcessEvents(lua_State*) [1724]
+                0.00    0.00       1/130135      EnableSigInt(lua_State*) [1723]
+                0.00    0.00       1/130135      CreateTcp4AdminServer(lua_State*) [1729]
+                0.00    0.00       1/130135      CreateTcp4Server(lua_State*) [1725]
+                0.00    0.00       1/130135      load_plugin_library(char const*, char const*, char const*) [1720]
+                0.00    0.00       1/130135      RunConfiguration(char const*) [1761]
+                0.00    0.00       1/130135      LoadScannerPlugin(char const*) [1719]
+                0.00    0.00       1/130135      LoadPlugin(char const*, void (*)(char const*), void (*)()) [1715]
+                0.00    0.00       1/130135      LogWithColor(lua_State*) [1718]
+                0.00    0.00       2/130135      PrintPID(lua_State*) [1721]
+                0.00    0.00       3/130135      RestScanner(lua_State*) [1722]
+                0.00    0.00       3/130135      add_bo(char const*, int, char const*, int, char const*) [1708]
+                0.00    0.00       4/130135      LuaLogDebug(lua_State*) [1706]
+                0.00    0.00       4/130135      LuaLogInfo(lua_State*) [1705]
+                0.00    0.00      36/130135      setup_workers(Service_t*) [1707]
+                0.00    0.00      72/130135      cleanup_bo() [1746]
+                0.00    0.00   10000/130135      on_close(uv_handle_s*) [1694]
+                0.00    0.00   10000/130135      check_sockname(sockaddr*, char const*, int, char const*) [clone .constprop.63] [1693]
+                0.00    0.00   10000/130135      on_connection(uv_stream_s*, int) [1692]
+                0.00    0.00   20000/130135      after_write(uv_write_s*, int) [1691]
+                0.00    0.00   80000/130135      after_read(uv_stream_s*, long, uv_buf_t const*) [3]
+[1684]   0.0    0.00    0.00  130135         timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       5/120285      google::protobuf::EnumDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [2378]
+                0.00    0.00       8/120285      google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [2395]
+                0.00    0.00       9/120285      google::protobuf::FileOptions::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1965]
+                0.00    0.00      28/120285      google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [2217]
+                0.00    0.00      30/120285      google::protobuf::EnumValueDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [2554]
+                0.00    0.00     205/120285      google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [2434]
+                0.00    0.00   40000/120285      interfaces::Request::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1696]
+                0.00    0.00   80000/120285      interfaces::Request_Header::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1688]
+[1685]   0.0    0.00    0.00  120285         google::protobuf::internal::ArenaStringPtr::CreateInstanceNoArena(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*) [1685]
+-----------------------------------------------
+                               40000             interfaces::Request_Header::Request_Header() [1686]
+                0.00    0.00       1/40001       interfaces::protobuf_AddDesc_request_2eproto() [1730]
+                0.00    0.00   40000/40001       interfaces::Request::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1696]
+[1686]   0.0    0.00    0.00   40001+40000   interfaces::Request_Header::Request_Header() [1686]
+                               40000             interfaces::Request_Header::Request_Header() [1686]
+-----------------------------------------------
+                0.00    0.00       1/40001       interfaces::protobuf_ShutdownFile_request_2eproto() [11]
+                0.00    0.00   40000/40001       google::protobuf::internal::GenericTypeHandler<interfaces::Request_Header>::Delete(interfaces::Request_Header*, google::protobuf::Arena*) [1689]
+[1687]   0.0    0.00    0.00   40001         interfaces::Request_Header::~Request_Header() [1687]
+-----------------------------------------------
+                0.00    0.00   40000/40000       interfaces::Request::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1696]
+[1688]   0.0    0.00    0.00   40000         interfaces::Request_Header::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1688]
+                0.00    0.00   80000/120285      google::protobuf::internal::ArenaStringPtr::CreateInstanceNoArena(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*) [1685]
+-----------------------------------------------
+                0.00    0.00   40000/40000       interfaces::Request::~Request() [5]
+[1689]   0.0    0.00    0.00   40000         google::protobuf::internal::GenericTypeHandler<interfaces::Request_Header>::Delete(interfaces::Request_Header*, google::protobuf::Arena*) [1689]
+                0.00    0.00   40000/40001       interfaces::Request_Header::~Request_Header() [1687]
+-----------------------------------------------
+                0.00    0.00   40000/40000       interfaces::Request::SerializeWithCachedSizesToArray(unsigned char*) const [6]
+[1690]   0.0    0.00    0.00   40000         interfaces::Request_Header::SerializeWithCachedSizesToArray(unsigned char*) const [1690]
+-----------------------------------------------
+                0.00    0.00   20000/20000       uv__write_callbacks [1468]
+[1691]   0.0    0.00    0.00   20000         after_write(uv_write_s*, int) [1691]
+                0.00    0.00   20000/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00   10000/10000       uv__server_io [1419]
+[1692]   0.0    0.00    0.00   10000         on_connection(uv_stream_s*, int) [1692]
+                0.00    0.00   10000/10000       check_sockname(sockaddr*, char const*, int, char const*) [clone .constprop.63] [1693]
+                0.00    0.00   10000/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00   10000/10000       on_connection(uv_stream_s*, int) [1692]
+[1693]   0.0    0.00    0.00   10000         check_sockname(sockaddr*, char const*, int, char const*) [clone .constprop.63] [1693]
+                0.00    0.00   10000/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00   10000/10000       uv_run [1613]
+[1694]   0.0    0.00    0.00   10000         on_close(uv_handle_s*) [1694]
+                0.00    0.00   10000/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00   10000/10000       uv__read [1]
+[1695]   0.0    0.00    0.00   10000         buf_alloc(uv_handle_s*, unsigned long, uv_buf_t*) [1695]
+-----------------------------------------------
+                0.00    0.00   10000/10000       google::protobuf::MessageLite::ParseFromString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [1981]
+[1696]   0.0    0.00    0.00   10000         interfaces::Request::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1696]
+                0.00    0.00   40000/40001       interfaces::Request_Header::Request_Header() [1686]
+                0.00    0.00   40000/40000       interfaces::Request_Header::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1688]
+                0.00    0.00   40000/120285      google::protobuf::internal::ArenaStringPtr::CreateInstanceNoArena(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*) [1685]
+-----------------------------------------------
+                0.00    0.00   10000/10000       google::protobuf::MessageLite::ParseFromString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [1981]
+[1697]   0.0    0.00    0.00   10000         interfaces::Request::Clear() [1697]
+                0.00    0.00   10000/10000       void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Chunk>::TypeHandler>() [1699]
+-----------------------------------------------
+                0.00    0.00   10000/10000       after_read(uv_stream_s*, long, uv_buf_t const*) [3]
+[1698]   0.0    0.00    0.00   10000         interfaces::Request::Request() [1698]
+-----------------------------------------------
+                0.00    0.00   10000/10000       interfaces::Request::Clear() [1697]
+[1699]   0.0    0.00    0.00   10000         void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Chunk>::TypeHandler>() [1699]
+-----------------------------------------------
+                0.00    0.00   10000/10000       google::protobuf::MessageLite::ParseFromString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [1981]
+[1700]   0.0    0.00    0.00   10000         void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Header>::TypeHandler>() [1700]
+-----------------------------------------------
+                0.00    0.00   10000/10000       google::protobuf::MessageLite::ParseFromString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [1981]
+[1701]   0.0    0.00    0.00   10000         interfaces::RequestBlock::IsInitialized() const [1701]
+-----------------------------------------------
+                0.00    0.00   10000/10000       google::protobuf::MessageLite::AppendPartialToString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) const [9]
+[1702]   0.0    0.00    0.00   10000         interfaces::Request::ByteSize() const [1702]
+-----------------------------------------------
+                0.00    0.00      24/24          cleanup_bo() [1746]
+[1703]   0.0    0.00    0.00      24         get_process_parent_id(int, int*) [1703]
+-----------------------------------------------
+                0.00    0.00       4/8           LuaLogDebug(lua_State*) [1706]
+                0.00    0.00       4/8           LuaLogInfo(lua_State*) [1705]
+[1704]   0.0    0.00    0.00       8         LuaBuildLogLine(lua_State*, char*) [1704]
+-----------------------------------------------
+                0.00    0.00       4/4           lj_BC_FUNCC [354]
+[1705]   0.0    0.00    0.00       4         LuaLogInfo(lua_State*) [1705]
+                0.00    0.00       4/8           LuaBuildLogLine(lua_State*, char*) [1704]
+                0.00    0.00       4/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       4/4           lj_BC_FUNCC [354]
+[1706]   0.0    0.00    0.00       4         LuaLogDebug(lua_State*) [1706]
+                0.00    0.00       4/8           LuaBuildLogLine(lua_State*, char*) [1704]
+                0.00    0.00       4/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       3/3           add_bo(char const*, int, char const*, int, char const*) [1708]
+[1707]   0.0    0.00    0.00       3         setup_workers(Service_t*) [1707]
+                0.00    0.00      36/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       3/3           AddBusinessObject(lua_State*) [1709]
+[1708]   0.0    0.00    0.00       3         add_bo(char const*, int, char const*, int, char const*) [1708]
+                0.00    0.00       3/3           std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_insert_unique(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> const&) [1710]
+                0.00    0.00       3/3           setup_workers(Service_t*) [1707]
+                0.00    0.00       3/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       3/3           lj_BC_FUNCC [354]
+[1709]   0.0    0.00    0.00       3         AddBusinessObject(lua_State*) [1709]
+                0.00    0.00       3/3           add_bo(char const*, int, char const*, int, char const*) [1708]
+-----------------------------------------------
+                0.00    0.00       3/3           add_bo(char const*, int, char const*, int, char const*) [1708]
+[1710]   0.0    0.00    0.00       3         std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_insert_unique(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> const&) [1710]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [4230]
+[1711]   0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN10interfaces35protobuf_AssignDesc_request_2eprotoEv [1711]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [4230]
+[1712]   0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN10interfaces36protobuf_AssignDesc_response_2eprotoEv [1712]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [4230]
+[1713]   0.0    0.00    0.00       1         _GLOBAL__sub_I_scanner [1713]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [4230]
+[1714]   0.0    0.00    0.00       1         _GLOBAL__sub_I_scanner_plugin [1714]
+-----------------------------------------------
+                0.00    0.00       1/1           load_plugin_library(char const*, char const*, char const*) [1720]
+[1715]   0.0    0.00    0.00       1         LoadPlugin(char const*, void (*)(char const*), void (*)()) [1715]
+                0.00    0.00       1/1           LoadScannerPlugin(char const*) [1719]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           RunConfiguration(char const*) [1761]
+[1716]   0.0    0.00    0.00       1         close_state(lua_State**) [1716]
+-----------------------------------------------
+                0.00    0.00       1/1           uv__signal_event [1424]
+[1717]   0.0    0.00    0.00       1         int_handler(uv_signal_s*, int) [1717]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1718]   0.0    0.00    0.00       1         LogWithColor(lua_State*) [1718]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           LoadPlugin(char const*, void (*)(char const*), void (*)()) [1715]
+[1719]   0.0    0.00    0.00       1         LoadScannerPlugin(char const*) [1719]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           LoadPluginLibrary(lua_State*) [1727]
+[1720]   0.0    0.00    0.00       1         load_plugin_library(char const*, char const*, char const*) [1720]
+                0.00    0.00       1/1           LoadPlugin(char const*, void (*)(char const*), void (*)()) [1715]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1721]   0.0    0.00    0.00       1         PrintPID(lua_State*) [1721]
+                0.00    0.00       2/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1722]   0.0    0.00    0.00       1         RestScanner(lua_State*) [1722]
+                0.00    0.00       3/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1723]   0.0    0.00    0.00       1         EnableSigInt(lua_State*) [1723]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1724]   0.0    0.00    0.00       1         ProcessEvents(lua_State*) [1724]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1725]   0.0    0.00    0.00       1         CreateTcp4Server(lua_State*) [1725]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1726]   0.0    0.00    0.00       1         SetJavaClassPath(lua_State*) [1726]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1727]   0.0    0.00    0.00       1         LoadPluginLibrary(lua_State*) [1727]
+                0.00    0.00       1/1           load_plugin_library(char const*, char const*, char const*) [1720]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1728]   0.0    0.00    0.00       1         ListBusinessObjects(lua_State*) [1728]
+-----------------------------------------------
+                0.00    0.00       1/1           lj_BC_FUNCC [354]
+[1729]   0.0    0.00    0.00       1         CreateTcp4AdminServer(lua_State*) [1729]
+                0.00    0.00       1/130135      timestamp() [1684]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [4230]
+[1730]   0.0    0.00    0.00       1         interfaces::protobuf_AddDesc_request_2eproto() [1730]
+                0.00    0.00       1/1           interfaces::Request::SharedCtor() [1733]
+                0.00    0.00       1/40001       interfaces::Request_Header::Request_Header() [1686]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [4230]
+[1731]   0.0    0.00    0.00       1         interfaces::protobuf_AddDesc_response_2eproto() [1731]
+-----------------------------------------------
+                0.00    0.00       1/1           google::protobuf::ShutdownProtobufLibrary() [12]
+[1732]   0.0    0.00    0.00       1         interfaces::protobuf_ShutdownFile_response_2eproto() [1732]
+                0.00    0.00       1/1           interfaces::Response::~Response() [1734]
+-----------------------------------------------
+                0.00    0.00       1/1           interfaces::protobuf_AddDesc_request_2eproto() [1730]
+[1733]   0.0    0.00    0.00       1         interfaces::Request::SharedCtor() [1733]
+-----------------------------------------------
+                0.00    0.00       1/1           interfaces::protobuf_ShutdownFile_response_2eproto() [1732]
+[1734]   0.0    0.00    0.00       1         interfaces::Response::~Response() [1734]
+-----------------------------------------------
+                0.00    0.00       1/1           cleanup_bo() [1746]
+[1735]   0.0    0.00    0.00       1         std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_erase(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >*) [1735]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [1711] _GLOBAL__sub_I__ZN10interfaces35protobuf_AssignDesc_request_2eprotoEv [1723] EnableSigInt(lua_State*) [4] interfaces::Request::SharedDtor()
+ [1712] _GLOBAL__sub_I__ZN10interfaces36protobuf_AssignDesc_response_2eprotoEv [1724] ProcessEvents(lua_State*) [1696] interfaces::Request::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*)
+ [1713] _GLOBAL__sub_I_scanner [1693] check_sockname(sockaddr*, char const*, int, char const*) [clone .constprop.63] [1697] interfaces::Request::Clear()
+ [1714] _GLOBAL__sub_I_scanner_plugin [1725] CreateTcp4Server(lua_State*) [1698] interfaces::Request::Request()
+ [1715] LoadPlugin(char const*, void (*)(char const*), void (*)()) [1726] SetJavaClassPath(lua_State*) [5] interfaces::Request::~Request()
+ [1705] LuaLogInfo(lua_State*) [1709] AddBusinessObject(lua_State*) [1734] interfaces::Response::~Response()
+   [3] after_read(uv_stream_s*, long, uv_buf_t const*) [1727] LoadPluginLibrary(lua_State*) [7] google::protobuf::StringPrintfVector(char const*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+ [1706] LuaLogDebug(lua_State*) [1728] ListBusinessObjects(lua_State*) [8] void google::protobuf::Arena::Own<google::protobuf::MessageLite>(google::protobuf::MessageLite*)
+ [1691] after_write(uv_write_s*, int) [10] close_process_handle(uv_process_s*, long, int) [1685] google::protobuf::internal::ArenaStringPtr::CreateInstanceNoArena(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const*)
+ [1716] close_state(lua_State**) [1729] CreateTcp4AdminServer(lua_State*) [1689] google::protobuf::internal::GenericTypeHandler<interfaces::Request_Header>::Delete(interfaces::Request_Header*, google::protobuf::Arena*)
+ [1717] int_handler(uv_signal_s*, int) [1703] get_process_parent_id(int, int*) [1699] void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Chunk>::TypeHandler>()
+ [1718] LogWithColor(lua_State*) [1694] on_close(uv_handle_s*) [1700] void google::protobuf::internal::RepeatedPtrFieldBase::Clear<google::protobuf::RepeatedPtrField<interfaces::Request_Header>::TypeHandler>()
+ [1692] on_connection(uv_stream_s*, int) [1695] buf_alloc(uv_handle_s*, unsigned long, uv_buf_t*) [1701] interfaces::RequestBlock::IsInitialized() const
+ [1707] setup_workers(Service_t*) [1688] interfaces::Request_Header::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) [1690] interfaces::Request_Header::SerializeWithCachedSizesToArray(unsigned char*) const
+ [1704] LuaBuildLogLine(lua_State*, char*) [1686] interfaces::Request_Header::Request_Header() [6] interfaces::Request::SerializeWithCachedSizesToArray(unsigned char*) const
+ [1719] LoadScannerPlugin(char const*) [1687] interfaces::Request_Header::~Request_Header() [1702] interfaces::Request::ByteSize() const
+ [1720] load_plugin_library(char const*, char const*, char const*) [1730] interfaces::protobuf_AddDesc_request_2eproto() [1710] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_insert_unique(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> const&)
+ [1708] add_bo(char const*, int, char const*, int, char const*) [1731] interfaces::protobuf_AddDesc_response_2eproto() [1735] std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> > >::_M_erase(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, Service_t*> >*)
+ [1721] PrintPID(lua_State*)  [11] interfaces::protobuf_ShutdownFile_request_2eproto() [1] uv__read (stream.c)
+ [1684] timestamp()         [1732] interfaces::protobuf_ShutdownFile_response_2eproto() [2] uv__write (stream.c)
+ [1722] RestScanner(lua_State*) [1733] interfaces::Request::SharedCtor()

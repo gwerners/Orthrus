@@ -8,7 +8,7 @@ CFLAGS="-O3"
 LIBRARIES=`pwd`/libraries
 OPEN_SOURCE=`pwd`/open_source
 OS="$(uname)"
-
+#PROF=-pg
 #export JAVA_HOME=/usr/lib/jvm/default-java
 export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$PATH:$JAVA_HOME/bin
@@ -42,26 +42,26 @@ fi
 
 
 if [[ "${USE_JIT}" == "YES" ]]; then
-   ${CC} ${CFLAGS} -c src/main.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0
-   ${CC} ${CFLAGS} -c src/logger.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0
-   ${CC} ${CFLAGS} -c src/plugin.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0
-   ${CC} ${CFLAGS} -c src/lua_utils.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0.0
-   ${CC} ${CFLAGS} -c src/request.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0.0
-   ${CC} ${CFLAGS} -c src/response.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0.0
+   ${CC} ${PROF} ${CFLAGS} -c src/main.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0
+   ${CC} ${PROF} ${CFLAGS} -c src/logger.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0
+   ${CC} ${PROF} ${CFLAGS} -c src/plugin.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0
+   ${CC} ${PROF} ${CFLAGS} -c src/lua_utils.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0.0
+   ${CC} ${PROF} ${CFLAGS} -c src/request.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0.0
+   ${CC} ${PROF} ${CFLAGS} -c src/response.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/luajit-2.0 -I${LIBRARIES}/include/luajit-2.0.0
    if [[ "${OS}" = "OSX" ]]; then
-      ${CC} ${CFLAGS} -o ${SERVER_NAME} main.o logger.o plugin.o lua_utils.o request.pb.o response.pb.o ${RPATH} -L${LIBRARIES}/lib/ ${LIBRARIES}/lib/libluajit-5.1.a ${LIBRARIES}/lib/libuv.a ${LIBRARIES}/lib/libprotobuf.a -lpthread -ldl -lm -pagezero_size 10000 -image_base 100000000
+      ${CC} ${PROF} ${CFLAGS} -o ${SERVER_NAME} main.o logger.o plugin.o lua_utils.o request.pb.o response.pb.o ${RPATH} -L${LIBRARIES}/lib/ ${LIBRARIES}/lib/libluajit-5.1.a ${LIBRARIES}/lib/libuv.a ${LIBRARIES}/lib/libprotobuf.a -lpthread -ldl -lm -pagezero_size 10000 -image_base 100000000
    else
    #"Linux"
-      ${CC} ${CFLAGS} -o ${SERVER_NAME} main.o logger.o plugin.o lua_utils.o request.pb.o response.pb.o ${RPATH} -L${LIBRARIES}/lib/ ${LIBRARIES}/lib/libluajit-5.1.a ${LIBRARIES}/lib/libuv.a ${LIBRARIES}/lib/libprotobuf.a -lpthread -ldl -lm
+      ${CC} ${PROF} ${CFLAGS} -o ${SERVER_NAME} main.o logger.o plugin.o lua_utils.o request.pb.o response.pb.o ${RPATH} -L${LIBRARIES}/lib/ ${LIBRARIES}/lib/libluajit-5.1.a ${LIBRARIES}/lib/libuv.a ${LIBRARIES}/lib/libprotobuf.a -lpthread -ldl -lm
    fi
 else
-   ${CC} ${CFLAGS} -c src/main.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
-   ${CC} ${CFLAGS} -c src/logger.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
-   ${CC} ${CFLAGS} -c src/plugin.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
-   ${CC} ${CFLAGS} -c src/lua_utils.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
-   ${CC} ${CFLAGS} -c src/request.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
-   ${CC} ${CFLAGS} -c src/response.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
-   ${CC} ${CFLAGS} -o ${SERVER_NAME} main.o logger.o plugin.o lua_utils.o request.pb.o response.pb.o ${RPATH} -L${LIBRARIES}/lib/  ${LIBRARIES}/lib/liblua.a ${LIBRARIES}/lib/libprotobuf.a ${LIBRARIES}/lib/libuv.a -lpthread -ldl -lm
+   ${CC} ${PROF} ${CFLAGS} -c src/main.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
+   ${CC} ${PROF} ${CFLAGS} -c src/logger.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
+   ${CC} ${PROF} ${CFLAGS} -c src/plugin.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
+   ${CC} ${PROF} ${CFLAGS} -c src/lua_utils.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
+   ${CC} ${PROF} ${CFLAGS} -c src/request.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
+   ${CC} ${PROF} ${CFLAGS} -c src/response.pb.cc -Isrc -I${LIBRARIES}/include -I${LIBRARIES}/include/lua
+   ${CC} ${PROF} ${CFLAGS} -o ${SERVER_NAME} main.o logger.o plugin.o lua_utils.o request.pb.o response.pb.o ${RPATH} -L${LIBRARIES}/lib/  ${LIBRARIES}/lib/liblua.a ${LIBRARIES}/lib/libprotobuf.a ${LIBRARIES}/lib/libuv.a -lpthread -ldl -lm
 fi
 
 echo "Building libraries!"

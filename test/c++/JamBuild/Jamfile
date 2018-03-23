@@ -1,0 +1,3 @@
+
+C++Flags = '-std=c++14' ;
+Main thread : main.cc ;

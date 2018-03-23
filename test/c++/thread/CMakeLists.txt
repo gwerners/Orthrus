@@ -1,0 +1,7 @@
+cmake_minimum_required (VERSION 2.6)
+project (Threads)
+set(CMAKE_CXX_FLAGS_DEBUG "-std=c++14")
+set(CMAKE_CXX_FLAGS_RELEASE "-std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-std=c++14")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
+add_executable(Threads main.cc)
