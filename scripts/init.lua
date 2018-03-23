@@ -18,7 +18,7 @@ admin_port=8086
 
 LogWithColor(true)--default is false!
 
---DisableLog(LOG_DEBUG)--remove any debug entry from log!
+DisableLog(LOG_DEBUG)--remove any debug entry from log!
 LogDebug("appearing?")
 
 --AbortOnError(true)
