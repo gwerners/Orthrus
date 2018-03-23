@@ -9,3 +9,5 @@ cp Jambase.html ..
 cp Jamfile.html ..
 cd ..
 rm -rf jam-2.6
+./jam
+./Thread.exe

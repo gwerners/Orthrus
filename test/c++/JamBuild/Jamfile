@@ -1,3 +1,49 @@
+SUFOBJ		?= .o ;
+LINKERCPP ?= g++ ;
+LINKLIBS = -pthread ;
+actions LinkCPP
+{
+  $(LINKERCPP) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) ;
+}
+rule LinkCPP
+{
+	$(LINKCPP) $(LINKFLAGS) -o $(<) $(UNDEFS) $(>) $(NEEDLIBS) $(LINKLIBS) ;
+}
 
-C++Flags = '-std=c++14' ;
-Main thread : main.cc ;
+rule MainCPP
+{
+	MainFromObjectsCPP $(<) : $(>:S=$(SUFOBJ)) ;
+	Objects $(>) ;
+}
+rule MainFromObjectsCPP
+{
+	local _s _t ;
+
+	# Add grist to file names
+	# Add suffix to exe
+
+	_s = [ FGristFiles $(>) ] ;
+	_t = [ FAppendSuffix $(<) : $(SUFEXE) ] ;
+
+	# so 'jam foo' works when it's really foo.exe
+
+	if $(_t) != $(<)
+	{
+	    Depends $(<) : $(_t) ;
+	    NotFile $(<) ;
+	}
+
+	# make compiled sources a dependency of target
+
+	Depends exe : $(_t) ;
+	Depends $(_t) : $(_s) ;
+	MakeLocate $(_t) : $(LOCATE_TARGET) ;
+
+	Clean clean : $(_t) ;
+
+	LinkCPP $(_t) : $(_s) ;
+}
+
+ObjectC++Flags main.cpp : -std=c++14 ;
+
+MainCPP Thread.exe : main.cpp ;
