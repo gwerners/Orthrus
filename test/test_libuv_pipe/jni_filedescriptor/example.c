@@ -10,7 +10,7 @@ int GetDescriptor()
 {
 
    int fd;
-   const char *fname="/home/gabrielfarinas/M4U_Interfaces/server/test/test_libuv_pipe/jni_filedescriptor/readme.txt";
+   const char *fname="/home/gwerners/workspace/Orthrus/test/test_libuv_pipe/jni_filedescriptor/readme.txt";
 
 
    fd = open(fname, O_RDWR | O_NONBLOCK);

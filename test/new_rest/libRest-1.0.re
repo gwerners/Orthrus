@@ -8,7 +8,7 @@
 
 #include "http_parser.h"
 #include "request.pb.h"
-#include "libM4UI-Rest-1.0.h"
+#include "libRest-1.0.h"
 
 static struct http_message message;
 

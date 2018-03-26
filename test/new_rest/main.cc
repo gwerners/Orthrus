@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 #include "http_parser.h"
-#include "libM4UI-Rest-1.0.h"
+#include "libRest-1.0.h"
 #include "request.pb.h"
 #include <fstream>
 #include <iostream>
@@ -272,7 +272,7 @@ main()
   interfaces::MessageBlock msg;
 
   // load plugin
-  LoadPlugin("libM4UI-Rest-1.0.so");
+  LoadPlugin("libRest-1.0.so");
   void* scanner = scanner_plugin.p_init(HTTP_REQUEST);
 
   str = (char*)malloc(1024);

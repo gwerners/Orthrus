@@ -26,7 +26,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <unistd.h>
 
 #include "http_parser.h"
-#include "libM4UI-Rest-2.0.h"
+#include "libRest-2.0.h"
 #include "logger.h"
 #include "request.pb.h"
 #include <fstream>
@@ -264,7 +264,7 @@ main()
 
   InitializeLog();
   // load plugin
-  LoadPlugin("libM4UI-Rest-2.0.so");
+  LoadPlugin("libRest-2.0.so");
   void* scanner = scanner_plugin.p_init(HTTP_REQUEST);
 
   str = (char*)malloc(1024);
@@ -298,7 +298,7 @@ main()
          "Accept-Language: en-US,en;q=0.5\r\n"
          "Accept-Encoding: gzip, deflate\r\n"
          "Content-Length: 23\r\n"
-         "M4U_SessionID: "
+         "SessionID: "
          "f4202e3c5852f9182a0430fd8144f0a74b95e7417ecae17db0f8cfeed0e3e66e\r\n"
          "Connection: keep-alive\r\n\r\n<html>body legal</html>");
   log_debug("Scanner version = %lu", scanner_plugin.p_version());

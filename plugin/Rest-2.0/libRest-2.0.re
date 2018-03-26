@@ -26,7 +26,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <inttypes.h>
 #include <stdlib.h>
 #include "request.pb.h"
-#include "libM4UI-Rest-2.0.h"
+#include "libRest-2.0.h"
 #include "logger.h"
 
 #define YYCTYPE        char
@@ -274,7 +274,7 @@ scanner(const char * cursor, const char * const limit)
    /*!re2c
    re2c:yyfill:enable = 0;
    ""{ return 0;}
-   "M4U_SessionID"{ session_found=1;return 1;}
+   "SessionID"{ session_found=1;return 1;}
    */
    return 0;
 }
@@ -296,7 +296,7 @@ header_field_cb (http_parser *p, const char *buf, size_t len)
   ret=scanner(buf,buf+len);
   if(ret)
   {
-     log_debug("M4U_SessionID:[%s]",m->headers[m->num_headers-1][0]);
+     log_debug("SessionID:[%s]",m->headers[m->num_headers-1][0]);
   }
   return 0;
 }

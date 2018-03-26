@@ -57,15 +57,15 @@ else
    cd ..
    rm -rf libuv-1.x
 fi
-${LIBRARIES}/bin/re2c --input custom libM4UI-Rest-1.0.re > libM4UI-Rest-1.0.cc
+${LIBRARIES}/bin/re2c --input custom libRest-1.0.re > libRest-1.0.cc
 ${LIBRARIES}/bin/protoc --cpp_out=. request.proto
 
 
 ${CC} -fPIC -shared -c request.pb.cc -I. -I${LIBRARIES}/include
-${CC} -fPIC -shared -c libM4UI-Rest-1.0.cc -I. -I${LIBRARIES}/include
+${CC} -fPIC -shared -c libRest-1.0.cc -I. -I${LIBRARIES}/include
 ${CC} -fPIC -shared -c http_parser.c -I. -I${LIBRARIES}/include
 #-Wl,-rpath ${LIBRARIES}/lib/
-${CC} -fPIC -shared http_parser.o libM4UI-Rest-1.0.o request.pb.o  -Wl,-rpath,./libraries/lib/ -L${LIBRARIES}/lib/ -lprotobuf -o libM4UI-Rest-1.0.so
+${CC} -fPIC -shared http_parser.o libRest-1.0.o request.pb.o  -Wl,-rpath,./libraries/lib/ -L${LIBRARIES}/lib/ -lprotobuf -o libRest-1.0.so
 
 ${CC} -c main.cc -I. -I${LIBRARIES}/include
 #-Wl,-rpath, sets the LD_LIBRARY_PATH inside the binary!
@@ -74,7 +74,7 @@ ${CC} -c main.cc -I. -I${LIBRARIES}/include
 #/usr/lib
 ${CC} -o client.exe main.o request.pb.o -Wl,-rpath,`pwd` -Wl,-rpath,${LIBRARIES}/lib ${LIBRARIES}/lib/libprotobuf.a ${LIBRARIES}/lib/libuv.a -ldl -pthread
 
-#ln -s libM4UI-Rest-1.0.so libM4UI-Rest.so
+#ln -s libRest-1.0.so libRest.so
 
 
 rm *.o
@@ -84,4 +84,4 @@ rm *.o
 
 #check if rpath is ok!
 #objdump -x client.exe |grep RPATH
-#objdump -x libM4UI-Rest-1.0.so |grep RPATH
+#objdump -x libRest-1.0.so |grep RPATH

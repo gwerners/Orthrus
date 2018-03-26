@@ -110,7 +110,7 @@ Run_Lua()
 
   // execute script
 
-  chdir("/home/gabrielfarinas/M4U_Interfaces/server/test/lua_admin");
+  chdir("/home/gabrielfarinas/Interfaces/server/test/lua_admin");
   status = luaL_loadfile(l, "admin.lua");
   lua_setglobal(l, "bogus");
   if (status != 0) {

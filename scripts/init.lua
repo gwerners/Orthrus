@@ -86,7 +86,7 @@ LogDebug(ListBusinessObjects())
 EnableSigInt()
 
 --load plugin!
-LoadPluginLibrary("./libraries/lib/libM4UI-Rest-2.0.so","LoadScannerPlugin","LoadScannerPluginDummy")
+LoadPluginLibrary("./libraries/lib/libRest-2.0.so","LoadScannerPlugin","LoadScannerPluginDummy")
 
 --test plugin
 request="GET /path/cgi.script HTTP/1.1\r\n" ..

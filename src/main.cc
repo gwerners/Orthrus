@@ -570,7 +570,7 @@ after_read(uv_stream_t* client, ssize_t nread, const uv_buf_t* buf)
   std::map<std::string, Service*>::iterator itor;
   std::string str_output;
   Service* p_service;
-  const char* service_name = "M4U_CORE";
+  const char* service_name = "CORE";
   const char* match;
   interfaces::Request request;
   size_t nmatch = 1;
@@ -1157,14 +1157,14 @@ test_configuration()
 {
   uv_signal_t* sig1a;
   const char* CLASSPATH =
-    "-Djava.class.path=/home/gabrielfarinas/M4U_Interfaces/server"
-    ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD"
-    ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD/com"
-    ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD/com/"
+    "-Djava.class.path=/home/gwerners/workspace/Orthrus"
+    ":/home/gwerners/workspace/Orthrus/BO/JAVA/USSD"
+    ":/home/gwerners/workspace/Orthrus/BO/JAVA/USSD/com"
+    ":/home/gwerners/workspace/Orthrus/BO/JAVA/USSD/com/"
     "interfaces"
-    ":/home/gabrielfarinas/M4U_Interfaces/server/BO/JAVA/USSD/com/"
+    ":/home/gwerners/workspace/Orthrus/BO/JAVA/USSD/com/"
     "interfaces/request"
-    ":/home/gabrielfarinas/M4U_Interfaces/server/libraries/lib/"
+    ":/home/gwerners/workspace/Orthrus/libraries/lib/"
     "protobuf-java-3.0.0-beta-1.jar";
 
   tcp4_start(&tcpServer, 8085, on_connection);
@@ -1182,7 +1182,7 @@ test_configuration()
   uv_signal_init(loop, sig1a);
   uv_signal_start(sig1a, int_handler, SIGINT);
 
-  load_plugin_library("./libraries/lib/libM4UI-Rest-2.0.so",
+  load_plugin_library("./libraries/lib/libRest-2.0.so",
                       "LoadScannerPlugin",
                       "LoadScannerPluginDummy");
 

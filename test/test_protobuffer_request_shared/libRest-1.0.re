@@ -1,32 +1,15 @@
-/*
-Copyright 2018 Gabriel Wernersbach Farinas
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in the
-Software without restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
 #include <iostream>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include "request.pb.h"
-#include "libM4UI-Rest-1.0.h"
+#include "libRest-1.0.h"
 
 //DEFINES
 
+#define _DEBUG_ME_
 
 #define YYCTYPE        char
 #define YYPEEK()       (cursor >= limit ? 0 : *cursor)
@@ -39,10 +22,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 extern "C"
 {
 
-
 static int InternalScanner(
 interfaces::Request* request,
-const char * cursor,
+const char * cursor, 
 const char * const limit,
 int *var_method,
 int *var_uri,
@@ -144,7 +126,6 @@ lbl_space_request_header:
 		"Host"{ var_request_header=7;key="Host";goto lbl_request_header;}
 		"User-Agent"{ var_request_header=8;key="User-Agent";goto lbl_request_header;}
 		"Content-Type"{ var_request_header=9;key="Content-Type";goto lbl_request_header;}
-
    */
 lbl_request_header:
    if(!var_request_header)
@@ -245,7 +226,6 @@ int Scanner(const char * input,const char*limit,char **output, int olen )
    google::protobuf::ShutdownProtobufLibrary();
    return ret;
 }
-
 
 
 

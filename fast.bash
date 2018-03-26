@@ -65,35 +65,35 @@ else
 fi
 
 echo "Building libraries!"
-if [[ -e "${LIBRARIES}/lib/libM4UI-Rest-2.0.so" ]]; then
-   echo "lib exists:${LIBRARIES}/lib/libM4UI-Rest-2.0.so, skipping build!"
+if [[ -e "${LIBRARIES}/lib/libRest-2.0.so" ]]; then
+   echo "lib exists:${LIBRARIES}/lib/libRest-2.0.so, skipping build!"
 else
    cd plugin/Rest-2.0
    ./fast.bash
-   cp ./libM4UI-Rest-2.0.so ${LIBRARIES}/lib/libM4UI-Rest-2.0.so
+   cp ./libRest-2.0.so ${LIBRARIES}/lib/libRest-2.0.so
    cd ../../
 fi
 
-if [[ -e "${LIBRARIES}/lib/libM4UI-Rest-2.0.so" ]]; then
-   echo "Sucessfull build of libM4UI-Rest-2.0.so"
+if [[ -e "${LIBRARIES}/lib/libRest-2.0.so" ]]; then
+   echo "Sucessfull build of libRest-2.0.so"
 else
-   echo "Problem building libM4UI-Rest-2.0.so, please check!"
+   echo "Problem building libRest-2.0.so, please check!"
 fi
 rm *.o
 
 if [[ "${OS}" = "OSX" ]]; then
    #para listar as libs com seus caminhos:
-   #otool -L libraries/lib/libM4UI-Rest-1.0.so
-   #fix para o caminho da libprotobuf dentro da libM4U:
-   install_name_tool -change `pwd`/plugin/Rest-2.0/libraries/lib/libprotobuf.10.dylib `pwd`/libraries/lib/libprotobuf.10.dylib `pwd`/libraries/lib/libM4UI-Rest-2.0.so
+   #otool -L libraries/lib/libRest-1.0.so
+   #fix para o caminho da libprotobuf dentro da lib:
+   install_name_tool -change `pwd`/plugin/Rest-2.0/libraries/lib/libprotobuf.10.dylib `pwd`/libraries/lib/libprotobuf.10.dylib `pwd`/libraries/lib/libRest-2.0.so
    echo "libprotobuf.so corrected for osx"
 else
    #mostra o rpath da aplicacao!
-   # readelf --dynamic libraries/lib/libM4UI-Rest-1.0.so | grep PATH
+   # readelf --dynamic libraries/lib/libRest-1.0.so | grep PATH
    #0x000000000000000f (RPATH)              Library rpath: [./libraries/lib/]
 
    #lista bibliotecas dinamicas e os respectivos caminhos!
-   #ldd libraries/lib/libM4UI-Rest-1.0.so
+   #ldd libraries/lib/libRest-1.0.so
 	#libprotobuf.so.10 => ./libraries/lib/libprotobuf.so.10 (0x00007f3af39f8000)
 
    #sudo apt-get install chrpath

@@ -6,7 +6,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "libM4UI-Rest-1.0.h"
+#include "libRest-1.0.h"
 #include "request.pb.h"
 #include <fstream>
 #include <iostream>
@@ -167,7 +167,7 @@ main()
   interfaces::MessageBlock msg;
 
   // load plugin
-  LoadPlugin("libM4UI-Rest-1.0.so");
+  LoadPlugin("libRest-1.0.so");
 
   str = (char*)malloc(1024);
   /*strcpy(str,
