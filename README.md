@@ -29,16 +29,5 @@ Directories:
 
 -test   - examples! lots of experimentations before doing the main software.
 
-TODO:
-
-1)enable async processing of the request. Currently the request will block on
-the C++/Java module waiting the response. This will be changed as the module
-already have the socket descriptor to answer anytime in the future...
-
-2)rebuild the http parser (the one in use is from nodejs project)
-
-3)enable a fast url2module using regular expression.
-
-4)review log library: need to be unified, log to file and check for performance.
 
 Gabriel W Farinas

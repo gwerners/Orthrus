@@ -1,0 +1,11 @@
+TODO:
+
+1)enable multithread processing of the request (parsing)
+
+2)rebuild the http parser (the one in use is from nodejs project)
+
+3)enable a better url2module using regular expression.
+
+4)unify the log library across plugins (disable / enable must be handled by the core lua)
+
+5)automated tests...
