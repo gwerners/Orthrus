@@ -4,6 +4,10 @@
 extern "C"{
 #include <uv.h>
 }
+
+//must read
+//https://nikhilm.github.io/uvbook/threads.html
+
 #define FIB_UNTIL 25
 uv_loop_t *loop;
 

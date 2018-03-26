@@ -25,12 +25,6 @@ extern "C"{
 #include <stdlib.h>
 #include <string.h>
 
-typedef enum {
-  TCP = 0,
-  UDP,
-  PIPE
-} stream_type;
-
 #define ASSERT(expr)                                      \
  do {                                                     \
   if (!(expr)) {                                          \
@@ -67,7 +61,6 @@ typedef struct {
 static uv_loop_t* loop;
 
 static int server_closed;
-static stream_type serverType;
 static uv_tcp_t tcpServer;
 static uv_udp_t udpServer;
 static uv_pipe_t pipeServer;
@@ -95,11 +88,44 @@ after_write_close(uv_write_t* req, int status)
   }
   free(wreq);
 }
+typedef struct workData_t{
+  uv_stream_t* handle;
+  uv_buf_t* buf;
+} workData;
+static void work_cb(uv_work_t*req){
+    write_req_t *wr;
+    workData *wrk = (workData*)req->data;
+    uv_stream_t*handle = (uv_stream_t*)wrk->handle;
+    uv_buf_t* buf=(uv_buf_t*)wrk->buf;
+    const char* r404 = "HTTP/1.1 404 Not Found\r\nContent-Length: "
+                       "35\r\nConnection: close\r\n\r\n<html><h1>404 NOT "
+                       "FOUND</h1></html>\r\n";
+    //printf("received %s\n",buf->base);
+    wr = (write_req_t*)malloc(sizeof(write_req_t));
+    ASSERT(wr != NULL);
+    wr->buf = uv_buf_init((char*)r404, strlen(r404)+1);
+    //wr->buf = uv_buf_init(buf->base, nread);
+     //printf("send %s\n",wr->buf.base);
+    if (uv_write(&wr->req, handle, &wr->buf, 1, after_write_close)) {
+      FATAL("uv_write failed");
+    }
+
+    if (buf->base)
+      free(buf->base);
+    //free(wrk);
+    uv_read_stop(handle);
+    uv_close((uv_handle_t*)handle, on_close);
+}
+static void after_work_cb(uv_work_t*req,int status){
+    ASSERT(status==0);
+    free(req->data);
+    free(req);
+}
 static void after_read(uv_stream_t* handle,
                        ssize_t nread,
                        const uv_buf_t* buf) {
   int i;
-  write_req_t *wr;
+
   uv_shutdown_t* sreq;
   //printf("after read \n");
   if (nread < 0) {
@@ -118,23 +144,14 @@ static void after_read(uv_stream_t* handle,
     return;
   }
 
-  const char* r404 = "HTTP/1.1 404 Not Found\r\nContent-Length: "
-                     "35\r\nConnection: close\r\n\r\n<html><h1>404 NOT "
-                     "FOUND</h1></html>\r\n";
-  //printf("received %s\n",buf->base);
-  wr = (write_req_t*)malloc(sizeof(write_req_t));
-  ASSERT(wr != NULL);
-  wr->buf = uv_buf_init((char*)r404, strlen(r404)+1);
-  //wr->buf = uv_buf_init(buf->base, nread);
-   //printf("send %s\n",wr->buf.base);
-  if (uv_write(&wr->req, handle, &wr->buf, 1, after_write_close)) {
-    FATAL("uv_write failed");
-  }
 
-  if (buf->base)
-    free(buf->base);
-  uv_read_stop(handle);
-  uv_close((uv_handle_t*)handle, on_close);
+  uv_work_t* req=(uv_work_t*)malloc(sizeof(uv_work_t));
+  workData *wrk = (workData*)calloc(1,sizeof(workData));
+  wrk->handle=handle;
+  wrk->buf=(uv_buf_t*)buf;
+  req->data=wrk;
+  int r=uv_queue_work(loop,req,work_cb,after_work_cb);
+  ASSERT(r==0);
 }
 
 
@@ -161,17 +178,12 @@ static void on_connection(uv_stream_t* server, int status) {
   }
   ASSERT(status == 0);
 
-  switch (serverType) {
-  case TCP:
-    stream = (uv_stream_t*)malloc(sizeof(uv_tcp_t));
-    ASSERT(stream != NULL);
-    r = uv_tcp_init(loop, (uv_tcp_t*)stream);
-    ASSERT(r == 0);
-    break;
-  default:
-    ASSERT(0 && "Bad serverType");
-    abort();
-  }
+
+  stream = (uv_stream_t*)malloc(sizeof(uv_tcp_t));
+  ASSERT(stream != NULL);
+  r = uv_tcp_init(loop, (uv_tcp_t*)stream);
+  ASSERT(r == 0);
+
 
   /* associate server with stream */
   stream->data = server;
@@ -195,7 +207,6 @@ static int tcp4_echo_start(int port) {
   ASSERT(0 == uv_ip4_addr("0.0.0.0", port, &addr));
 
   server = (uv_handle_t*)&tcpServer;
-  serverType = TCP;
 
   r = uv_tcp_init(loop, &tcpServer);
   if (r) {
