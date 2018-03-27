@@ -1,33 +1,24 @@
 #!/bin/sh
-CC=g++
+CC=gcc
+CFLAGS=-O3
+LIBEVENT=libevent-2.1.8-stable
 LIBRARIES=`pwd`/libraries
 rm *.exe
 rm *.o
 
 export PREFIX=${LIBRARIES}
-
-if [ -e "${LIBRARIES}/lib/libuv.a" ]
-then
-   echo "libuv exists..."
-else
-   echo "building libuv!"
-   git clone https://github.com/libuv/libuv.git
-   mkdir ${LIBRARIES}
-   cd libuv
-   sh autogen.sh
-   ./configure --prefix=${LIBRARIES}
-   make
-   make html
-   #uncomment next line to make long check on libuv...
-   #make check
-   make install
-   cd ..
-   #rm -rf libuv-1.x
+if [ ! -e "${LIBRARIES}/lib/libuv.a" ]; then
+  tar -xzf ${LIBEVENT}.tar.gz
+  cd ${LIBEVENT}
+  ./configure --prefix=$LIBRARIES
+  make
+  make install
+  cd ..
+  rm -rf $LIBEVENT
 fi
-
-${CC} -c main.cpp -I. -I${LIBRARIES}/include
-${CC} -o worker.exe main.o ${LIBRARIES}/lib/libuv.a -pthread
+${CC} $CFLAGS -c main.c -I. -I${LIBRARIES}/include
+${CC} $CFLAGS -o worker.exe main.o ${LIBRARIES}/lib/libevent.a -pthread
 rm *.o
 
-#export LD_LIBRARY_PATH=`pwd`
-./worker.exe
+##export LD_LIBRARY_PATH=`pwd`
+./worker.exe www
